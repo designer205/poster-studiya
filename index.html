@@ -2373,12 +2373,21 @@ boot();
    ============================================================ */
 const GEN_KEY = "ips:gemini";
 const GEN_MODELS = [
-  ["gemini-2.5-flash-image", "Nano Banana (gemini-2.5-flash-image)"],
-  ["gemini-3-pro-image-preview", "Nano Banana Pro (gemini-3-pro-image-preview)"],
+  ["gemini-nano-banana-2.1", "Nano Banana 2.1 (gemini-nano-banana-2.1)"],
+  ["gemini-3.1-flash-lite-image", "Nano Banana 2 Lite (gemini-3.1-flash-lite-image)"],
+  ["gemini-3-pro-image", "Nano Banana Pro (gemini-3-pro-image)"],
+  ["custom", "Boshqa model (nomini qo'lda yozish)"],
 ];
 const GEN_ASPECTS = ["1:1", "2:3", "3:2", "3:4", "4:3", "4:5", "5:4", "9:16", "16:9", "21:9"];
 const genAvailable = () => !!(window.__WEB && window.__WEB.firebase);
-function genSettings() { return ls.get(GEN_KEY) || { key: "", model: GEN_MODELS[0][0], size: "2K" }; }
+function genSettings() {
+  const s = ls.get(GEN_KEY) || { key: "", model: GEN_MODELS[0][0], size: "2K" };
+  const MOVED = { "gemini-2.5-flash-image": "gemini-nano-banana-2.1", "gemini-3-pro-image-preview": "gemini-3-pro-image" };
+  if (MOVED[s.model]) s.model = MOVED[s.model];
+  if (!GEN_MODELS.some(m => m[0] === s.model)) { s.custom = s.custom || s.model; s.model = "custom"; }
+  return s;
+}
+const genModelId = s => (s.model === "custom" ? String(s.custom || "").trim() : s.model) || GEN_MODELS[0][0];
 function genAspect(w, h) {
   const r = w / h, val = a => { const [x, y] = a.split(":").map(Number); return x / y; };
   return GEN_ASPECTS.reduce((a, b) => Math.abs(Math.log(val(b) / r)) < Math.abs(Math.log(val(a) / r)) ? b : a);
@@ -2391,6 +2400,7 @@ function openGenSettings(then) {
       <p class="hint">Fon rasmlari Google Gemini (Nano Banana) bilan chiziladi. API kalitni Google AI Studio'da oling: <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener" style="color:var(--accent)">aistudio.google.com/apikey</a>. Kalit faqat shu brauzerda saqlanadi.</p>
       <div class="fld"><label for="gKey">API kalit</label><input type="password" id="gKey" autocomplete="off" spellcheck="false" placeholder="AIza…" value="${esc(s.key)}"></div>
       <div class="fld"><label for="gModel">Model</label><select id="gModel">${GEN_MODELS.map(([v, l]) => `<option value="${v}" ${v === s.model ? "selected" : ""}>${esc(l)}</option>`).join("")}</select></div>
+      <div class="fld" id="gCustomF" ${s.model === "custom" ? "" : "hidden"}><label for="gCustom">Model nomi (AI Studio'dagi kabi)</label><input type="text" id="gCustom" spellcheck="false" placeholder="gemini-…" value="${esc(s.custom || "")}"></div>
       <div class="fld"><label for="gSize">Sifat (faqat Pro)</label><select id="gSize">${["1K", "2K", "4K"].map(v => `<option ${v === s.size ? "selected" : ""}>${v}</option>`).join("")}</select></div>
       <p class="hint">Bitta ishga tushirishda ko'pi bilan ${esc(STYLE.maxPerRun)} ta so'rov chiziladi, har biriga 1 ta rasm. Google rasm generatsiyasi uchun pullik tarif talab qilishi mumkin.</p>
       <div class="row" style="justify-content:space-between;flex-wrap:wrap"><button class="btn danger" id="gForget" type="button">Kalitni o'chirish</button>
@@ -2401,11 +2411,14 @@ function openGenSettings(then) {
   d.addEventListener("click", e => { if (e.target === d) close(); });
   d.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
   $("#gCancel", d).addEventListener("click", close);
+  $("#gModel", d).addEventListener("change", e => { $("#gCustomF", d).hidden = e.target.value !== "custom"; });
   $("#gForget", d).addEventListener("click", () => { ls.del(GEN_KEY); toast("Kalit o'chirildi"); close(); });
   $("#gSave", d).addEventListener("click", () => {
     const key = $("#gKey", d).value.trim();
     if (!key) { toast("API kalitni kiriting"); return; }
-    ls.set(GEN_KEY, { key, model: $("#gModel", d).value, size: $("#gSize", d).value });
+    const model = $("#gModel", d).value, custom = $("#gCustom", d).value.trim();
+    if (model === "custom" && !/^[a-z0-9][a-z0-9.\-]{2,80}$/i.test(custom)) { toast("Model nomini to'g'ri yozing, masalan gemini-…"); return; }
+    ls.set(GEN_KEY, { key, model, custom, size: $("#gSize", d).value });
     toast("Gemini sozlamalari saqlandi"); close(); if (then) then();
   });
   setTimeout(() => $("#gKey", d).focus(), 30);
@@ -2424,6 +2437,7 @@ function genError(status, body) {
   if (status === 400) return ("So'rov rad etildi: " + msg).slice(0, 80);
   if (status === 401 || status === 403) return "Kalitga ruxsat yo'q yoki tarif mos emas";
   if (status === 404) return "Model topilmadi: sozlamada boshqa modelni tanlang";
+  if (status === 429 && /limit:\s*0|free.?tier|billing/i.test(msg)) return "Bepul tarifda rasm yo'q: AI Studio'da billing yoqing";
   if (status === 429) return "Gemini limiti tugadi: keyinroq urinib ko'ring";
   if (status >= 500) return "Gemini serveri javob bermadi";
   return ("Xato " + status + ": " + msg).slice(0, 80);
@@ -2455,8 +2469,9 @@ async function runGenerator() {
       const parts = [{ text: prompt }];
       if (ref) { parts.push({ inlineData: { mimeType: ref.mime, data: ref.data } }); parts.push({ text: "Use the attached image only as a style reference for rendering, lighting and materials. Do not copy its subject; use the colors described above." }); }
       const imageConfig = { aspectRatio: genAspect(sz.w, sz.h) };
-      if (/pro/.test(s.model)) imageConfig.imageSize = s.size || "2K";
-      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(s.model)}:generateContent`, {
+      const modelId = genModelId(s);
+      if (/pro/.test(modelId)) imageConfig.imageSize = s.size || "2K";
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(modelId)}:generateContent`, {
         method: "POST", headers: { "Content-Type": "application/json", "x-goog-api-key": s.key },
         body: JSON.stringify({ contents: [{ role: "user", parts }], generationConfig: { responseModalities: ["IMAGE"], imageConfig, candidateCount: 1, seed: +STYLE.seed || undefined } }),
       });
@@ -2471,12 +2486,12 @@ async function runGenerator() {
       const inl = img.inlineData || img.inline_data, bin = atob(inl.data), u8 = new Uint8Array(bin.length);
       for (let i = 0; i < bin.length; i++) u8[i] = bin.charCodeAt(i);
       const up = await caps.assets.upload(new Blob([u8], { type: inl.mimeType || inl.mime_type || "image/png" }));
-      await doc.update({ status: "done", imageUrl: "/_blob/" + up.id, assetId: up.id, creationId: (body && body.responseId) || "", model: s.model, doneAt: new Date().toISOString(), error: "" });
+      await doc.update({ status: "done", imageUrl: "/_blob/" + up.id, assetId: up.id, creationId: (body && body.responseId) || "", model: modelId, doneAt: new Date().toISOString(), error: "" });
       done++;
     } catch (e) {
       const m = e && e.message ? e.message : "Tarmoq xatosi";
       await doc.update({ status: "error", error: (/Failed to fetch|NetworkError/i.test(m) ? "Tarmoq xatosi: Gemini'ga ulanib bo'lmadi" : m).slice(0, 80) }).catch(() => {});
-      if (/API kalit|ruxsat yo'q/.test(m)) break;
+      if (/API kalit|ruxsat yo'q|billing|Model topilmadi/.test(m)) break;
     }
   }
   try { await caps.db.doc("config/runner").set({ lastRunAt: new Date().toISOString(), lastProcessed: done }); } catch (e) {}
@@ -2598,7 +2613,11 @@ const EN = {
   "Poster 3:4": "Poster 3:4", "Story / Reels 9:16": "Story / Reels 9:16", "Instagram 4:5": "Instagram 4:5", "Kvadrat 1:1": "Square 1:1", "Ekran 16:9": "Screen 16:9", "Banner 1.91:1": "Banner 1.91:1",
   "A4 bosma, 150 dpi": "A4 print, 150 dpi", "A3 bosma, 150 dpi": "A3 print, 150 dpi", "Maxsus": "Custom", "Maxsus…": "Custom…",
   // generator dialog
-  "Gemini sozlamalari": "Gemini settings", "Gemini generatori": "Gemini generator", "API kalit": "API key", "Sifat (faqat Pro)": "Quality (Pro only)", "Kalitni o'chirish": "Forget key",
+  "Gemini sozlamalari": "Gemini settings", "Model nomi (AI Studio'dagi kabi)": "Model ID (as shown in AI Studio)", "Boshqa model (nomini qo'lda yozish)": "Other model (type the ID)",
+  "Model nomini to'g'ri yozing, masalan gemini-…": "Enter a valid model ID, e.g. gemini-…", "Bepul tarifda rasm yo'q: AI Studio'da billing yoqing": "No images on the free tier: enable billing in AI Studio",
+  "Gemini limiti tugadi: keyinroq urinib ko'ring": "Gemini quota reached: try again later", "API kalit noto'g'ri": "Invalid API key", "Kalitga ruxsat yo'q yoki tarif mos emas": "The key has no access or the plan doesn't allow it",
+  "Model topilmadi: sozlamada boshqa modelni tanlang": "Model not found: pick another model in settings", "Gemini serveri javob bermadi": "The Gemini server didn't respond",
+  "Gemini mavzuni xavfsizlik sababli rad etdi": "Gemini refused the topic for safety reasons", "Gemini rasm qaytarmadi": "Gemini returned no image", "Tarmoq xatosi: Gemini'ga ulanib bo'lmadi": "Network error: couldn't reach Gemini", "Gemini generatori": "Gemini generator", "API kalit": "API key", "Sifat (faqat Pro)": "Quality (Pro only)", "Kalitni o'chirish": "Forget key",
   "Fon rasmlari Google Gemini (Nano Banana) bilan chiziladi. API kalitni Google AI Studio'da oling:": "Backgrounds are painted with Google Gemini (Nano Banana). Get an API key in Google AI Studio:",
   ". Kalit faqat shu brauzerda saqlanadi.": ". The key is stored only in this browser.",
   "Google rasm generatsiyasi uchun pullik tarif talab qilishi mumkin.": "Google may require a paid plan for image generation.",
