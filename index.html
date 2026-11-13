@@ -1,0 +1,2364 @@
+<!doctype html><html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="IT departamenti uchun poster muharriri, fon rasmlari navbati va umumiy galereya.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect width=%2216%22 height=%2216%22 rx=%223%22 fill=%22%232DD4BF%22/%3E%3C/svg%3E">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}.authbox{display:flex;align-items:center;gap:10px;white-space:nowrap}.authbox .runinfo{display:inline}@media (max-width:1560px){.top>.runinfo{display:none}}@media (max-width:900px){.authbox .runinfo{display:none}}</style>
+<title>IT Poster Studiya</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap">
+<style>
+/* Layout: professional design-tool shell — top bar, action strip, tool rail | workspace with rulers | inspector + layers, status line. Single dark theme. */
+:root{
+  color-scheme:dark;
+  --bg:#080D18; --ws:#0C1220; --panel:#101828; --panel2:#151F33; --raise:#1B2740; --line:#22304A; --line2:#2C3C5C;
+  --text:#E3ECF4; --muted:#8798B2; --dim:#5D6E8A;
+  --accent:#2DD4BF; --accent-ink:#04201C; --pink:#FF4FA3; --amber:#FFB547; --red:#FF6B6B; --ok:#4ADE80;
+  --navy:#0B1B3A; --ice:#CFE3EC;
+  --f-display:"Golos Text",system-ui,sans-serif; --f-ui:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif; --f-mono:"Golos Text",system-ui,sans-serif;
+  --r:6px;
+}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);font:13px/1.4 var(--f-ui);font-variant-numeric:tabular-nums;overflow:hidden}
+button,input,select,textarea{font:inherit;color:inherit}
+*{box-sizing:border-box}
+::selection{background:rgba(45,212,191,.35)}
+svg.i{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.app{height:100%;display:flex;flex-direction:column;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+
+/* ---------- top bar ---------- */
+.top{display:flex;align-items:center;gap:14px;height:48px;padding:0 max(12px,env(safe-area-inset-right,0px)) 0 max(12px,env(safe-area-inset-left,0px));background:var(--panel);border-bottom:1px solid var(--line);flex:none;min-width:0}
+.logo{display:flex;align-items:center;gap:9px;font:600 13px var(--f-display);letter-spacing:.02em;white-space:nowrap}
+.logo b{width:14px;height:14px;background:var(--accent);display:block}
+.logo span{color:var(--muted);font-weight:400}
+.nav{display:flex;gap:2px;margin-left:8px;overflow-x:auto;scrollbar-width:none}
+.nav button{border:0;background:none;padding:7px 11px;border-radius:var(--r);color:var(--muted);cursor:pointer;display:flex;gap:7px;align-items:center;white-space:nowrap}
+.nav button:hover{background:var(--raise);color:var(--text)}
+.nav button[aria-current="page"]{background:var(--raise);color:var(--text);box-shadow:inset 0 -2px 0 var(--accent)}
+.cnt{font:500 11px var(--f-mono);background:var(--line);padding:1px 6px;border-radius:9px;color:var(--text)}
+.top .sp{flex:1}
+.runinfo{font:11px var(--f-mono);color:var(--muted);white-space:nowrap}
+.runinfo i{font-style:normal;color:var(--text)}
+
+/* ---------- buttons / fields ---------- */
+.btn{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 11px;border-radius:var(--r);border:1px solid var(--line2);background:var(--panel2);cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--raise)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+.btn.pri:hover{filter:brightness(1.08)}
+.btn.danger{border-color:rgba(255,107,107,.5);color:var(--red)}
+.btn.danger.arm{background:var(--red);color:#1b0606}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.ib{width:30px;height:30px;display:inline-grid;place-items:center;border:0;background:none;border-radius:var(--r);color:var(--muted);cursor:pointer;flex:none}
+.ib:hover{background:var(--raise);color:var(--text)}
+.ib[aria-pressed="true"]{background:rgba(45,212,191,.16);color:var(--accent)}
+.ib:disabled{opacity:.35;cursor:not-allowed}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.sep{width:1px;height:20px;background:var(--line);margin:0 4px;flex:none}
+input[type=text],input[type=number],input[type=search],select,textarea{background:var(--bg);border:1px solid var(--line2);border-radius:5px;height:28px;padding:0 8px;min-width:0;width:100%}
+textarea{height:auto;padding:6px 8px;resize:vertical;line-height:1.4}
+input[type=number]{font-family:var(--f-mono);font-size:12px;-moz-appearance:textfield}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+input[type=color]{width:28px;height:28px;border:1px solid var(--line2);border-radius:5px;background:none;padding:2px;cursor:pointer}
+input[type=range]{width:100%;flex:1;min-width:0;accent-color:var(--accent)}
+input[type=checkbox]{accent-color:var(--accent)}
+label.chk{display:flex;align-items:center;gap:8px;cursor:pointer;padding:3px 0}
+
+/* tooltips */
+[data-tip]{position:relative}
+[data-tip]:hover::after,[data-tip]:focus-visible::after{content:attr(data-tip);position:absolute;z-index:80;left:50%;top:calc(100% + 6px);transform:translateX(-50%);background:#02060E;border:1px solid var(--line2);color:var(--text);font:11px/1.3 var(--f-ui);padding:5px 8px;border-radius:5px;white-space:nowrap;pointer-events:none}
+[data-tip][data-k]:hover::after,[data-tip][data-k]:focus-visible::after{content:attr(data-tip) "   " attr(data-k)}
+.rail [data-tip]:hover::after,.rail [data-tip]:focus-visible::after{left:calc(100% + 8px);top:50%;transform:translateY(-50%)}
+
+/* ---------- banner ---------- */
+.banner{display:flex;gap:10px;align-items:center;padding:8px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px));background:rgba(255,181,71,.1);border-bottom:1px solid rgba(255,181,71,.3);color:#FFD9A0;font-size:12.5px;flex:none}
+
+/* ---------- views ---------- */
+.view{flex:1;min-height:0}
+.ed{display:grid;grid-template-columns:48px minmax(0,1fr) 304px;grid-template-rows:44px minmax(0,1fr) 26px;height:100%}
+.acts{grid-column:1/4;display:flex;align-items:center;gap:2px;padding:0 10px;background:var(--panel);border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:thin;min-width:0}
+.docname{display:flex;align-items:center;gap:8px;margin-left:auto;padding-left:12px;min-width:0}
+.docname input{width:220px;background:transparent;border-color:transparent;font-weight:500}
+.docname input:hover,.docname input:focus{border-color:var(--line2);background:var(--bg)}
+.state{font:11px var(--f-mono);color:var(--muted);white-space:nowrap}
+.state.dirty{color:var(--amber)}
+.state.saved{color:var(--ok)}
+.rail{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 0;background:var(--panel);border-right:1px solid var(--line)}
+.rail .ib{width:34px;height:34px}
+.rail .grow{flex:1}
+.wsWrap{position:relative;display:grid;grid-template-columns:22px minmax(0,1fr);grid-template-rows:22px minmax(0,1fr);background:var(--ws);min-width:0;min-height:0}
+.corner{background:var(--panel);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+#rulerX,#rulerY{display:block;background:var(--panel)}
+#rulerX{border-bottom:1px solid var(--line)}
+#rulerY{border-right:1px solid var(--line)}
+#ws{position:relative;overflow:hidden;min-width:0;min-height:0;background:
+  radial-gradient(circle at 1px 1px,rgba(135,152,178,.12) 1px,transparent 0) 0 0/16px 16px,var(--ws)}
+#ws .canvas-container{position:absolute!important;inset:0}
+#ws.hand,#ws.hand .upper-canvas{cursor:grab!important}
+#ws.hand.grabbing,#ws.hand.grabbing .upper-canvas{cursor:grabbing!important}
+.fxctl{position:absolute;right:12px;bottom:12px;display:flex;gap:6px;align-items:center;background:rgba(16,24,40,.92);border:1px solid var(--line2);border-radius:8px;padding:4px 6px 4px 10px;font:11px var(--f-mono);color:var(--muted)}
+.side{display:flex;flex-direction:column;background:var(--panel);border-left:1px solid var(--line);min-height:0;min-width:0}
+.tabs{display:flex;border-bottom:1px solid var(--line);flex:none}
+.tabs button{flex:1;border:0;background:none;padding:10px 4px;color:var(--muted);cursor:pointer;font-size:12px;border-bottom:2px solid transparent}
+.tabs button[aria-selected="true"]{color:var(--text);border-bottom-color:var(--accent)}
+.pane{overflow:auto;padding:12px;flex:1 1 58%;min-height:0;display:flex;flex-direction:column;gap:14px}
+.grp{display:flex;flex-direction:column;gap:8px}
+.grp>h4{margin:0;font:600 10.5px var(--f-mono);letter-spacing:.09em;text-transform:uppercase;color:var(--dim)}
+.row{display:flex;gap:6px;align-items:center;min-width:0}
+.row>*{min-width:0}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.g6{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.num{display:flex;align-items:center;background:var(--bg);border:1px solid var(--line2);border-radius:5px;height:28px;min-width:0}
+.num:focus-within{border-color:var(--accent)}
+.num span{font:600 10.5px var(--f-mono);color:var(--dim);padding:0 4px 0 8px;cursor:ew-resize;user-select:none;flex:none;min-width:22px}
+.num input{border:0;background:none;height:26px;padding:0 6px 0 2px}
+.num input:focus{outline:none}
+.sw{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.sw button{width:22px;height:22px;border-radius:4px;border:1px solid var(--line2);cursor:pointer;padding:0}
+.sw button[aria-pressed="true"]{outline:2px solid var(--accent);outline-offset:1px}
+.seg{display:flex;background:var(--bg);border:1px solid var(--line2);border-radius:5px;padding:1px;gap:1px}
+.seg .ib{width:auto;flex:1;height:26px}
+.hint{color:var(--muted);font-size:12px;line-height:1.5;margin:0}
+.layers{border-top:1px solid var(--line);flex:1 1 42%;min-height:120px;display:flex;flex-direction:column}
+.layers header{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;font:600 10.5px var(--f-mono);letter-spacing:.09em;text-transform:uppercase;color:var(--dim)}
+#layerList{list-style:none;margin:0;padding:0 6px 8px;overflow:auto;flex:1}
+#layerList li{display:flex;align-items:center;gap:6px;height:28px;padding:0 4px 0 8px;border-radius:5px;cursor:pointer;color:var(--muted);user-select:none}
+#layerList li:hover{background:var(--panel2)}
+#layerList li.sel{background:rgba(45,212,191,.14);color:var(--text)}
+#layerList li.hid .lname{opacity:.45}
+#layerList li.drop{box-shadow:inset 0 2px 0 var(--accent)}
+#layerList .lname{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#layerList .lname input{height:22px;padding:0 4px}
+#layerList .ib{width:22px;height:22px;opacity:.55}
+#layerList li:hover .ib,#layerList .ib[aria-pressed="true"]{opacity:1}
+.status{grid-column:1/4;display:flex;align-items:center;gap:18px;padding:0 12px;background:var(--panel);border-top:1px solid var(--line);font:11px var(--f-mono);color:var(--muted);white-space:nowrap;overflow:hidden}
+.status b{color:var(--text);font-weight:500}
+
+/* popovers / menus */
+.pop{position:fixed;z-index:60;background:var(--panel2);border:1px solid var(--line2);border-radius:8px;box-shadow:0 18px 50px rgba(0,0,0,.5);padding:6px;min-width:200px}
+.menu button{display:flex;align-items:center;gap:10px;width:100%;border:0;background:none;padding:7px 10px;border-radius:5px;cursor:pointer;text-align:left}
+.menu button:hover{background:var(--raise)}
+.menu button:disabled{opacity:.4;cursor:default;background:none}
+.menu button kbd{margin-left:auto;font:11px var(--f-mono);color:var(--dim)}
+.menu hr{border:0;border-top:1px solid var(--line);margin:4px 0}
+.lib{width:340px;max-height:min(560px,80vh);overflow:auto;padding:12px;display:flex;flex-direction:column;gap:14px}
+.libgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.libgrid button{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 4px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:5px;font-size:11px;color:var(--muted)}
+.libgrid button:hover{border-color:var(--accent);color:var(--text)}
+.libgrid svg.i{width:24px;height:24px}
+.libtxt{display:flex;flex-direction:column;gap:4px}
+.libtxt button{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 10px;text-align:left;cursor:pointer}
+.libtxt button:hover{border-color:var(--accent)}
+.dlg{position:fixed;inset:0;z-index:70;background:rgba(2,6,14,.6);display:grid;place-items:center;padding:16px}
+.dlg>div{background:var(--panel2);border:1px solid var(--line2);border-radius:10px;max-width:640px;width:100%;max-height:85vh;overflow:auto;padding:20px}
+.dlg h3{margin:0 0 12px;font:600 15px var(--f-display)}
+.kbd{display:grid;grid-template-columns:1fr auto;gap:6px 16px;font-size:12.5px}
+.kbd kbd{justify-self:start}
+.kbd kbd,kbd.k{font:11px var(--f-mono);background:var(--bg);border:1px solid var(--line2);border-radius:4px;padding:2px 6px;color:var(--text);white-space:nowrap}
+.toast{position:fixed;left:50%;bottom:44px;transform:translateX(-50%);z-index:90;background:#02060E;border:1px solid var(--line2);padding:9px 14px;border-radius:8px;font-size:12.5px;max-width:calc(100% - 32px)}
+.prog{height:4px;background:var(--line);border-radius:2px;overflow:hidden;width:120px}
+.prog i{display:block;height:100%;background:var(--accent);width:0}
+
+/* ---------- pages (gallery / queue / rules) ---------- */
+.page{height:100%;overflow:auto;padding-block:24px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.page .in{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+.ph{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.ph h2{margin:0;font:600 22px var(--f-display);letter-spacing:-.01em}
+.ph p{margin:4px 0 0;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.card .thumb{position:relative;aspect-ratio:3/4;background:var(--navy);max-width:100%}
+.card .thumb img{width:100%;height:100%;object-fit:contain;display:block}
+.card .thumb{background:#070B13!important}
+.card .badge{position:absolute;top:8px;right:8px;font:600 10px var(--f-mono);background:var(--accent);color:var(--accent-ink);padding:2px 6px;border-radius:3px;letter-spacing:.06em}
+.card .meta{padding:10px 12px 4px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.card .meta b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .meta small{font:11px var(--f-mono);color:var(--dim)}
+.card .acts2{display:grid;grid-template-columns:1fr 1fr auto;gap:4px;padding:8px 8px 10px}
+.card .acts2 .btn{justify-content:center;min-width:0;padding:0 6px}
+.card .acts2 .btn.danger{width:30px;padding:0}
+.card .acts2 .btn{height:28px;padding:0 9px;font-size:12px}
+.empty{border:1px dashed var(--line2);border-radius:10px;padding:36px 20px;text-align:center;color:var(--muted)}
+.empty b{display:block;color:var(--text);font-weight:600;margin-bottom:4px}
+.qwrap{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:20px;align-items:start}
+.panelbox{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.panelbox h3{margin:0;font:600 14px var(--f-display)}
+.fld{display:flex;flex-direction:column;gap:5px}
+.fld label{font-size:12px;color:var(--muted);display:flex;justify-content:space-between}
+.fld label small{font:11px var(--f-mono);color:var(--dim)}
+.qlist{display:flex;flex-direction:column;gap:6px}
+.qi{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 12px;background:var(--panel2);border:1px solid var(--line);border-radius:8px}
+.qi .t{min-width:0}
+.qi .t b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qi .t small{color:var(--muted);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qi .err{color:var(--red);font-size:12px}
+.pill{font:600 10.5px var(--f-mono);padding:3px 8px;border-radius:10px;letter-spacing:.04em;white-space:nowrap;text-transform:uppercase}
+.pill.queued{background:rgba(135,152,178,.18);color:var(--muted)}
+.pill.generating{background:rgba(255,181,71,.16);color:var(--amber)}
+.pill.done{background:rgba(74,222,128,.14);color:var(--ok)}
+.pill.error{background:rgba(255,107,107,.15);color:var(--red)}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.pal{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.pal div{border-radius:6px;border:1px solid var(--line);overflow:hidden;font:11px var(--f-mono)}
+.pal i{display:block;height:44px}
+.pal span{display:block;padding:5px 6px;color:var(--muted)}
+dl.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:12.5px}
+dl.kv dt{color:var(--muted)}
+dl.kv dd{margin:0;font-family:var(--f-mono);font-size:12px;overflow-wrap:anywhere}
+pre.prompt{white-space:pre-wrap;margin:0;font:12px/1.55 var(--f-mono);background:var(--bg);border:1px solid var(--line);padding:10px;border-radius:6px;color:var(--ice)}
+
+
+/* ---------- directions ---------- */
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none;background:var(--accent);box-shadow:0 0 0 2px rgba(255,255,255,.06)}
+.dirpick{display:flex;align-items:center;gap:7px;margin-left:12px;padding:0 4px 0 10px;border:1px solid var(--line2);border-radius:var(--r);height:30px;background:var(--panel2)}
+.dirpick select{border:0;background:transparent;height:28px;padding:0 4px;width:auto;font-weight:500}
+.dirpick select:focus{outline:none}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chips button{display:inline-flex;align-items:center;gap:7px;height:30px;padding:0 12px;border-radius:15px;border:1px solid var(--line2);background:var(--panel);cursor:pointer;color:var(--muted)}
+.chips button[aria-pressed="true"]{background:var(--raise);color:var(--text);border-color:var(--text)}
+.dircards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.dircard{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;cursor:pointer;text-align:left;padding:0;color:inherit;transition:border-color .15s,transform .15s}
+.dircard:hover{border-color:var(--dc,var(--accent));transform:translateY(-2px)}
+.dircard .thumb{aspect-ratio:3/4;max-width:100%;background:#0D1117;position:relative}
+.dircard .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.dircard .bar{display:grid;grid-template-columns:repeat(3,1fr);height:8px}
+.dircard .info{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px}
+.dircard .info b{font:600 15px var(--f-display);letter-spacing:-.01em}
+.dircard .info small{font:11px var(--f-mono);color:var(--dim)}
+.crumb{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:12.5px}
+.crumb button{border:0;background:none;color:var(--muted);cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:3px}
+.crumb button:hover{color:var(--text)}
+.dhead{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.dhead .mark{width:44px;height:44px;border-radius:10px;flex:none}
+.dhead h2{margin:0;font:600 26px var(--f-display);letter-spacing:-.01em}
+.dhead p{margin:2px 0 0;font:12px var(--f-mono);color:var(--muted);letter-spacing:.08em}
+.dgrid{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:24px;align-items:start}
+.dposter{border-radius:10px;overflow:hidden;border:1px solid var(--line);aspect-ratio:3/4;max-width:100%;background:#0D1117}
+.dposter img{width:100%;height:100%;object-fit:cover;display:block}
+.dcol{display:flex;flex-direction:column;gap:16px;min-width:0}
+.tones{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.tone{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg);cursor:pointer;text-align:left;padding:0;color:inherit}
+.tone i{display:block;height:72px}
+.tone span{display:block;padding:8px 10px 10px;font-size:12px;line-height:1.35}
+.tone span b{display:block;font:600 12px var(--f-mono);letter-spacing:.02em}
+.tone span em{font-style:normal;color:var(--muted);font-size:11.5px}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mode{border-radius:8px;padding:14px;display:flex;align-items:center;gap:12px;border:1px solid var(--line)}
+.mode .sq{display:grid;grid-template-columns:repeat(3,22px);gap:0}
+.mode .sq i{height:22px}
+.mode small{font:11px var(--f-mono);letter-spacing:.08em}
+.dmini{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.dmini img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:6px;border:1px solid var(--line);cursor:pointer;max-width:100%}
+.dirrow{display:grid;grid-template-columns:140px repeat(4,1fr);gap:6px;align-items:center;font:11px var(--f-mono)}
+.dirrow i{height:26px;border-radius:4px;display:block}
+@media (max-width:900px){.dgrid{grid-template-columns:minmax(0,1fr)}.tones{grid-template-columns:repeat(2,1fr)}.modes{grid-template-columns:1fr}.dirpick{margin-left:6px}.dirrow{grid-template-columns:90px repeat(4,1fr)}}
+
+/* ---------- phone ---------- */
+@media (max-width:900px){
+  body{overflow:auto}
+  .app{height:auto;min-height:100%}
+  .top{flex-wrap:wrap;height:auto;padding-block:8px}
+  .nav{order:3;width:100%;margin:0}
+  .runinfo{display:none}
+  .ed{display:flex;flex-direction:column;height:auto}
+  .acts{order:1}
+  .rail{order:2;flex-direction:row;overflow-x:auto;padding:4px 8px;border-right:0;border-bottom:1px solid var(--line)}
+  .rail .grow{display:none}
+  .wsWrap{order:3;display:block;height:62vh}
+  .corner,#rulerX,#rulerY{display:none}
+  #ws{height:100%}
+  .side{order:4;border-left:0;border-top:1px solid var(--line)}
+  .pane{max-height:none}
+  .layers{min-height:220px}
+  .status{order:5;flex-wrap:wrap;gap:10px;padding-block:6px}
+  .docname{margin-left:8px}
+  .docname input{width:150px}
+  .qwrap{grid-template-columns:minmax(0,1fr)}
+  [data-tip]:hover::after{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="web_shim.js"></script>
+</head><body>
+<div class="app" id="app">
+  <header class="top">
+    <div class="logo"><b></b>IT Poster Studiya <span>/ IT departamenti</span></div>
+    <nav class="nav" aria-label="Bo'limlar">
+      <button data-view="editor" aria-current="page"><i data-ic="pen"></i>Muharrir</button>
+      <button data-view="directions"><i data-ic="palette"></i>Yo'nalishlar <span class="cnt" id="cntDirs">8</span></button>
+      <button data-view="gallery"><i data-ic="gallery"></i>Galereya <span class="cnt" id="cntGallery">0</span></button>
+      <button data-view="queue"><i data-ic="sparkles"></i>Rasm so'rovi <span class="cnt" id="cntQueue">0</span></button>
+      <button data-view="rules"><i data-ic="book"></i>Qoidalar</button>
+    </nav>
+    <div class="sp"></div>
+    <div class="runinfo">Oxirgi generatsiya: <i id="lastRun">hali bo'lmagan</i></div>
+    <button class="btn" id="btnRunNow" hidden data-tip="Navbatdagi so'rovlarni hozir generatsiya qilish"><i data-ic="play"></i>Hozir generatsiya</button>
+  </header>
+  <div class="banner" id="banner" hidden><i data-ic="alert"></i><span id="bannerText"></span></div>
+
+  <!-- ================= EDITOR ================= -->
+  <section class="view" id="v-editor">
+    <div class="ed">
+      <div class="acts" role="toolbar" aria-label="Amallar">
+        <button class="ib" id="aNew" data-tip="Yangi poster" data-k="Ctrl+Alt+N"><i data-ic="file"></i></button>
+        <button class="ib" id="aSave" data-tip="Galereyaga saqlash" data-k="Ctrl+S"><i data-ic="save"></i></button>
+        <div class="sep"></div>
+        <button class="ib" id="aUndo" data-tip="Bekor qilish" data-k="Ctrl+Z"><i data-ic="undo"></i></button>
+        <button class="ib" id="aRedo" data-tip="Qaytarish" data-k="Ctrl+Shift+Z"><i data-ic="redo"></i></button>
+        <div class="sep"></div>
+        <button class="ib" id="aCut" data-tip="Kesish" data-k="Ctrl+X"><i data-ic="scissors"></i></button>
+        <button class="ib" id="aCopy" data-tip="Nusxa olish" data-k="Ctrl+C"><i data-ic="copy"></i></button>
+        <button class="ib" id="aPaste" data-tip="Joylash" data-k="Ctrl+V"><i data-ic="clipboard"></i></button>
+        <button class="ib" id="aDup" data-tip="Dublikat" data-k="Ctrl+D"><i data-ic="dup"></i></button>
+        <button class="ib" id="aDel" data-tip="O'chirish" data-k="Delete"><i data-ic="trash"></i></button>
+        <div class="sep"></div>
+        <button class="ib" id="aGroup" data-tip="Guruhlash" data-k="Ctrl+G"><i data-ic="group"></i></button>
+        <button class="ib" id="aUngroup" data-tip="Guruhni ajratish" data-k="Ctrl+Shift+G"><i data-ic="ungroup"></i></button>
+        <div class="sep"></div>
+        <button class="ib" id="aTop" data-tip="Eng oldinga" data-k="Ctrl+Shift+]"><i data-ic="toFront"></i></button>
+        <button class="ib" id="aUp" data-tip="Oldinga" data-k="Ctrl+]"><i data-ic="forward"></i></button>
+        <button class="ib" id="aDown" data-tip="Orqaga" data-k="Ctrl+["><i data-ic="backward"></i></button>
+        <button class="ib" id="aBottom" data-tip="Eng orqaga" data-k="Ctrl+Shift+["><i data-ic="toBack"></i></button>
+        <div class="sep"></div>
+        <button class="ib" id="aGrid" aria-pressed="true" data-tip="Panjarani ko'rsatish" data-k="Ctrl+'"><i data-ic="grid"></i></button>
+        <button class="ib" id="aSnap" aria-pressed="true" data-tip="Magnit (yopishish)" data-k="Shift+M"><i data-ic="magnet"></i></button>
+        <div class="sep"></div>
+        <button class="btn" id="aExport" data-tip="Eksport" data-k="Ctrl+E"><i data-ic="download"></i>Eksport</button>
+        <label class="dirpick" data-tip="O'lcham: shablon, panjara va eksport shunga moslashadi"><i data-ic="frame"></i><select id="docSize" aria-label="Poster o'lchami"></select></label>
+        <label class="dirpick" data-tip="Yo'nalish: shablon ranglari shunga qarab o'zgaradi"><span class="dot" id="dirDot"></span><select id="docDir" aria-label="Yo'nalish"></select></label>
+        <div class="docname">
+          <input type="text" id="docTitle" aria-label="Hujjat nomi" value="Yangi poster" maxlength="60">
+          <span class="state" id="docState">Saqlanmagan</span>
+        </div>
+      </div>
+
+      <div class="rail" role="toolbar" aria-label="Asboblar" aria-orientation="vertical">
+        <button class="ib" data-tool="select" aria-pressed="true" data-tip="Tanlash" data-k="V"><i data-ic="pointer"></i></button>
+        <button class="ib" data-tool="hand" data-tip="Qo'l" data-k="H / Probel"><i data-ic="hand"></i></button>
+        <button class="ib" data-tool="text" data-tip="Matn" data-k="T"><i data-ic="type"></i></button>
+        <button class="ib" data-tool="rect" data-tip="To'rtburchak" data-k="R"><i data-ic="square"></i></button>
+        <button class="ib" data-tool="ellipse" data-tip="Ellips" data-k="O"><i data-ic="circle"></i></button>
+        <button class="ib" data-tool="line" data-tip="Chiziq" data-k="L"><i data-ic="line"></i></button>
+        <button class="ib" id="tImage" data-tip="Rasm yoki logo joylash" data-k="I"><i data-ic="image"></i></button>
+        <button class="ib" id="tLib" data-tip="Kutubxona" data-k="K"><i data-ic="library"></i></button>
+        <div class="grow"></div>
+        <button class="ib" id="tKeys" data-tip="Tezkor tugmalar" data-k="?"><i data-ic="help"></i></button>
+      </div>
+
+      <div class="wsWrap">
+        <div class="corner"></div>
+        <canvas id="rulerX" height="22"></canvas>
+        <canvas id="rulerY" width="22"></canvas>
+        <div id="ws" tabindex="0" aria-label="Ish maydoni">
+          <canvas id="cv"></canvas>
+          <div class="fxctl" id="fxCtl" hidden>
+            <span id="fxLabel">Harakat</span>
+            <button class="ib" id="fxPlay" data-tip="To'xtatish / davom ettirish"><i data-ic="pause"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="side">
+        <div class="tabs" role="tablist">
+          <button role="tab" data-pane="props" aria-selected="true">Xususiyat</button>
+          <button role="tab" data-pane="align" aria-selected="false">Tekislash</button>
+          <button role="tab" data-pane="bg" aria-selected="false">Fon</button>
+          <button role="tab" data-pane="gridp" aria-selected="false">Panjara</button>
+        </div>
+        <div class="pane" id="p-props"></div>
+        <div class="pane" id="p-align" hidden>
+          <div class="grp"><h4>Nisbatan</h4>
+            <div class="seg" id="alignRel">
+              <button class="ib" data-rel="margin" aria-pressed="true">Chet maydon</button>
+              <button class="ib" data-rel="poster" aria-pressed="false">Poster</button>
+              <button class="ib" data-rel="sel" aria-pressed="false">Tanlov</button>
+            </div>
+          </div>
+          <div class="grp"><h4>Tekislash</h4>
+            <div class="g6">
+              <button class="ib" data-al="left" data-tip="Chapga"><i data-ic="alL"></i></button>
+              <button class="ib" data-al="hc" data-tip="Markazga"><i data-ic="alC"></i></button>
+              <button class="ib" data-al="right" data-tip="O'ngga"><i data-ic="alR"></i></button>
+              <button class="ib" data-al="top" data-tip="Tepaga"><i data-ic="alT"></i></button>
+              <button class="ib" data-al="vm" data-tip="O'rtaga"><i data-ic="alM"></i></button>
+              <button class="ib" data-al="bottom" data-tip="Pastga"><i data-ic="alB"></i></button>
+            </div>
+          </div>
+          <div class="grp"><h4>Taqsimlash</h4>
+            <div class="g2">
+              <button class="btn" data-dist="h"><i data-ic="distH"></i>Teng, gorizontal</button>
+              <button class="btn" data-dist="v"><i data-ic="distV"></i>Teng, vertikal</button>
+              <button class="btn" data-dist="h48"><i data-ic="distH"></i>48 px, gorizontal</button>
+              <button class="btn" data-dist="v48"><i data-ic="distV"></i>48 px, vertikal</button>
+            </div>
+            <p class="hint">Matnlar harflarning haqiqiy chegarasi bo'yicha tekislanadi. Taqsimlash uchun kamida 2 ta element tanlang.</p>
+          </div>
+        </div>
+        <div class="pane" id="p-bg" hidden>
+          <div class="grp"><h4>Generatsiya qilingan rasmlar</h4>
+            <div class="libgrid" id="bgList" style="grid-template-columns:repeat(3,1fr)"></div>
+          </div>
+          <div class="grp"><h4>O'z rasmingiz</h4>
+            <button class="btn" id="bgUpload"><i data-ic="upload"></i>Rasm yuklash</button>
+          </div>
+          <div class="grp"><h4>Bir rangli fon</h4>
+            <div class="sw" id="bgSolid"></div>
+          </div>
+          <div class="grp"><h4>Harakat effektlari</h4>
+            <label class="chk"><input type="checkbox" id="fx-zoom"> Sekin yaqinlashish</label>
+            <label class="chk"><input type="checkbox" id="fx-light"> Markaziy nur</label>
+            <div class="row" style="padding-left:24px"><span class="hint" style="white-space:nowrap">Balandlik</span><input type="range" id="fx-lightY" min="0.1" max="0.9" step="0.01" value="0.38"></div>
+            <label class="chk"><input type="checkbox" id="fx-wave"> Yorug'lik to'lqini</label>
+            <label class="chk"><input type="checkbox" id="fx-scan"> Skaner chizig'i</label>
+            <label class="chk"><input type="checkbox" id="fx-sparks"> Uchqunlar</label>
+            <div class="row"><span class="hint" style="white-space:nowrap">Bir aylanish</span>
+              <select id="fx-period"><option value="2">2 soniya</option><option value="3">3 soniya</option><option value="4" selected>4 soniya</option><option value="6">6 soniya</option></select>
+            </div>
+            <p class="hint" id="rmNote" hidden>Tizimingizda harakatni kamaytirish yoqilgan: muharrirda effektlar to'xtab turadi, GIF esa to'liq chiqadi.</p>
+          </div>
+        </div>
+        <div class="pane" id="p-gridp" hidden>
+          <div class="grp"><h4>Ko'rinish</h4>
+            <label class="chk"><input type="checkbox" id="g-show" checked> Panjarani ko'rsatish</label>
+            <label class="chk"><input type="checkbox" id="g-snap" checked> Magnit (yopishish)</label>
+            <label class="chk"><input type="checkbox" id="g-keep" checked> Chet maydonidan chiqarmaslik</label>
+          </div>
+          <div class="grp"><h4>Qiymatlar, px</h4>
+            <div class="g2">
+              <div class="num"><span data-scrub="g-margin">Chet</span><input type="number" id="g-margin" min="0" max="300"></div>
+              <div class="num"><span data-scrub="g-cols">Ust.</span><input type="number" id="g-cols" min="1" max="24"></div>
+              <div class="num"><span data-scrub="g-gutter">Ora</span><input type="number" id="g-gutter" min="0" max="200"></div>
+              <div class="num"><span data-scrub="g-row">Qator</span><input type="number" id="g-row" min="4" max="200"></div>
+              <div class="num"><span data-scrub="g-gap">Oraliq</span><input type="number" id="g-gap" min="0" max="300"></div>
+            </div>
+            <div class="row"><button class="btn" id="gReset">Qoidaga qaytarish</button><button class="btn" id="gSaveRule" hidden>Qoida sifatida saqlash</button></div>
+          </div>
+          <div class="grp"><h4>Element</h4>
+            <button class="btn" id="gFit"><i data-ic="grid"></i>Panjaraga moslash</button>
+            <p class="hint">Tanlangan elementning chetlarini eng yaqin ustun chegaralariga, tepasini qator chizig'iga moslaydi.</p>
+          </div>
+        </div>
+        <section class="layers" aria-label="Qatlamlar">
+          <header><span>Qatlamlar</span><span id="layerCount">0</span></header>
+          <ul id="layerList"></ul>
+        </section>
+      </aside>
+
+      <div class="status">
+        <span>Zoom <b id="sZoom">100%</b></span>
+        <span>Asbob <b id="sTool">Tanlash</b></span>
+        <span>X <b id="sX">0</b> Y <b id="sY">0</b></span>
+        <span>Tanlov <b id="sSel">—</b></span>
+        <span>Qatlamlar <b id="sLayers">0</b></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY ================= -->
+  <section class="view" id="v-gallery" hidden>
+    <div class="page"><div class="in">
+      <div class="ph">
+        <div><h2>Galereya</h2><p>IT departamentining tayyor posterlari. Tahrirlash posterning o'zini o'zgartiradi, nusxa esa yangi poster ochadi.</p></div>
+        <div style="width:min(320px,100%)"><input type="search" id="gSearch" placeholder="Sarlavha bo'yicha qidirish" aria-label="Sarlavha bo'yicha qidirish"></div>
+      </div>
+      <div class="chips" id="gFilter" role="group" aria-label="Yo'nalish bo'yicha filtr"></div>
+      <div class="cards" id="cards"></div>
+    </div></div>
+  </section>
+
+  <!-- ================= DIRECTIONS ================= -->
+  <section class="view" id="v-directions" hidden>
+    <div class="page"><div class="in">
+      <div class="ph"><div><h2>Yo'nalishlar</h2><p>Har bir yo'nalishning o'z rangi va poster shabloni bor. Yo'nalishni tanlang: shablon, fon rasmi prompti va muharrirdagi ranglar shunga moslashadi.</p></div></div>
+      <div class="dircards" id="dirGrid"></div>
+    </div></div>
+  </section>
+  <section class="view" id="v-dir" hidden>
+    <div class="page"><div class="in" id="dirDetail"></div></div>
+  </section>
+
+  <!-- ================= QUEUE ================= -->
+  <section class="view" id="v-queue" hidden>
+    <div class="page"><div class="in">
+      <div class="ph"><div><h2>Rasm so'rovi</h2><p>Mavzuni yozing: fon rasmi navbat bo'yicha generatsiya qilinadi, matnlar esa shablonga qo'yiladi.</p></div></div>
+      <div class="qwrap">
+        <form class="panelbox" id="reqForm" autocomplete="off">
+          <h3>Yangi so'rov</h3>
+          <div class="fld"><label for="rDir">Yo'nalish <small id="rDirHex"></small></label><select id="rDir"></select></div>
+          <div class="fld"><label for="rSize">O'lcham <small id="rSizeAsp"></small></label><select id="rSize"></select></div>
+          <div class="fld"><label for="rTopic">Mavzu (rasmda nima bo'lsin) <small id="cTopic">0/120</small></label><textarea id="rTopic" maxlength="120" rows="3" required placeholder="Masalan: parollarni xavfsiz saqlash, bulutdagi zaxira nusxa"></textarea></div>
+          <div class="fld"><label for="rTitle">Sarlavha <small id="cTitle">0/60</small></label><input type="text" id="rTitle" maxlength="60" required placeholder="Parolingizni hech kimga bermang"></div>
+          <div class="fld"><label for="rSub">Qo'shimcha matn <small id="cSub">0/140</small></label><textarea id="rSub" maxlength="140" rows="2" placeholder="IT xodimlari hech qachon parolingizni so'ramaydi."></textarea></div>
+          <div class="fld"><label for="rFoot">Pastki qator <small id="cFoot">0/60</small></label><input type="text" id="rFoot" maxlength="60" placeholder="Savollar: ichki raqam 1100"></div>
+          <button class="btn pri" type="submit" id="rSubmit"><i data-ic="plus"></i>Navbatga qo'shish</button>
+          <p class="hint" id="rNote">Rasmda matn, logo yoki real odamlar bo'lmaydi: bunday mavzular rad etiladi.</p>
+        </form>
+        <div class="panelbox">
+          <h3>Navbat</h3>
+          <div class="qlist" id="qlist"></div>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- ================= RULES ================= -->
+  <section class="view" id="v-rules" hidden>
+    <div class="page"><div class="in">
+      <div class="ph"><div><h2>Qoidalar</h2><p>Brend, generatsiya va panjara qiymatlari. Ular kod bilan qotirilgan: AI faqat fon rasmini chizadi.</p></div></div>
+      <div class="rules" id="rulesBox"></div>
+    </div></div>
+  </section>
+</div>
+<input type="file" id="fileImg" accept="image/png,image/jpeg,image/webp,image/svg+xml" hidden>
+<script src="https://cdn.jsdelivr.net/npm/fabric@5.3.0/dist/fabric.min.js"></script>
+<script>
+"use strict";
+/* ============================================================
+   IT Poster Studiya — core: icons, state, canvas, glyph bounds
+   ============================================================ */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+let W = 1080, H = 1440;   // current document size — variable
+/* size presets (px). Everything else — grid, type, effects, export — is derived from the size. */
+const SIZES = [
+  { id: "poster", label: "Poster 3:4", w: 1080, h: 1440 },
+  { id: "story", label: "Story / Reels 9:16", w: 1080, h: 1920 },
+  { id: "insta", label: "Instagram 4:5", w: 1080, h: 1350 },
+  { id: "square", label: "Kvadrat 1:1", w: 1080, h: 1080 },
+  { id: "wide", label: "Ekran 16:9", w: 1920, h: 1080 },
+  { id: "banner", label: "Banner 1.91:1", w: 1200, h: 628 },
+  { id: "a4", label: "A4 bosma, 150 dpi", w: 1240, h: 1754 },
+  { id: "a3", label: "A3 bosma, 150 dpi", w: 1754, h: 2480 },
+];
+const SIZE_MIN = 320, SIZE_MAX = 4000;
+const kOf = (w, h) => Math.min(w, h) / 1080;   // type & spacing scale relative to the 1080 base
+function sizeLabel(w, h) { const p = SIZES.find(x => x.w === w && x.h === h); return p ? p.label : "Maxsus"; }
+function aspectOf(w, h) {
+  const r = w / h, list = [["1:1", 1], ["4:5", 0.8], ["3:4", 0.75], ["2:3", 2 / 3], ["9:16", 0.5625], ["5:4", 1.25], ["4:3", 4 / 3], ["3:2", 1.5], ["16:9", 16 / 9], ["1.91:1", 1.91], ["21:9", 21 / 9]];
+  return list.reduce((a, b) => Math.abs(Math.log(b[1] / r)) < Math.abs(Math.log(a[1] / r)) ? b : a)[0];
+}
+function gridFor(w, h, base) {
+  base = base || STYLE.grid; const k = kOf(w, h);
+  return { margin: Math.round(base.margin * k), cols: base.cols, gutter: Math.round(base.gutter * k), row: Math.max(4, Math.round(base.row * k)), gap: Math.round(base.gap * k) };
+}
+
+const ICONS = {
+  pen: "M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z",
+  gallery: "M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2ZM9 7a2 2 0 1 0 0 4a2 2 0 1 0 0-4ZM21 15l-5-5L5 21",
+  sparkles: "M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9ZM19 3v4M17 5h4",
+  book: "M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5ZM20 17v4H6.5A2.5 2.5 0 0 1 4 18.5",
+  play: "M7 4l13 8-13 8Z",
+  pause: "M8 5v14M16 5v14",
+  alert: "M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0ZM12 9v4M12 17h.01",
+  file: "M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9ZM14 3v6h6M12 12v6M9 15h6",
+  save: "M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2ZM17 21v-8H7v8M7 3v5h8",
+  undo: "M9 14 4 9l5-5M4 9h10.5a5.5 5.5 0 0 1 0 11H11",
+  redo: "M15 14l5-5-5-5M20 9H9.5a5.5 5.5 0 0 0 0 11H13",
+  scissors: "M6 3a3 3 0 1 0 0 6a3 3 0 1 0 0-6ZM6 15a3 3 0 1 0 0 6a3 3 0 1 0 0-6ZM20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12",
+  copy: "M11 9h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-9a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2ZM5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1",
+  clipboard: "M9 2h6a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1ZM16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2",
+  dup: "M10 8h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-9a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2ZM4 16V5a1 1 0 0 1 1-1h11M14.5 11.5v6M11.5 14.5h6",
+  trash: "M3 6h18M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6M10 11v6M14 11v6M9 6V4h6v2",
+  group: "M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 7h6v6H7ZM11 11h6v6h-6Z",
+  ungroup: "M4 3h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1ZM14 13h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1Z",
+  toFront: "M12 20V9M7 14l5-5 5 5M5 4h14",
+  forward: "M12 19V7M7 12l5-5 5 5",
+  backward: "M12 5v12M7 12l5 5 5-5",
+  toBack: "M12 4v11M7 10l5 5 5-5M5 20h14",
+  grid: "M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2ZM9 3v18M15 3v18M3 9h18M3 15h18",
+  magnet: "M6 15l-4-4 6.75-6.77a7.79 7.79 0 0 1 11 11L13 22l-4-4 6.39-6.36a2.14 2.14 0 0 0-3-3L6 15M5 8l4 4M12 15l4 4",
+  download: "M12 3v12M7 10l5 5 5-5M5 21h14",
+  upload: "M12 21V9M7 14l5-5 5 5M5 3h14",
+  pointer: "M4 4l7 17 2.5-7.5L21 11Z",
+  hand: "M18 11V6a2 2 0 0 0-4 0v5M14 10V4a2 2 0 0 0-4 0v6M10 10.5V6a2 2 0 0 0-4 0v8M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-6-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15",
+  type: "M4 7V4h16v3M9 20h6M12 4v16",
+  square: "M5 4h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z",
+  circle: "M12 4a8 8 0 1 0 0 16a8 8 0 1 0 0-16Z",
+  line: "M5 19 19 5",
+  image: "M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2ZM9 7a2 2 0 1 0 0 4a2 2 0 1 0 0-4ZM21 15l-3.1-3.1a2 2 0 0 0-2.8 0L6 21",
+  library: "M4 3h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1ZM15 3h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1ZM4 14h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1ZM17.5 14a3.5 3.5 0 1 0 0 7a3.5 3.5 0 1 0 0-7Z",
+  help: "M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18ZM9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01",
+  eye: "M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12ZM12 9a3 3 0 1 0 0 6a3 3 0 1 0 0-6Z",
+  eyeOff: "M9.9 4.24A9.12 9.12 0 0 1 12 4c6.4 0 10 8 10 8a18.5 18.5 0 0 1-2.16 3.19M6.6 6.6C3.9 8.4 2 12 2 12s3.6 7 10 7a9.7 9.7 0 0 0 5.4-1.6M14.12 14.12a3 3 0 1 1-4.24-4.24M2 2l20 20",
+  lock: "M6 11h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2ZM8 11V7a4 4 0 0 1 8 0v4",
+  unlock: "M6 11h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2ZM8 11V7a4 4 0 0 1 7.9-1",
+  alL: "M4 3v18M8 7h12v4H8ZM8 14h7v4H8Z", alC: "M12 3v18M6 7h12v4H6ZM8.5 14h7v4h-7Z", alR: "M20 3v18M4 7h12v4H4ZM9 14h7v4H9Z",
+  alT: "M3 4h18M7 8v12h4V8ZM14 8v7h4V8Z", alM: "M3 12h18M7 6h4v12H7ZM14 8.5h4v7h-4Z", alB: "M3 20h18M7 4h4v12H7ZM14 9h4v7h-4Z",
+  distH: "M3 4v16M21 4v16M9 8h6v8H9Z", distV: "M4 3h16M4 21h16M8 9h8v6H8Z",
+  flipH: "M12 3v18M8 7l-5 5 5 5ZM16 7l5 5-5 5Z", flipV: "M3 12h18M7 8l5-5 5 5ZM7 16l5 5 5-5Z",
+  palette: "M12 3a9 9 0 1 0 0 18c1.1 0 1.7-.9 1.4-1.9-.4-1.2.4-2.1 1.6-2.1H17a4 4 0 0 0 4-4c0-5-4-10-9-10ZM7.5 11.5h.01M10 7.5h.01M15 7.5h.01M17.5 11h.01",
+  frame: "M7 3v18M17 3v18M3 7h18M3 17h18",
+  swap: "M7 4v16M3 8l4-4 4 4M17 20V4M13 16l4 4 4-4",
+  plus: "M12 5v14M5 12h14", x: "M18 6 6 18M6 6l12 12",
+  refresh: "M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5",
+  open: "M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6",
+  bold: "M6 4h7a4 4 0 0 1 0 8H6ZM6 12h8a4 4 0 0 1 0 8H6Z", italic: "M19 4h-9M14 20H5M15 4 9 20",
+  underline: "M6 4v6a6 6 0 0 0 12 0V4M4 21h16", caps: "M3 18 7.5 6 12 18M4.7 14h5.6M14 18l3.5-9 3.5 9M15 15.5h5",
+  taL: "M3 6h18M3 12h12M3 18h16", taC: "M3 6h18M6 12h12M4 18h16", taR: "M3 6h18M9 12h12M5 18h16", taJ: "M3 6h18M3 12h18M3 18h18",
+  // 12 IT icons (library)
+  shield: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z",
+  lockIt: "M6 11h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2ZM8 11V7a4 4 0 0 1 8 0v4",
+  cloud: "M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z",
+  wifi: "M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01",
+  server: "M4 2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2ZM4 14h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2ZM6 6h.01M6 18h.01",
+  checkIt: "M12 2a10 10 0 1 0 0 20a10 10 0 1 0 0-20Zm-3 10 2 2 4-4",
+  warnIt: "M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0ZM12 9v4M12 17h.01",
+  mail: "M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2ZM22 7l-10 6L2 7",
+  key: "M7.5 10a5.5 5.5 0 1 0 0 11a5.5 5.5 0 1 0 0-11ZM11.4 11.6 21 2M15.5 7.5l3 3L22 7l-3-3",
+  laptop: "M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9M2.7 18.6 4 16h16l1.3 2.6a1 1 0 0 1-.9 1.4H3.6a1 1 0 0 1-.9-1.4Z",
+  code: "M16 18l6-6-6-6M8 6l-6 6 6 6",
+  phone: "M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2ZM12 18h.01",
+};
+const IT_ICONS = [["shield","Qalqon"],["lockIt","Qulf"],["cloud","Bulut"],["wifi","Wi-Fi"],["server","Server"],["checkIt","Tasdiq"],["warnIt","Diqqat"],["mail","Pochta"],["key","Kalit"],["laptop","Noutbuk"],["code","Kod"],["phone","Telefon"]];
+const icon = n => `<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="${ICONS[n] || ""}"/></svg>`;
+function paintIcons(root = document) { $$("i[data-ic]", root).forEach(el => { el.outerHTML = icon(el.dataset.ic); }); }
+paintIcons();
+
+/* ---------- brand / config ---------- */
+const PROMPT_TEMPLATE = "Editorial 3D illustration for a corporate IT department poster. Subject: {mavzu}. Clean isometric composition with one central subject placed in the upper two thirds, deep navy background (#0B1B3A) with electric teal (#2DD4BF) and cool white accent lights, faint technical grid lines, generous calm empty space in the lower third, smooth matte materials, soft studio lighting. No text, no letters, no numbers, no logos, no watermarks.";
+const DEFAULT_STYLE = {
+  company: "IT departamenti",
+  palette: { navy: "#0B1B3A", teal: "#2DD4BF", white: "#F4F8FB", ice: "#CFE3EC", extra: ["#14325F", "#FFB547", "#FF6B6B", "#000000"] },
+  model: "Google Nano Banana Pro", modelSlug: "imagen-nano-banana-2", aspect: "3:4", resolution: "2k", seed: 20261104,
+  styleRef: "", maxPerRun: 8, promptTemplate: PROMPT_TEMPLATE, sampleImageUrl: (window.__WEB && window.__WEB.sample) || "",
+  grid: { margin: 72, cols: 6, gutter: 24, row: 24, gap: 48 },
+};
+let STYLE = JSON.parse(JSON.stringify(DEFAULT_STYLE));
+/* Company directions — palettes from "new colors" (same in light and dark mode).
+   light = och, main = asosiy (urg'u), deep = chuqur. bg = poster base for that direction. */
+const DIRECTIONS = [
+  { slug: "it",          label: "IT departamenti",     name: "IT departamenti", short: "IT",          light: "#7FE9DA", main: "#2DD4BF", deep: "#14325F", bg: "#0B1B3A", hue: "electric teal", base: true },
+  { slug: "jobs",        label: "HUNTME JOBS",         name: "Jobs",            short: "Jobs",        light: "#44F297", main: "#15B98E", deep: "#05907B", bg: "#07171A", hue: "emerald green" },
+  { slug: "hrms",        label: "HUNTME HRMS",         name: "HRMS",            short: "HRMS",        light: "#5AEDED", main: "#39BADB", deep: "#1D94C5", bg: "#071621", hue: "aqua cyan" },
+  { slug: "marketplace", label: "HUNTME MARKETPLACE",  name: "Marketplace",     short: "Market",      light: "#FFAD4A", main: "#F57833", deep: "#D95D1E", bg: "#1A1210", hue: "warm orange" },
+  { slug: "fleet",       label: "HUNTME FLEET",        name: "Fleet",           short: "Fleet",       light: "#86C0FF", main: "#689AFE", deep: "#516FFF", bg: "#0C1024", hue: "periwinkle blue" },
+  { slug: "global",      label: "HUNTME GLOBAL",       name: "Global",          short: "Global",      light: "#4DAAFD", main: "#1C8BEF", deep: "#046CC9", bg: "#07131F", hue: "azure blue" },
+  { slug: "skills",      label: "HUNTME SKILLS",       name: "Skills",          short: "Skills",      light: "#CCA4FF", main: "#A268FF", deep: "#8144DD", bg: "#110D1F", hue: "violet purple" },
+  { slug: "hunterai",    label: "HUNTER AI",           name: "HunterAI",        short: "HunterAI",    light: "#CED5DB", main: "#ABB3BD", deep: "#939CA6", bg: "#0D1117", hue: "cool silver grey" },
+];
+const DIR = slug => DIRECTIONS.find(d => d.slug === slug) || DIRECTIONS[0];
+const hexA = (hex, a) => { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16 & 255},${n >> 8 & 255},${n & 255},${a})`; };
+function promptFor(dir) {
+  const d = DIR(dir), t = STYLE.promptTemplate || PROMPT_TEMPLATE;
+  if (d.base) return t;
+  return t.replace(/deep navy background \(#0B1B3A\) with electric teal \(#2DD4BF\)/, `deep dark background (${d.bg}) with ${d.hue} (${d.main}, ${d.light})`);
+}
+const SWATCHES = () => { const d = DIR(cur.direction); if (d.base) return [STYLE.palette.navy, STYLE.palette.teal, STYLE.palette.white, STYLE.palette.ice, ...STYLE.palette.extra]; return [d.light, d.main, d.deep, d.bg, STYLE.palette.white, STYLE.palette.ice, "#FFB547", "#000000"]; };
+let G = { ...STYLE.grid };
+const C = { navy: "#0B1B3A", teal: "#2DD4BF", white: "#F4F8FB", ice: "#CFE3EC", pink: "#FF4FA3" };
+const FONT = "Golos Text";
+const FONTS = [[FONT, "Golos Text"]];
+
+const ui = { showGrid: true, snap: true, keep: true, tool: "select", alignRel: "margin", spaceHand: false };
+const caps = { db: null, user: null, assets: null, downloads: null, uid: null, canWrite: false, canAdmin: false, owner: false, ready: false };
+const cur = { direction: "it", id: null, kind: "manual", pristine: true, dirty: false, imageUrl: "" };
+let REQ = [];          // requests from db
+let RUNNER = null;
+
+/* ---------- small utils ---------- */
+const ls = {
+  get(k) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : null; } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } },
+  del(k) { try { localStorage.removeItem(k); } catch (e) {} },
+};
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const r1 = v => Math.round(v * 10) / 10;
+const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
+const genId = () => "p" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+const normUrl = u => { u = String(u || ""); if (window.__WEB) u = window.__WEB.canon(u); return u.replace(/^https?:\/\/[^/"]+(?=\/_blob\/)/, ""); };
+const todayStr = () => { const d = new Date(); return `${String(d.getDate()).padStart(2, "0")}.${String(d.getMonth() + 1).padStart(2, "0")}.${d.getFullYear()}`; };
+const fmtTime = iso => { if (!iso) return ""; const d = new Date(iso); if (isNaN(d)) return ""; return `${String(d.getDate()).padStart(2, "0")}.${String(d.getMonth() + 1).padStart(2, "0")} ${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`; };
+let toastT;
+function toast(msg, ms = 2600) {
+  let el = $("#toast"); if (!el) { el = document.createElement("div"); el.id = "toast"; el.className = "toast"; el.setAttribute("role", "status"); document.body.appendChild(el); }
+  el.textContent = msg; el.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { el.hidden = true; }, ms);
+}
+
+/* ============================================================
+   Fabric setup
+   ============================================================ */
+const PROPS = ["name", "role", "tone", "kind", "locked", "fx", "upper", "srcText", "lockMovementX", "lockMovementY", "lockScalingX", "lockScalingY", "lockRotation", "hasControls", "evented"];
+fabric.Object.prototype.set({
+  transparentCorners: false, cornerColor: "#2DD4BF", cornerStrokeColor: "#04201C", borderColor: "#2DD4BF",
+  cornerSize: 9, cornerStyle: "rect", borderScaleFactor: 1.3, padding: 0,
+});
+fabric.Object.NUM_FRACTION_DIGITS = 2;
+fabric.Textbox.prototype.set({ cursorColor: "#2DD4BF", selectionColor: "rgba(45,212,191,.3)", editingBorderColor: "#2DD4BF" });
+
+/* --- effect layer: a dedicated object between background and texts --- */
+const FX = { p: 0, zoom: 1, playing: true, reduced: false };
+const FX_DEFAULT = () => ({ zoom: false, light: false, wave: false, scan: false, sparks: false, lightY: 0.38, period: 4 });
+fabric.FxLayer = fabric.util.createClass(fabric.Rect, {
+  type: "fxLayer",
+  initialize(o) {
+    this.callSuper("initialize", Object.assign({ left: 0, top: 0, width: W, height: H, fill: "rgba(0,0,0,0)", strokeWidth: 0, objectCaching: false, role: "fx", name: "Effektlar", fx: FX_DEFAULT(), hasControls: false, lockMovementX: true, lockMovementY: true, evented: false }, o || {}));
+  },
+  _render(ctx) { drawFx(ctx, this.fx || FX_DEFAULT(), FX.p, this.width, this.height); },
+});
+fabric.FxLayer.fromObject = (o, cb) => fabric.Object._fromObject("FxLayer", o, cb);
+
+const SPARKS = Array.from({ length: 60 }, (_, i) => {
+  const r = n => { const x = Math.sin((i + 1) * 12.9898 + n * 78.233) * 43758.5453; return x - Math.floor(x); };
+  return { x: r(1), y: r(2), s: 1.4 + r(3) * 3, k: 1 + Math.floor(r(4) * 2), ph: r(5), sway: 6 + r(6) * 16, w: r(7) > 0.7 };
+});
+function drawFx(ctx, fx, p, W, H) {
+  const kk = Math.min(W, H) / 1080;
+  const TAU = Math.PI * 2;
+  ctx.save();
+  ctx.translate(-W / 2, -H / 2);
+  if (fx.light) {
+    const cy = fx.lightY * H, rad = 560 * kk * (1 + 0.05 * Math.sin(TAU * p)), a = 0.28 + 0.1 * Math.sin(TAU * p);
+    const g = ctx.createRadialGradient(W / 2, cy, 0, W / 2, cy, rad);
+    g.addColorStop(0, `rgba(45,212,191,${a.toFixed(3)})`); g.addColorStop(0.45, `rgba(45,212,191,${(a * 0.35).toFixed(3)})`); g.addColorStop(1, "rgba(45,212,191,0)");
+    ctx.globalCompositeOperation = "screen"; ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  }
+  if (fx.wave) {
+    const u = -0.35 + p * 1.7, cx = u * (W + H) - H * 0.3;
+    ctx.save(); ctx.globalCompositeOperation = "screen";
+    ctx.translate(cx, H / 2); ctx.rotate(-0.42);
+    const g = ctx.createLinearGradient(-160 * kk, 0, 160 * kk, 0);
+    g.addColorStop(0, "rgba(207,227,236,0)"); g.addColorStop(0.5, "rgba(207,227,236,.22)"); g.addColorStop(1, "rgba(207,227,236,0)");
+    ctx.fillStyle = g; ctx.fillRect(-160 * kk, -(W + H), 320 * kk, (W + H) * 2); ctx.restore();
+  }
+  if (fx.scan) {
+    ctx.save(); ctx.strokeStyle = "rgba(45,212,191,.07)"; ctx.lineWidth = 1; ctx.beginPath();
+    const st = 60 * kk;
+    for (let x = 0; x <= W; x += st) { ctx.moveTo(x + 0.5, 0); ctx.lineTo(x + 0.5, H); }
+    for (let y = 0; y <= H; y += st) { ctx.moveTo(0, y + 0.5); ctx.lineTo(W, y + 0.5); }
+    ctx.stroke();
+    const y = p * H, fade = Math.sin(Math.PI * p);
+    const sh = 140 * kk, g = ctx.createLinearGradient(0, y - sh, 0, y);
+    g.addColorStop(0, "rgba(45,212,191,0)"); g.addColorStop(1, `rgba(45,212,191,${(0.22 * fade).toFixed(3)})`);
+    ctx.fillStyle = g; ctx.fillRect(0, y - sh, W, sh);
+    ctx.fillStyle = `rgba(160,255,240,${(0.75 * fade).toFixed(3)})`; ctx.fillRect(0, y - 1, W, 2);
+    ctx.restore();
+  }
+  if (fx.sparks) {
+    ctx.save(); ctx.globalCompositeOperation = "screen";
+    for (const s of SPARKS) {
+      let y = (s.y * H - p * s.k * H) % H; if (y < 0) y += H;
+      const x = s.x * W + s.sway * kk * Math.sin(TAU * (p * s.k + s.ph));
+      const a = 0.35 + 0.55 * (0.5 + 0.5 * Math.sin(TAU * (p * s.k * 2 + s.ph)));
+      ctx.globalAlpha = a; ctx.fillStyle = s.w ? "#F4F8FB" : "#2DD4BF";
+      ctx.beginPath(); ctx.arc(x, y, s.s * kk, 0, TAU); ctx.fill();
+    }
+    ctx.restore();
+  }
+  ctx.restore();
+}
+// slow zoom is applied to the background image only, around the poster centre
+const _imgRender = fabric.Image.prototype.render;
+fabric.Image.prototype.render = function (ctx) {
+  if (this.role === "bg" && FX.zoom !== 1) {
+    ctx.save(); ctx.translate(W / 2, H / 2); ctx.scale(FX.zoom, FX.zoom); ctx.translate(-W / 2, -H / 2);
+    _imgRender.call(this, ctx); ctx.restore();
+  } else _imgRender.call(this, ctx);
+};
+
+const canvas = new fabric.Canvas("cv", {
+  preserveObjectStacking: true, controlsAboveOverlay: true, backgroundColor: C.navy, stopContextMenu: true, fireRightClick: true,
+  selectionColor: "rgba(45,212,191,.08)", selectionBorderColor: "#2DD4BF", selectionLineWidth: 1, enableRetinaScaling: true,
+  targetFindTolerance: 4, uniformScaling: true,
+});
+const POSTER_CLIP = (w = W, h = H) => new fabric.Rect({ left: 0, top: 0, width: w, height: h, absolutePositioned: true });
+canvas.clipPath = POSTER_CLIP();
+const zoom = () => canvas.getZoom();
+
+/* ============================================================
+   Glyph bounds — the real ink edges of text
+   ============================================================ */
+const gbCache = new Map();
+const isText = o => !!o && (o.type === "textbox" || o.type === "i-text" || o.type === "text");
+function glyphBox(o) {
+  const br = o.getBoundingRect(true, true);
+  if (o.isEditing || !o.text || !o.text.trim()) return br;
+  const key = [o.text, o.fontFamily, o.fontSize, o.fontWeight, o.fontStyle, o.lineHeight, o.charSpacing, o.width, o.textAlign, r1(o.scaleX), r1(o.scaleY), r1(o.angle), o.flipX, o.flipY, o.underline, o.stroke, o.strokeWidth].join("|");
+  let r = gbCache.get(key);
+  if (!r) {
+    const m = Math.min(1, 700 / Math.max(br.width, br.height, 1));
+    let el;
+    try { el = o.toCanvasElement({ multiplier: m, withoutShadow: true }); } catch (e) { return br; }
+    const w = el.width, h = el.height;
+    if (!w || !h) return br;
+    const d = el.getContext("2d").getImageData(0, 0, w, h).data;
+    let x0 = w, y0 = h, x1 = -1, y1 = -1;
+    for (let y = 0; y < h; y++) { const row = y * w * 4; for (let x = 0; x < w; x++) { if (d[row + x * 4 + 3] > 24) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; y1 = y; } } }
+    if (x1 < 0) r = { dx: 0, dy: 0, w: br.width, h: br.height };
+    else { const ox = (Math.ceil(br.width) - br.width) / 2, oy = (Math.ceil(br.height) - br.height) / 2; r = { dx: x0 / m - ox, dy: y0 / m - oy, w: (x1 - x0 + 1) / m, h: (y1 - y0 + 1) / m }; }
+    if (gbCache.size > 600) gbCache.delete(gbCache.keys().next().value);
+    gbCache.set(key, r);
+  }
+  return { left: br.left + r.dx, top: br.top + r.dy, width: r.w, height: r.h };
+}
+function bounds(o) {
+  if (!o) return null;
+  if (o.type === "activeSelection") {
+    let a = Infinity, b = Infinity, c = -Infinity, d = -Infinity;
+    o.getObjects().forEach(ch => { const k = bounds(ch); a = Math.min(a, k.left); b = Math.min(b, k.top); c = Math.max(c, k.left + k.width); d = Math.max(d, k.top + k.height); });
+    return { left: a, top: b, width: c - a, height: d - b };
+  }
+  return isText(o) ? glyphBox(o) : o.getBoundingRect(true, true);
+}
+const freeRole = o => o && (o.role === "bg" || o.role === "shade" || o.role === "fx");
+function moveTo(o, x, y) { const b = bounds(o); if (x != null) o.left += x - b.left; if (y != null) o.top += y - b.top; o.setCoords(); }
+
+/* ============================================================
+   Grid geometry
+   ============================================================ */
+function colW(g = G, w = W) { return (w - 2 * g.margin - (g.cols - 1) * g.gutter) / g.cols; }
+function span(n, g = G, w = W) { return n * colW(g, w) + (n - 1) * g.gutter; }
+function gridX() {
+  const xs = [0, W, G.margin, W - G.margin, W / 2], cw = colW();
+  for (let i = 0; i < G.cols; i++) { const x = G.margin + i * (cw + G.gutter); xs.push(x, x + cw); }
+  return [...new Set(xs.map(v => Math.round(v * 100) / 100))];
+}
+function gridY() {
+  const ys = [0, H, G.margin, H - G.margin, H / 2];
+  for (let y = G.margin; y <= H - G.margin + 0.01; y += G.row) ys.push(y);
+  return [...new Set(ys)];
+}
+
+/* ============================================================
+   Viewport: size, zoom, pan, rulers
+   ============================================================ */
+const ws = $("#ws");
+function resizeCanvas() {
+  const r = ws.getBoundingClientRect();
+  if (!r.width || !r.height) return;
+  canvas.setDimensions({ width: r.width, height: r.height });
+  sizeRulers(); canvas.requestRenderAll();
+}
+function fitView() {
+  const r = ws.getBoundingClientRect(), pad = r.width < 500 ? 24 : 60;
+  const z = clamp(Math.min((r.width - pad * 2) / W, (r.height - pad * 2) / H), 0.08, 4);
+  canvas.setViewportTransform([z, 0, 0, z, (r.width - W * z) / 2, (r.height - H * z) / 2]);
+  afterZoom();
+}
+function zoomAt(z, pt) {
+  z = clamp(z, 0.08, 4);
+  if (!pt) { const r = ws.getBoundingClientRect(); pt = new fabric.Point(r.width / 2, r.height / 2); }
+  canvas.zoomToPoint(pt, z); afterZoom();
+}
+function afterZoom() { $("#sZoom").textContent = Math.round(zoom() * 100) + "%"; canvas.getObjects().forEach(o => o.setCoords()); canvas.requestRenderAll(); }
+
+const rX = $("#rulerX"), rY = $("#rulerY");
+function sizeRulers() {
+  const dpr = window.devicePixelRatio || 1, r = ws.getBoundingClientRect();
+  rX.width = Math.round(r.width * dpr); rX.height = 22 * dpr; rX.style.width = r.width + "px"; rX.style.height = "22px";
+  rY.height = Math.round(r.height * dpr); rY.width = 22 * dpr; rY.style.height = r.height + "px"; rY.style.width = "22px";
+}
+let cursorW = null;
+function drawRulers() {
+  if (rX.offsetParent === null) return;
+  const dpr = window.devicePixelRatio || 1, v = canvas.viewportTransform, z = v[0];
+  const steps = [5, 10, 20, 25, 50, 100, 200, 250, 500, 1000];
+  const step = steps.find(s => s * z >= 56) || 1000, minor = step / (step % 50 === 0 ? 5 : 2);
+  const sel = canvas.getActiveObject(), sb = sel ? bounds(sel) : null;
+  const one = (cv, horiz) => {
+    const ctx = cv.getContext("2d"), len = (horiz ? cv.width : cv.height) / dpr, off = horiz ? v[4] : v[5];
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, horiz ? len : 22, horiz ? 22 : len);
+    const toS = w => w * z + off, ext = horiz ? W : H;
+    const band = (a, b, col) => { ctx.fillStyle = col; const s = toS(a), e = toS(b); if (horiz) ctx.fillRect(s, 0, e - s, 22); else ctx.fillRect(0, s, 22, e - s); };
+    band(0, G.margin, "rgba(255,79,163,.16)"); band(ext - G.margin, ext, "rgba(255,79,163,.16)");
+    if (sb) band(horiz ? sb.left : sb.top, horiz ? sb.left + sb.width : sb.top + sb.height, "rgba(45,212,191,.28)");
+    ctx.strokeStyle = "#3A4A68"; ctx.fillStyle = "#8798B2"; ctx.font = "500 9.5px 'Golos Text', sans-serif"; ctx.lineWidth = 1; ctx.beginPath();
+    const w0 = Math.floor((-off / z) / minor) * minor, w1 = (len - off) / z;
+    for (let w = w0; w <= w1; w += minor) {
+      const s = Math.round(toS(w)) + 0.5, major = Math.abs(w / step - Math.round(w / step)) < 1e-6, t = major ? 9 : 4;
+      if (horiz) { ctx.moveTo(s, 22); ctx.lineTo(s, 22 - t); } else { ctx.moveTo(22, s); ctx.lineTo(22 - t, s); }
+      if (major) {
+        if (horiz) ctx.fillText(String(Math.round(w)), s + 3, 10);
+        else { ctx.save(); ctx.translate(10, s - 3); ctx.rotate(-Math.PI / 2); ctx.fillText(String(Math.round(w)), 0, 0); ctx.restore(); }
+      }
+    }
+    ctx.stroke();
+    if (cursorW) { const s = toS(horiz ? cursorW.x : cursorW.y); ctx.fillStyle = C.pink; if (horiz) ctx.fillRect(s - 0.5, 0, 1, 22); else ctx.fillRect(0, s - 0.5, 22, 1); }
+  };
+  one(rX, true); one(rY, false);
+}
+
+/* ============================================================
+   Overlay: grid, margin, snapping guides, glyph boxes
+   ============================================================ */
+let guides = [];
+canvas.on("after:render", e => {
+  if (!e || e.ctx !== canvas.contextContainer) return;
+  const ctx = e.ctx, v = canvas.viewportTransform, z = v[0], dpr = canvas.getRetinaScaling();
+  ctx.save(); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const sx = x => x * z + v[4], sy = y => y * z + v[5];
+  if (ui.showGrid) {
+    const cw = colW();
+    for (let i = 0; i < G.cols; i++) {
+      const x = G.margin + i * (cw + G.gutter);
+      ctx.fillStyle = "rgba(45,212,191,.055)"; ctx.fillRect(sx(x), sy(0), cw * z, H * z);
+      ctx.strokeStyle = "rgba(45,212,191,.28)"; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(Math.round(sx(x)) + 0.5, sy(0)); ctx.lineTo(Math.round(sx(x)) + 0.5, sy(H)); ctx.moveTo(Math.round(sx(x + cw)) + 0.5, sy(0)); ctx.lineTo(Math.round(sx(x + cw)) + 0.5, sy(H)); ctx.stroke();
+    }
+    if (z * G.row >= 9) {
+      ctx.strokeStyle = "rgba(45,212,191,.07)"; ctx.beginPath();
+      for (let y = G.margin; y <= H - G.margin; y += G.row) { const s = Math.round(sy(y)) + 0.5; ctx.moveTo(sx(0), s); ctx.lineTo(sx(W), s); }
+      ctx.stroke();
+    }
+    ctx.setLineDash([6, 5]); ctx.strokeStyle = "rgba(255,79,163,.85)"; ctx.lineWidth = 1;
+    ctx.strokeRect(Math.round(sx(G.margin)) + 0.5, Math.round(sy(G.margin)) + 0.5, (W - 2 * G.margin) * z, (H - 2 * G.margin) * z);
+    ctx.setLineDash([]);
+  }
+  // glyph boxes for selected texts
+  const act = canvas.getActiveObjects().filter(isText);
+  if (act.length) {
+    ctx.setLineDash([4, 3]); ctx.strokeStyle = C.pink; ctx.lineWidth = 1;
+    act.forEach(o => { const b = glyphBox(o); ctx.strokeRect(Math.round(sx(b.left)) + 0.5, Math.round(sy(b.top)) + 0.5, b.width * z, b.height * z); });
+    ctx.setLineDash([]);
+  }
+  // snapping guides
+  if (guides.length) {
+    ctx.strokeStyle = C.pink; ctx.fillStyle = C.pink; ctx.lineWidth = 1; ctx.font = "600 11px 'Golos Text', sans-serif";
+    guides.forEach(g => {
+      ctx.beginPath();
+      if (g.t === "v") { const x = Math.round(sx(g.x)) + 0.5; ctx.moveTo(x, sy(g.a)); ctx.lineTo(x, sy(g.b)); }
+      else if (g.t === "h") { const y = Math.round(sy(g.y)) + 0.5; ctx.moveTo(sx(g.a), y); ctx.lineTo(sx(g.b), y); }
+      else if (g.t === "gap") {
+        ctx.moveTo(sx(g.x1), sy(g.y1)); ctx.lineTo(sx(g.x2), sy(g.y2));
+        const mx = (sx(g.x1) + sx(g.x2)) / 2, my = (sy(g.y1) + sy(g.y2)) / 2, txt = String(Math.round(g.v)), tw = ctx.measureText(txt).width + 8;
+        ctx.stroke(); ctx.beginPath();
+        ctx.fillRect(mx - tw / 2, my - 8, tw, 16); ctx.fillStyle = "#1a0410"; ctx.fillText(txt, mx - tw / 2 + 4, my + 4); ctx.fillStyle = C.pink;
+        // end ticks
+        if (g.y1 === g.y2) { ctx.moveTo(sx(g.x1), sy(g.y1) - 4); ctx.lineTo(sx(g.x1), sy(g.y1) + 4); ctx.moveTo(sx(g.x2), sy(g.y2) - 4); ctx.lineTo(sx(g.x2), sy(g.y2) + 4); }
+        else { ctx.moveTo(sx(g.x1) - 4, sy(g.y1)); ctx.lineTo(sx(g.x1) + 4, sy(g.y1)); ctx.moveTo(sx(g.x2) - 4, sy(g.y2)); ctx.lineTo(sx(g.x2) + 4, sy(g.y2)); }
+      }
+      ctx.stroke();
+    });
+  }
+  ctx.restore();
+  drawRulers();
+});
+
+/* ============================================================
+   Snapping (move / scale / resize) + margin clamp
+   ============================================================ */
+function others(t) {
+  const skip = new Set(t.type === "activeSelection" ? t.getObjects() : [t]);
+  return canvas.getObjects().filter(o => !skip.has(o) && o.visible !== false && !freeRole(o));
+}
+function snapMove(t) {
+  guides = [];
+  const th = 10 / zoom();
+  let b = bounds(t);
+  if (ui.snap) {
+    const os = others(t).map(o => ({ o, b: bounds(o) }));
+    const xs = gridX().map(v => ({ v, a: 0, b: H, grid: true })), ys = gridY().map(v => ({ v, a: 0, b: W, grid: true }));
+    os.forEach(({ b: k }) => { [k.left, k.left + k.width / 2, k.left + k.width].forEach(v => xs.push({ v, a: k.top, b: k.top + k.height, k })); [k.top, k.top + k.height / 2, k.top + k.height].forEach(v => ys.push({ v, a: k.left, b: k.left + k.width, k })); });
+    // --- X axis: 48px gap candidates win
+    let dx = null, gx = null, dxBest = th;
+    os.forEach(({ b: k }) => {
+      if (k.top < b.top + b.height && k.top + k.height > b.top) {
+        const y = (Math.max(k.top, b.top) + Math.min(k.top + k.height, b.top + b.height)) / 2;
+        const c1 = k.left + k.width + G.gap - b.left; if (Math.abs(c1) <= dxBest) { dxBest = Math.abs(c1); dx = c1; gx = { t: "gap", x1: k.left + k.width, x2: k.left + k.width + G.gap, y1: y, y2: y, v: G.gap }; }
+        const c2 = k.left - G.gap - (b.left + b.width); if (Math.abs(c2) <= dxBest) { dxBest = Math.abs(c2); dx = c2; gx = { t: "gap", x1: k.left - G.gap, x2: k.left, y1: y, y2: y, v: G.gap }; }
+      }
+    });
+    if (dx === null) {
+      let best = th + 1e-9, hit = null;
+      [b.left, b.left + b.width / 2, b.left + b.width].forEach(e => xs.forEach(c => { const d = c.v - e; if (Math.abs(d) < best) { best = Math.abs(d); dx = d; hit = c; } }));
+      if (hit) gx = { t: "v", x: hit.v, a: Math.min(hit.a, b.top), b: Math.max(hit.b, b.top + b.height) };
+    }
+    // --- Y axis
+    let dy = null, gy = null, dyBest = th;
+    os.forEach(({ b: k }) => {
+      if (k.left < b.left + b.width && k.left + k.width > b.left) {
+        const x = (Math.max(k.left, b.left) + Math.min(k.left + k.width, b.left + b.width)) / 2;
+        const c1 = k.top + k.height + G.gap - b.top; if (Math.abs(c1) <= dyBest) { dyBest = Math.abs(c1); dy = c1; gy = { t: "gap", x1: x, x2: x, y1: k.top + k.height, y2: k.top + k.height + G.gap, v: G.gap }; }
+        const c2 = k.top - G.gap - (b.top + b.height); if (Math.abs(c2) <= dyBest) { dyBest = Math.abs(c2); dy = c2; gy = { t: "gap", x1: x, x2: x, y1: k.top - G.gap, y2: k.top, v: G.gap }; }
+      }
+    });
+    if (dy === null) {
+      let best = th + 1e-9, hit = null;
+      [b.top, b.top + b.height / 2, b.top + b.height].forEach(e => ys.forEach(c => { const d = c.v - e; if (Math.abs(d) < best) { best = Math.abs(d); dy = d; hit = c; } }));
+      if (hit) gy = { t: "h", y: hit.v, a: Math.min(hit.a, b.left), b: Math.max(hit.b, b.left + b.width) };
+    }
+    if (dx) t.left += dx; if (dy) t.top += dy;
+    if (gx) { if (gx.t === "gap" && dy) { gx.y1 += dy; gx.y2 += dy; } guides.push(gx); }
+    if (gy) { if (gy.t === "gap" && dx) { gy.x1 += dx; gy.x2 += dx; } guides.push(gy); }
+    if (dx || dy) b = { ...b, left: b.left + (dx || 0), top: b.top + (dy || 0) };
+  }
+  if (ui.keep && !(t.type !== "activeSelection" && freeRole(t))) keepInside(t, b);
+  t.setCoords();
+}
+function keepInside(t, b) {
+  b = b || bounds(t);
+  const m = G.margin, x0 = m, y0 = m, x1 = W - m, y1 = H - m;
+  let dx = 0, dy = 0;
+  if (b.width <= x1 - x0) { if (b.left < x0) dx = x0 - b.left; else if (b.left + b.width > x1) dx = x1 - (b.left + b.width); }
+  if (b.height <= y1 - y0) { if (b.top < y0) dy = y0 - b.top; else if (b.top + b.height > y1) dy = y1 - (b.top + b.height); }
+  if (dx || dy) { t.left += dx; t.top += dy; t.setCoords(); }
+}
+function nearest(v, list, th) { let best = th, out = null; list.forEach(c => { const d = Math.abs(c - v); if (d < best) { best = d; out = c; } }); return out; }
+function edgeList(t, axis) {
+  const l = axis === "x" ? gridX() : gridY();
+  others(t).forEach(o => { const k = bounds(o); if (axis === "x") l.push(k.left, k.left + k.width, k.left + k.width / 2); else l.push(k.top, k.top + k.height, k.top + k.height / 2); });
+  return l;
+}
+canvas.on("object:scaling", e => {
+  const t = e.target, corner = e.transform && e.transform.corner; guides = [];
+  if (!ui.snap || !corner || (t.angle % 360)) return;
+  const th = 10 / zoom(), b = t.getBoundingRect(true, true);
+  const xs = edgeList(t, "x"), ys = edgeList(t, "y");
+  let fx = null, fy = null, ex = null, ey = null;
+  if (corner.includes("r")) { const c = nearest(b.left + b.width, xs, th); if (c != null) { fx = (c - b.left) / b.width; ex = c; } }
+  if (corner.includes("l")) { const c = nearest(b.left, xs, th); if (c != null) { fx = (b.left + b.width - c) / b.width; ex = c; } }
+  if (corner.includes("b")) { const c = nearest(b.top + b.height, ys, th); if (c != null) { fy = (c - b.top) / b.height; ey = c; } }
+  if (corner.includes("t")) { const c = nearest(b.top, ys, th); if (c != null) { fy = (b.top + b.height - c) / b.height; ey = c; } }
+  const uniform = corner.length === 2 && !(e.e && e.e.shiftKey);
+  if (uniform && fx && fy) { if (Math.abs(1 - fx) < Math.abs(1 - fy)) fy = null; else fx = null; }
+  if (uniform) { const f = fx || fy; if (!f) return; fx = fy = f; }
+  if (fx && fx > 0) t.scaleX *= fx;
+  if (fy && fy > 0) t.scaleY *= fy;
+  t.setCoords();
+  const nb = t.getBoundingRect(true, true);
+  if (corner.includes("l")) t.left += (b.left + b.width) - (nb.left + nb.width);
+  if (corner.includes("t")) t.top += (b.top + b.height) - (nb.top + nb.height);
+  t.setCoords();
+  if (ex != null) guides.push({ t: "v", x: ex, a: 0, b: H });
+  if (ey != null) guides.push({ t: "h", y: ey, a: 0, b: W });
+});
+canvas.on("object:resizing", e => {
+  const t = e.target, corner = e.transform && e.transform.corner; guides = [];
+  if (!ui.snap || (t.angle % 360)) return;
+  const th = 10 / zoom(), xs = edgeList(t, "x");
+  const sx = t.scaleX || 1;
+  if (corner === "mr") { const c = nearest(t.left + t.width * sx, xs, th); if (c != null) { t.set("width", (c - t.left) / sx); guides.push({ t: "v", x: c, a: 0, b: H }); } }
+  if (corner === "ml") { const right = t.left + t.width * sx, c = nearest(t.left, xs, th); if (c != null) { t.set({ left: c, width: (right - c) / sx }); guides.push({ t: "v", x: c, a: 0, b: H }); } }
+  t.setCoords();
+});
+canvas.on("object:moving", e => snapMove(e.target));
+canvas.on("mouse:up", () => { if (guides.length) { guides = []; canvas.requestRenderAll(); } });
+/* ============================================================
+   History (60 steps), dirty state, drafts
+   ============================================================ */
+const hist = { stack: [], idx: -1, lock: 0 };
+/* older layouts: drop the removed accent bar and move every text to the single brand face */
+const REMOVED_LAYERS = ["Urg'u chizig'i", "Belgi", "Ajratuvchi chiziq"];
+function normalizeLayout(str) {
+  try {
+    const j = JSON.parse(str); let changed = false;
+    const walk = list => (list || []).filter(o => { if (REMOVED_LAYERS.includes(o.name)) { changed = true; return false; } if (o.fontFamily && o.fontFamily !== FONT) { o.fontFamily = FONT; changed = true; } if (o.objects) o.objects = walk(o.objects); return true; });
+    j.objects = walk(j.objects);
+    return changed ? JSON.stringify(j) : str;
+  } catch (e) { return str; }
+}
+function serialize() {
+  const j = canvas.toJSON(PROPS); delete j.clipPath; j.direction = cur.direction; j.size = { w: W, h: H };
+  const out = JSON.stringify(j).replace(/https?:\/\/[^"/]+(\/_blob\/)/g, "$1");
+  return window.__WEB ? window.__WEB.canonAll(out) : out;
+}
+function pushHist() {
+  if (hist.lock) return;
+  const s = serialize();
+  if (hist.stack[hist.idx] === s) return;
+  hist.stack = hist.stack.slice(0, hist.idx + 1); hist.stack.push(s);
+  if (hist.stack.length > 61) hist.stack.shift();
+  hist.idx = hist.stack.length - 1;
+  if (hist.stack.length > 1) { setDirty(true); saveDraft(); }
+  syncUndo(); refreshLayers();
+}
+const pushSoon = debounce(pushHist, 350);
+function resetHist() { hist.stack = []; hist.idx = -1; pushHist(); setDirty(false); }
+function syncUndo() { $("#aUndo").disabled = hist.idx <= 0; $("#aRedo").disabled = hist.idx >= hist.stack.length - 1; }
+function loadJSON(str, cb) {
+  if (window.__WEB) { hist.lock++; window.__WEB.resolveAll(str).then(s2 => { hist.lock--; loadJSONNow(s2, cb); }); return; }
+  loadJSONNow(str, cb);
+}
+function loadJSONNow(str, cb) {
+  hist.lock++;
+  canvas.discardActiveObject();
+  let resized = false;
+  try { const pj = JSON.parse(str); if (pj.direction) cur.direction = DIR(pj.direction).slug; const sz = pj.size || { w: 1080, h: 1440 }; if (sz.w !== W || sz.h !== H) { setDocSize(sz.w, sz.h); resized = true; } } catch (e) {}
+  str = normalizeLayout(str);
+  canvas.loadFromJSON(str, () => {
+    canvas.clipPath = POSTER_CLIP(); syncDirUI();
+    canvas.getObjects().forEach(applyLock);
+    hist.lock--; if (resized) fitView(); canvas.requestRenderAll(); refreshLayers(); renderProps(); syncFxUI();
+    cb && cb();
+  });
+}
+function undo() { if (hist.idx <= 0) return; hist.idx--; loadJSON(hist.stack[hist.idx], () => { setDirty(true); saveDraft(); syncUndo(); }); }
+function redo() { if (hist.idx >= hist.stack.length - 1) return; hist.idx++; loadJSON(hist.stack[hist.idx], () => { setDirty(true); saveDraft(); syncUndo(); }); }
+function setDirty(v) {
+  cur.dirty = v; if (v) cur.pristine = false;
+  const st = $("#docState");
+  st.className = "state" + (v ? " dirty" : cur.id ? " saved" : "");
+  st.textContent = v ? (cur.id ? "O'zgartirilgan" : "Saqlanmagan") : (cur.id ? "Saqlangan" : "Saqlanmagan");
+}
+const draftKey = () => "ips:draft:" + (cur.id || "new");
+const saveDraft = debounce(() => { ls.set(draftKey(), { layout: hist.stack[hist.idx], title: $("#docTitle").value, at: Date.now(), imageUrl: cur.imageUrl }); }, 600);
+canvas.on("object:added", e => { if (!hist.lock && !drawing.temp) pushSoon(); });
+canvas.on("object:removed", () => { if (!hist.lock) pushSoon(); });
+canvas.on("object:modified", () => { guides = []; pushHist(); renderProps(); });
+canvas.on("text:changed", () => pushSoon());
+canvas.on("text:editing:exited", e => { const t = e.target; if (t && t.upper) { t.srcText = t.text; t.set("text", t.text.toUpperCase()); } pushHist(); renderProps(); });
+canvas.on("text:editing:entered", e => { const t = e.target; if (t && t.upper && t.srcText != null) { /* keep visible caps while editing */ } });
+
+/* ============================================================
+   Locking, naming
+   ============================================================ */
+function applyLock(o) {
+  const L = !!o.locked || o.role === "fx";
+  o.set({ lockMovementX: L, lockMovementY: L, lockScalingX: L, lockScalingY: L, lockRotation: L, hasControls: !L, evented: !L });
+}
+const TYPE_NAME = { textbox: "Matn", rect: "To'rtburchak", ellipse: "Ellips", line: "Chiziq", image: "Rasm", path: "Ikonka", group: "Guruh", triangle: "Uchburchak", fxLayer: "Effektlar" };
+function nameOf(o) { return o.name || TYPE_NAME[o.type] || o.type; }
+function typeIcon(o) { return { textbox: "type", rect: "square", ellipse: "circle", line: "line", image: "image", path: "shield", group: "group", triangle: "warnIt", fxLayer: "sparkles" }[o.type] || "square"; }
+
+/* ============================================================
+   Tools
+   ============================================================ */
+const TOOL_NAMES = { select: "Tanlash", hand: "Qo'l", text: "Matn", rect: "To'rtburchak", ellipse: "Ellips", line: "Chiziq" };
+const drawing = { on: false, start: null, temp: null, pan: null };
+function setTool(t) {
+  ui.tool = t;
+  $$(".rail [data-tool]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.tool === t)));
+  const drawTool = ["text", "rect", "ellipse", "line"].includes(t);
+  canvas.selection = t === "select";
+  canvas.skipTargetFind = t !== "select";
+  canvas.defaultCursor = drawTool ? "crosshair" : "default";
+  canvas.hoverCursor = drawTool ? "crosshair" : "move";
+  ws.classList.toggle("hand", t === "hand" || ui.spaceHand);
+  if (t !== "select") canvas.discardActiveObject();
+  $("#sTool").textContent = ui.spaceHand ? "Qo'l" : TOOL_NAMES[t];
+  canvas.requestRenderAll();
+}
+$$(".rail [data-tool]").forEach(b => b.addEventListener("click", () => setTool(b.dataset.tool)));
+
+function snapPt(p, shift) {
+  if (!ui.snap) return { x: Math.round(p.x), y: Math.round(p.y) };
+  const th = 10 / zoom(), x = nearest(p.x, gridX(), th), y = nearest(p.y, gridY(), th);
+  return { x: x ?? Math.round(p.x), y: y ?? Math.round(p.y) };
+}
+canvas.on("mouse:down", opt => {
+  const e = opt.e;
+  if (opt.button === 3) { openCtxMenu(opt); return; }
+  if (ui.tool === "hand" || ui.spaceHand || e.button === 1) {
+    drawing.pan = { x: e.clientX, y: e.clientY }; ws.classList.add("grabbing"); canvas.selection = false; return;
+  }
+  if (!["text", "rect", "ellipse", "line"].includes(ui.tool)) return;
+  const p = snapPt(canvas.getPointer(e));
+  if (ui.tool === "text") {
+    const t = new fabric.Textbox("Matn", { left: p.x, top: p.y, width: span(3), fontFamily: FONT, fontSize: Math.round(34 * kOf(W, H)), fill: C.white, lineHeight: 1.3, name: "Matn" });
+    canvas.add(t); setTool("select"); canvas.setActiveObject(t); t.enterEditing(); t.selectAll(); return;
+  }
+  drawing.on = true; drawing.start = p;
+  let o;
+  if (ui.tool === "rect") o = new fabric.Rect({ left: p.x, top: p.y, width: 1, height: 1, fill: C.teal, strokeWidth: 0, name: "To'rtburchak" });
+  if (ui.tool === "ellipse") o = new fabric.Ellipse({ left: p.x, top: p.y, rx: 0.5, ry: 0.5, fill: C.teal, strokeWidth: 0, name: "Ellips" });
+  if (ui.tool === "line") o = new fabric.Line([p.x, p.y, p.x, p.y], { stroke: C.ice, strokeWidth: Math.max(1, Math.round(4 * kOf(W, H))), strokeLineCap: "round", name: "Chiziq" });
+  drawing.temp = o; o.set({ selectable: false, evented: false }); canvas.add(o);
+});
+canvas.on("mouse:move", opt => {
+  const e = opt.e, w = canvas.getPointer(e);
+  cursorW = w; $("#sX").textContent = Math.round(w.x); $("#sY").textContent = Math.round(w.y);
+  if (drawing.pan) { canvas.relativePan(new fabric.Point(e.clientX - drawing.pan.x, e.clientY - drawing.pan.y)); drawing.pan = { x: e.clientX, y: e.clientY }; canvas.requestRenderAll(); return; }
+  if (!drawing.on || !drawing.temp) { drawRulers(); return; }
+  let p = snapPt(w); const s = drawing.start, o = drawing.temp;
+  let dx = p.x - s.x, dy = p.y - s.y;
+  if (o.type === "line") {
+    if (e.shiftKey) { const a = Math.round(Math.atan2(dy, dx) / (Math.PI / 4)) * (Math.PI / 4), L = Math.hypot(dx, dy); dx = Math.cos(a) * L; dy = Math.sin(a) * L; }
+    o.set({ x2: s.x + dx, y2: s.y + dy });
+  } else {
+    if (e.shiftKey) { const m = Math.max(Math.abs(dx), Math.abs(dy)); dx = Math.sign(dx || 1) * m; dy = Math.sign(dy || 1) * m; }
+    const left = Math.min(s.x, s.x + dx), top = Math.min(s.y, s.y + dy), w2 = Math.abs(dx), h2 = Math.abs(dy);
+    if (o.type === "rect") o.set({ left, top, width: w2, height: h2 });
+    else o.set({ left, top, rx: w2 / 2, ry: h2 / 2 });
+  }
+  o.setCoords(); canvas.requestRenderAll();
+});
+canvas.on("mouse:up", () => {
+  if (drawing.pan) { drawing.pan = null; ws.classList.remove("grabbing"); canvas.selection = ui.tool === "select"; afterZoom(); return; }
+  if (!drawing.on) return;
+  drawing.on = false; const o = drawing.temp; drawing.temp = null;
+  if (!o) return;
+  const b = o.getBoundingRect(true, true);
+  if (b.width < 3 && b.height < 3) {
+    // click without drag: default size
+    if (o.type === "rect") o.set({ width: span(2), height: span(2) * 0.5 });
+    else if (o.type === "ellipse") o.set({ rx: span(1) / 2, ry: span(1) / 2 });
+    else o.set({ x2: o.x1 + span(2) });
+  }
+  o.set({ selectable: true, evented: true }); o.setCoords();
+  setTool("select"); canvas.setActiveObject(o); pushHist();
+});
+// wheel: ctrl = zoom to cursor, otherwise pan
+canvas.on("mouse:wheel", opt => {
+  const e = opt.e; e.preventDefault(); e.stopPropagation();
+  if (e.ctrlKey || e.metaKey) { zoomAt(zoom() * Math.pow(0.999, e.deltaY * (e.deltaMode ? 30 : 1)), new fabric.Point(e.offsetX, e.offsetY)); }
+  else { canvas.relativePan(new fabric.Point(-(e.shiftKey ? e.deltaY : e.deltaX), e.shiftKey ? 0 : -e.deltaY)); afterZoom(); }
+});
+
+/* ============================================================
+   Objects: add helpers, library, images
+   ============================================================ */
+function addObj(o, select = true) {
+  if (!o.left && !o.top) { const b = o.getBoundingRect(true, true); o.set({ left: (W - b.width) / 2, top: (H - b.height) / 2 }); }
+  canvas.add(o); o.setCoords(); if (select) { setTool("select"); canvas.setActiveObject(o); } canvas.requestRenderAll();
+}
+const TEXT_STYLES = {
+  "Sarlavha": { fontFamily: FONT, fontWeight: 700, fontSize: 72, lineHeight: 1.05, fill: "#F4F8FB", w: 6, text: "Sarlavha" },
+  "Matn": { fontFamily: FONT, fontWeight: 400, fontSize: 34, lineHeight: 1.3, fill: "#CFE3EC", w: 5, text: "Oddiy matn — qisqa va aniq yozing." },
+  "Yorliq": { fontFamily: FONT, fontWeight: 500, fontSize: 22, lineHeight: 1.2, fill: "#2DD4BF", w: 3, text: "YORLIQ", charSpacing: 80, upper: true },
+  "Katta raqam": { fontFamily: FONT, fontWeight: 800, fontSize: 160, lineHeight: 1, fill: "#2DD4BF", w: 3, text: "24/7" },
+};
+function addTextStyle(k) {
+  const s = TEXT_STYLES[k];
+  const t = new fabric.Textbox(s.text, { fontFamily: s.fontFamily, fontWeight: s.fontWeight, fontSize: Math.round(s.fontSize * kOf(W, H)), lineHeight: s.lineHeight, fill: s.fill, width: span(s.w), charSpacing: s.charSpacing || 0, name: k, upper: !!s.upper, srcText: s.upper ? s.text : undefined });
+  t.set({ left: G.margin, top: H / 2 - 60 }); addObj(t);
+}
+function addShape(k) {
+  let o;
+  if (k === "rect") o = new fabric.Rect({ width: span(2), height: span(1), fill: C.teal, name: "To'rtburchak" });
+  if (k === "plate") { const kk = kOf(W, H), d = DIR(cur.direction); o = new fabric.Rect({ width: span(3), height: Math.round(72 * kk), rx: Math.round(36 * kk), ry: Math.round(36 * kk), fill: d.base ? "#14325F" : hexA(d.deep, 0.35), stroke: hexA(d.main, 0.6), strokeWidth: Math.max(1, Math.round(2 * kk)), name: "Plashka" }); }
+  if (k === "ellipse") o = new fabric.Ellipse({ rx: span(1) / 2, ry: span(1) / 2, fill: C.teal, name: "Ellips" });
+  if (k === "triangle") o = new fabric.Triangle({ width: span(1), height: span(1), fill: C.teal, name: "Uchburchak" });
+  if (k === "line") o = new fabric.Line([0, 0, span(2), 0], { stroke: C.ice, strokeWidth: Math.max(1, Math.round(4 * kOf(W, H))), strokeLineCap: "round", name: "Chiziq" });
+  o.set({ left: G.margin, top: H / 2 }); addObj(o);
+}
+function makeIcon(key, label, color) {
+  const p = new fabric.Path(ICONS[key], { fill: "", stroke: color || C.teal, strokeWidth: 1.8, strokeLineCap: "round", strokeLineJoin: "round", name: "Ikonka · " + label, kind: "icon" });
+  const s = 120 * kOf(W, H) / 24; p.set({ scaleX: s, scaleY: s });
+  return p;
+}
+function addIcon(key, label) { const p = makeIcon(key, label); p.set({ left: G.margin, top: H / 2 - 160 * kOf(W, H) }); addObj(p); }
+
+async function uploadImage(file) {
+  if (caps.assets) {
+    try { const r = await caps.assets.upload(file); return { url: "/_blob/" + r.id, id: r.id, shared: true }; }
+    catch (e) { toast("Rasmni yuklab bo'lmadi: " + (e && e.message ? e.message : "xato")); }
+  }
+  return { url: URL.createObjectURL(file), shared: false };
+}
+async function loadImg(url) { if (window.__WEB) url = await window.__WEB.resolve(url); return new Promise((res, rej) => fabric.Image.fromURL(url, img => img && img.width ? res(img) : rej(new Error("Rasm ochilmadi")), { crossOrigin: "anonymous" })); }
+function coverImage(img, w = W, h = H) { const s = Math.max(w / img.width, h / img.height); img.set({ scaleX: s, scaleY: s, left: (w - img.width * s) / 2, top: (h - img.height * s) / 2, angle: 0 }); img.setCoords(); }
+async function setBackgroundImage(url) {
+  try {
+    const img = await loadImg(url);
+    coverImage(img); img.set({ name: "Fon rasmi", role: "bg", locked: true }); applyLock(img);
+    hist.lock++;
+    const old = canvas.getObjects().filter(o => o.role === "bg"); old.forEach(o => canvas.remove(o));
+    canvas.insertAt(img, 0); cur.imageUrl = normUrl(url);
+    hist.lock--; pushHist(); renderBgList(); return img;
+  } catch (e) { toast("Fon rasmini ochib bo'lmadi"); }
+}
+const fileImg = $("#fileImg");
+let fileMode = "place";
+function pickImage(mode) { fileMode = mode; fileImg.value = ""; fileImg.click(); }
+fileImg.addEventListener("change", async () => {
+  const f = fileImg.files && fileImg.files[0]; if (!f) return;
+  await placeFile(f, fileMode === "bg");
+});
+async function placeFile(f, asBg) {
+  if (f.size > 19 * 1024 * 1024) { toast("Rasm 20 MB dan katta bo'lmasin"); return; }
+  const up = await uploadImage(f);
+  if (!up.shared && caps.canWrite) toast("Rasm faqat shu brauzerda turadi");
+  if (asBg) { await setBackgroundImage(up.url); return; }
+  try {
+    const img = await loadImg(up.url);
+    const maxW = span(3), s = Math.min(1, maxW / img.width);
+    img.set({ scaleX: s, scaleY: s, left: G.margin, top: G.margin + 96, name: "Rasm" }); addObj(img);
+  } catch (e) { toast("Rasmni ochib bo'lmadi"); }
+}
+$("#tImage").addEventListener("click", () => pickImage("place"));
+$("#bgUpload").addEventListener("click", () => pickImage("bg"));
+document.addEventListener("paste", e => {
+  if (isTyping(e.target) || curView !== "editor") return;
+  const f = [...(e.clipboardData?.files || [])].find(x => x.type.startsWith("image/"));
+  if (f) { e.preventDefault(); placeFile(f, false); }
+});
+ws.addEventListener("dragover", e => { if ([...(e.dataTransfer?.items || [])].some(i => i.kind === "file")) e.preventDefault(); });
+ws.addEventListener("drop", e => { const f = [...(e.dataTransfer?.files || [])].find(x => x.type.startsWith("image/")); if (f) { e.preventDefault(); placeFile(f, false); } });
+
+/* ============================================================
+   Template (bottom-up on the grid)
+   ============================================================ */
+function shadeGrad(h, stops) { return new fabric.Gradient({ type: "linear", gradientUnits: "pixels", coords: { x1: 0, y1: 0, x2: 0, y2: h }, colorStops: stops }); }
+function fitGlyphBottom(o, y) { const g = glyphBox(o); o.top += y - (g.top + g.height); o.setCoords(); return glyphBox(o); }
+/* direction colouring: template objects carry a `tone` and are repainted from the direction palette */
+function toneFill(o, dir) {
+  const d = DIR(dir);
+  switch (o.tone) {
+    case "main": o.set("fill", d.main); break;
+    case "label": o.set("fill", d.base ? C.ice : d.light); break;
+    case "rule": o.set("fill", hexA(d.base ? C.ice : d.light, 0.35)); break;
+    case "bgfill": o.set("fill", new fabric.Gradient({ type: "radial", gradientUnits: "pixels", coords: { x1: o.width / 2, y1: o.height * 0.34, r1: 0, x2: o.width / 2, y2: o.height * 0.34, r2: Math.max(o.width, o.height) * 0.75 }, colorStops: [{ offset: 0, color: d.base ? "#14325F" : hexA(d.deep, 0.55) }, { offset: 0.55, color: d.base ? "#0E2348" : hexA(d.deep, 0.16) }, { offset: 1, color: d.bg }] })); o.set("backgroundColor", d.bg); break;
+    case "shadeB": { const h = o.height; o.set("fill", shadeGrad(h, [{ offset: 0, color: hexA(d.bg, 0) }, { offset: 0.42, color: hexA(d.bg, 0.8) }, { offset: 1, color: hexA(d.bg, 0.97) }])); break; }
+    case "shadeL": o.set("fill", new fabric.Gradient({ type: "linear", gradientUnits: "pixels", coords: { x1: 0, y1: 0, x2: o.width, y2: 0 }, colorStops: [{ offset: 0, color: hexA(d.bg, 0.96) }, { offset: 0.5, color: hexA(d.bg, 0.82) }, { offset: 1, color: hexA(d.bg, 0) }] })); break;
+    case "shadeT": o.set("fill", shadeGrad(o.height, [{ offset: 0, color: hexA(d.bg, 0.75) }, { offset: 1, color: hexA(d.bg, 0) }])); break;
+  }
+}
+function applyDirection(slug, opts = {}) {
+  const prev = DIR(cur.direction), d = DIR(slug);
+  cur.direction = d.slug;
+  canvas.backgroundColor = d.bg;
+  canvas.getObjects().forEach(o => {
+    toneFill(o, d.slug);
+    if ((o.name === "Bo'lim nomi" || o.name === "Pastki qator") && isText(o)) {
+      const was = (o.srcText != null ? o.srcText : o.text).toUpperCase();
+      const oldL = (o.name === "Pastki qator" ? (prev.base ? "IT departamenti" : prev.label) : (prev.base ? (STYLE.company || prev.label) : prev.label)).toUpperCase();
+      const newL = o.name === "Pastki qator" ? (d.base ? "IT departamenti" : d.label) : (d.base ? (STYLE.company || d.label) : d.label);
+      if (was === oldL) { o.srcText = newL; o.set("text", newL.toUpperCase()); }
+    }
+  });
+  syncDirUI(); canvas.requestRenderAll();
+  if (!opts.silent) { pushHist(); renderProps(); renderBgList(); }
+}
+const TPL_NAMES = ["Fon rasmi", "Pastki soya", "Yuqori soya", "Effektlar", "Bo'lim nomi", "Raqam", "Pastki qator", "Sana", "Qo'shimcha matn", "Sarlavha"];
+const STYLE_KEYS = ["fill", "fontFamily", "fontWeight", "fontStyle", "underline", "charSpacing", "lineHeight", "textAlign", "opacity", "visible", "locked", "stroke", "strokeWidth", "rx", "ry"];
+const clampSize = v => clamp(Math.round(+v || 0), SIZE_MIN, SIZE_MAX);
+/* Template built bottom-up on the grid of the given size. Every measurement derives from the size:
+   k = min(w,h)/1080 scales type and spacing, the grid comes from gridFor(), wide formats use narrower text columns. */
+async function buildTemplate(c, d) {
+  d = d || {};
+  const main = c === canvas;
+  const w = d.size && d.size.w ? clampSize(d.size.w) : (main ? W : 1080), h = d.size && d.size.h ? clampSize(d.size.h) : (main ? H : 1440);
+  if (main && (w !== W || h !== H)) setDocSize(w, h);
+  const g = main ? G : gridFor(w, h), k = kOf(w, h), fs = v => Math.max(1, Math.round(v * k));
+  const sp = n => span(n, g, w), wide = w / h > 1.15;
+  const dirS = DIR(d.direction || (main ? cur.direction : "it")).slug, dd = DIR(dirS);
+  const st = d.styles || {};
+  const styled = o => { const sv = st[o.name]; if (sv) Object.keys(sv).forEach(key => { if (key === "fill" && o.tone) return; o.set(key, sv[key]); }); if (isText(o)) o.initDimensions(); return o; };
+  const m = g.margin, gap = g.gap, objs = [];
+  // background
+  let bg = null;
+  const url = normUrl(d.imageUrl || "");
+  if (url) { try { bg = await loadImg(url); coverImage(bg, w, h); bg.set({ name: "Fon rasmi", role: "bg", locked: true }); } catch (e) { bg = null; } }
+  if (!bg && d.solid) bg = new fabric.Rect({ left: 0, top: 0, width: w, height: h, fill: d.solid, name: "Fon rasmi", role: "bg", locked: true, strokeWidth: 0 });
+  if (!bg) bg = new fabric.Rect({ left: 0, top: 0, width: w, height: h, name: "Fon rasmi", role: "bg", tone: "bgfill", locked: true, strokeWidth: 0 });
+  objs.push(bg);
+  if (wide) objs.push(new fabric.Rect({ left: 0, top: 0, width: Math.round(w * 0.72), height: h, strokeWidth: 0, name: "Pastki soya", role: "shade", tone: "shadeL" }));
+  else { const sb = Math.round(h * 0.46); objs.push(new fabric.Rect({ left: 0, top: sb, width: w, height: h - sb, strokeWidth: 0, name: "Pastki soya", role: "shade", tone: "shadeB" })); }
+  objs.push(new fabric.Rect({ left: 0, top: 0, width: w, height: fs(180), strokeWidth: 0, name: "Yuqori soya", role: "shade", tone: "shadeT" }));
+  if (d.fx && anyFx(d.fx)) objs.push(new fabric.FxLayer({ fx: d.fx, width: w, height: h }));
+  // top row
+  const secTxt = d.section || (dd.base ? (STYLE.company || "IT departamenti") : dd.label);
+  const sec = styled(new fabric.Textbox(secTxt.toUpperCase(), { left: m, top: m, width: Math.max(sp(4), fs(200)), fontFamily: FONT, fontWeight: 500, fontSize: fs(22), charSpacing: 80, fill: C.ice, name: "Bo'lim nomi", tone: "label", upper: true, srcText: secTxt }));
+  const num = styled(new fabric.Textbox("№ " + (d.number || "0001"), { left: w - m - sp(2), top: m, width: sp(2), textAlign: "right", fontFamily: FONT, fontWeight: 500, fontSize: fs(22), fill: C.ice, name: "Raqam" }));
+  [sec, num].forEach(t => { const gb = glyphBox(t); t.top += m - gb.top; t.setCoords(); });
+  const topRow = Math.max(glyphBox(sec).top + glyphBox(sec).height, glyphBox(num).top + glyphBox(num).height);
+  objs.push(sec, num);
+  // bottom row
+  const footTxt = d.footer || (dd.base ? "IT departamenti" : dd.label);
+  const foot = styled(new fabric.Textbox(String(footTxt).toUpperCase(), { left: m, top: h - m - fs(30), width: sp(wide ? 3 : 4), fontFamily: FONT, fontWeight: 400, fontSize: fs(20), charSpacing: 40, fill: C.ice, name: "Pastki qator", upper: true, srcText: footTxt }));
+  const date = styled(new fabric.Textbox(d.date || todayStr(), { left: w - m - sp(2), top: h - m - fs(30), width: sp(2), textAlign: "right", fontFamily: FONT, fontWeight: 400, fontSize: fs(20), fill: C.ice, name: "Sana" }));
+  const fg = fitGlyphBottom(foot, h - m); fitGlyphBottom(date, h - m);
+  objs.push(foot, date);
+  // subtitle + title + accent, fitted into the space under the top row
+  const sub = d.subtitle ? styled(new fabric.Textbox(d.subtitle, { left: m, top: 0, width: sp(wide ? 3 : 5), fontFamily: FONT, fontWeight: 400, fontSize: fs(34), lineHeight: 1.3, fill: C.ice, name: "Qo'shimcha matn" })) : null;
+  const title = styled(new fabric.Textbox(d.title || "Sarlavha", { left: m, top: 0, width: sp(wide ? 4 : 6), fontFamily: FONT, fontWeight: 700, fontSize: fs(88), lineHeight: 1.06, fill: C.white, name: "Sarlavha" }));
+  const setT = v => { title.set("fontSize", v); title.initDimensions(); };
+  let tfs = fs(88); const tmin = fs(52), tfloor = Math.max(10, fs(30));
+  for (; tfs > tmin; tfs -= 2) { setT(tfs); if (title._textLines.length <= 3) break; }
+  setT(tfs);
+  const place = () => {
+    let y = fg.top - gap;
+    if (sub) { const sg = fitGlyphBottom(sub, y); y = sg.top - gap; }
+    return fitGlyphBottom(title, y).top;
+  };
+  const limit = topRow + gap;
+  for (let guard = 0; place() < limit && guard < 60; guard++) {
+    if (tfs > tfloor) { tfs -= 2; setT(tfs); }
+    else if (sub && sub.fontSize > Math.max(10, fs(20))) { sub.set("fontSize", sub.fontSize - 2); sub.initDimensions(); }
+    else break;
+  }
+  if (sub) objs.push(sub);
+  objs.push(title);
+  // ink edges, not frames, sit on the margin
+  objs.filter(isText).forEach(t => { const gb = glyphBox(t); if (t.textAlign === "right") t.left += (w - m) - (gb.left + gb.width); else t.left += m - gb.left; t.setCoords(); });
+  objs.forEach(o => { toneFill(o, dirS); applyLock(o); o.setCoords(); });
+  if (main) { hist.lock++; cur.direction = dirS; }
+  c.discardActiveObject && c.discardActiveObject();
+  c.clear(); c.clipPath = POSTER_CLIP(w, h); c.backgroundColor = d.solid || dd.bg;
+  if (!main) { c.setWidth(w); c.setHeight(h); }
+  objs.forEach(o => c.add(o));
+  if (main) { hist.lock--; syncDirUI(); }
+  c.requestRenderAll();
+}
+
+/* ============================================================
+   Document size — presets, custom, resize with adaptation
+   ============================================================ */
+function setDocSize(w, h) {
+  W = clampSize(w); H = clampSize(h); G = gridFor(W, H);
+  canvas.clipPath = POSTER_CLIP();
+  syncGridUI(); syncSizeUI();
+}
+function pick(o, keys) { const r = {}; keys.forEach(k => { if (o[k] !== undefined && typeof o[k] !== "object") r[k] = o[k]; }); if (o.shadow) r.shadow = o.shadow; return r; }
+async function resizeDoc(w, h) {
+  w = clampSize(w); h = clampSize(h);
+  if (w === W && h === H) { syncSizeUI(); return; }
+  const a = canvas.getActiveObject(); if (a && a.isEditing) a.exitEditing();
+  canvas.discardActiveObject();
+  const objs = canvas.getObjects(), get = n => objs.find(o => o.name === n);
+  const txt = n => { const o = get(n); return o && isText(o) ? (o.upper && o.srcText != null ? o.srcText : o.text) : null; };
+  const oldW = W, oldH = H, kr = kOf(w, h) / kOf(oldW, oldH);
+  const bgo = objs.find(o => o.role === "bg"), fx = fxLayer();
+  const data = { size: { w, h }, direction: cur.direction, title: txt("Sarlavha") || "", subtitle: txt("Qo'shimcha matn"), footer: txt("Pastki qator"), section: txt("Bo'lim nomi"), date: txt("Sana"), number: (txt("Raqam") || "").replace(/^№\s*/, "") || "0001", fx: fx ? { ...fx.fx } : null, styles: {} };
+  if (bgo && bgo.type === "image") data.imageUrl = normUrl(bgo.getSrc());
+  else if (bgo && !bgo.tone && typeof bgo.fill === "string") data.solid = bgo.fill;
+  const present = new Set(objs.map(o => o.name));
+  TPL_NAMES.forEach(n => { const o = get(n); if (o && o.role !== "bg" && o.role !== "shade" && o.role !== "fx") data.styles[n] = pick(o, STYLE_KEYS); });
+  const extras = objs.filter(o => !TPL_NAMES.includes(o.name) && !o.role).map(o => { const c2 = o.getCenterPoint(); return { json: o.toObject(PROPS), rx: c2.x / oldW, ry: c2.y / oldH }; });
+  hist.lock++;
+  try {
+    setDocSize(w, h);
+    await buildTemplate(canvas, data);
+    canvas.getObjects().filter(o => TPL_NAMES.includes(o.name) && o.role !== "bg" && o.role !== "shade" && o.role !== "fx" && !present.has(o.name)).forEach(o => canvas.remove(o));
+    await new Promise(res => fabric.util.enlivenObjects(extras.map(e => e.json), list => {
+      list.forEach((o, i) => { o.scaleX *= kr; o.scaleY *= kr; o.setPositionByOrigin(new fabric.Point(extras[i].rx * w, extras[i].ry * h), "center", "center"); applyLock(o); o.setCoords(); canvas.add(o); });
+      res();
+    }));
+  } finally { hist.lock--; }
+  pushHist(); fitView(); refreshLayers(); renderProps(); syncFxUI();
+  toast(`O'lcham: ${w} × ${h} px · ${sizeLabel(w, h)}`);
+}
+function sizeOptions(w, h) { const isP = SIZES.some(p => p.w === w && p.h === h); return SIZES.map(p => `<option value="${p.id}" ${p.w === w && p.h === h ? "selected" : ""}>${esc(p.label)} · ${p.w}×${p.h}</option>`).join("") + `<option value="custom" ${isP ? "" : "selected"}>Maxsus${isP ? "…" : ` · ${w}×${h}`}</option>`; }
+function syncSizeUI() {
+  const sel = $("#docSize"); if (sel) sel.innerHTML = sizeOptions(W, H);
+  const pw = $("#pw"), ph = $("#ph");
+  if (pw && document.activeElement !== pw) pw.value = W; if (ph && document.activeElement !== ph) ph.value = H;
+}
+/* ============================================================
+   Layers panel
+   ============================================================ */
+const layerList = $("#layerList");
+let dragIdx = null;
+function refreshLayers() {
+  const objs = canvas.getObjects(), act = new Set(canvas.getActiveObjects());
+  $("#layerCount").textContent = objs.length; $("#sLayers").textContent = objs.length;
+  layerList.innerHTML = objs.map((o, i) => ({ o, i })).reverse().map(({ o, i }) =>
+    `<li data-i="${i}" draggable="true" class="${act.has(o) ? "sel" : ""} ${o.visible === false ? "hid" : ""}">${icon(typeIcon(o))}<span class="lname">${esc(nameOf(o))}</span>` +
+    `<button class="ib" data-act="vis" aria-pressed="${o.visible === false}" aria-label="Ko'rsatish yoki yashirish">${icon(o.visible === false ? "eyeOff" : "eye")}</button>` +
+    `<button class="ib" data-act="lock" aria-pressed="${!!o.locked}" aria-label="Qulflash">${icon(o.locked ? "lock" : "unlock")}</button></li>`).join("");
+  $("#sSel").textContent = selText();
+}
+function selText() { const a = canvas.getActiveObject(); if (!a) return "—"; const b = bounds(a); return `${Math.round(b.width)} × ${Math.round(b.height)}`; }
+layerList.addEventListener("click", e => {
+  const li = e.target.closest("li"); if (!li || li.querySelector("input")) return;
+  const o = canvas.getObjects()[+li.dataset.i]; if (!o) return;
+  const act = e.target.closest("[data-act]");
+  if (act) {
+    if (act.dataset.act === "vis") { o.visible = o.visible === false; if (!o.visible) canvas.discardActiveObject(); }
+    if (act.dataset.act === "lock") { o.locked = !o.locked; applyLock(o); }
+    canvas.requestRenderAll(); pushHist(); refreshLayers(); return;
+  }
+  if (o.visible === false) return;
+  if (e.shiftKey && canvas.getActiveObject()) {
+    const cur2 = canvas.getActiveObjects(), set = cur2.includes(o) ? cur2.filter(x => x !== o) : [...cur2, o];
+    canvas.discardActiveObject();
+    if (set.length === 1) canvas.setActiveObject(set[0]); else if (set.length) canvas.setActiveObject(new fabric.ActiveSelection(set, { canvas }));
+  } else { canvas.discardActiveObject(); canvas.setActiveObject(o); }
+  canvas.requestRenderAll(); refreshLayers(); renderProps();
+});
+layerList.addEventListener("dblclick", e => {
+  const li = e.target.closest("li"); if (!li || e.target.closest("[data-act]")) return;
+  const o = canvas.getObjects()[+li.dataset.i], span2 = li.querySelector(".lname");
+  span2.innerHTML = `<input type="text" id="layerRename" value="${esc(nameOf(o))}" maxlength="60" aria-label="Qatlam nomi">`;
+  const inp = span2.querySelector("input"); inp.focus(); inp.select();
+  const done = ok => { if (ok && inp.value.trim()) { o.name = inp.value.trim(); pushHist(); } refreshLayers(); renderProps(); };
+  inp.addEventListener("keydown", ev => { if (ev.key === "Enter") done(true); if (ev.key === "Escape") done(false); ev.stopPropagation(); });
+  inp.addEventListener("blur", () => done(true));
+});
+layerList.addEventListener("dragstart", e => { const li = e.target.closest("li"); dragIdx = +li.dataset.i; e.dataTransfer.effectAllowed = "move"; });
+layerList.addEventListener("dragover", e => { const li = e.target.closest("li"); if (!li) return; e.preventDefault(); $$("li.drop", layerList).forEach(x => x.classList.remove("drop")); li.classList.add("drop"); });
+layerList.addEventListener("drop", e => {
+  const li = e.target.closest("li"); if (!li || dragIdx == null) return; e.preventDefault();
+  const o = canvas.getObjects()[dragIdx], to = +li.dataset.i;
+  if (o) { canvas.moveTo(o, to); canvas.requestRenderAll(); pushHist(); }
+  dragIdx = null; refreshLayers();
+});
+canvas.on("selection:created", () => { refreshLayers(); renderProps(); });
+canvas.on("selection:updated", () => { refreshLayers(); renderProps(); });
+canvas.on("selection:cleared", () => { refreshLayers(); renderProps(); });
+canvas.on("object:moving", () => { $("#sSel").textContent = selText(); liveGeom(); });
+canvas.on("object:scaling", () => { $("#sSel").textContent = selText(); liveGeom(); });
+/* ============================================================
+   Properties panel
+   ============================================================ */
+const pProps = $("#p-props");
+const numF = (id, label, val, attrs = "") => `<div class="num"><span data-scrub="${id}">${label}</span><input type="number" id="${id}" value="${val}" ${attrs}></div>`;
+function swatchRow(prop, val) {
+  const v = String(val || "").toLowerCase();
+  return `<div class="sw" data-colorfor="${prop}">${SWATCHES().map(c => `<button type="button" data-c="${c}" aria-pressed="${c.toLowerCase() === v}" style="background:${c}" aria-label="${c}"></button>`).join("")}<input type="color" data-cp="${prop}" value="${/^#[0-9a-f]{6}$/i.test(v) ? v : "#2dd4bf"}" aria-label="Erkin rang"></div>`;
+}
+const colorProp = o => (o.type === "line" || o.kind === "icon") ? "stroke" : "fill";
+function renderProps() {
+  if (curView !== "editor") return;
+  const a = canvas.getActiveObject();
+  if (!a) {
+    pProps.innerHTML = `<div class="grp"><h4>Poster o'lchami</h4><select id="pPreset" aria-label="Tayyor o'lcham">${sizeOptions(W, H)}</select>
+      <div class="row"><div class="g2" style="flex:1">${numF("pw", "W", W, `min="${SIZE_MIN}" max="${SIZE_MAX}"`)}${numF("ph", "H", H, `min="${SIZE_MIN}" max="${SIZE_MAX}"`)}</div><button class="ib" id="pSwap" data-tip="Yo'nalishni almashtirish (W ↔ H)">${icon("swap")}</button></div>
+      <p class="hint">Nisbat ${aspectOf(W, H)} · masshtab ${r1(kOf(W, H)).toFixed(1)}×. O'lcham o'zgarganda shablon, panjara, shriftlar, effektlar va eksport moslashadi. Qo'shilgan elementlar mutanosib joyiga ko'chadi.</p></div>
+      <div class="grp"><h4>Fon rangi</h4>${swatchRow("canvasBg", canvas.backgroundColor)}<p class="hint">Fon rasmi bo'lsa, rang uning ostida qoladi.</p></div>
+      <div class="grp"><h4>Maslahat</h4><p class="hint">Elementni tanlang yoki chap paneldan asbob oling. Matnlar harflarning haqiqiy chegarasi bo'yicha joylashadi.</p></div>`;
+    bindProps(); return;
+  }
+  const multi = a.type === "activeSelection", b = bounds(a), o = a;
+  let h = "";
+  if (!multi) h += `<div class="grp"><h4>Element</h4><input type="text" id="pName" value="${esc(nameOf(o))}" maxlength="60" aria-label="Element nomi"></div>`;
+  else h += `<div class="grp"><h4>${a.getObjects().length} ta element tanlangan</h4></div>`;
+  const textW = isText(o);
+  h += `<div class="grp"><h4>Joylashuv${textW ? " · harflar bo'yicha" : ""}</h4><div class="g2">${numF("pX", "X", Math.round(b.left))}${numF("pY", "Y", Math.round(b.top))}${numF("pW", "W", Math.round(textW ? o.width * o.scaleX : b.width), o.type === "fxLayer" ? "disabled" : "")}${numF("pH", "H", Math.round(b.height), textW || o.type === "fxLayer" ? "disabled" : "")}${numF("pA", "∠", Math.round(o.angle || 0))}</div>
+    <div class="row"><button class="ib" data-do="flipX" data-tip="Gorizontal aks ettirish">${icon("flipH")}</button><button class="ib" data-do="flipY" data-tip="Vertikal aks ettirish">${icon("flipV")}</button>${multi ? "" : `<button class="ib" data-do="lock" aria-pressed="${!!o.locked}" data-tip="Qulflash">${icon(o.locked ? "lock" : "unlock")}</button>`}</div></div>`;
+  if (textW) {
+    const fam = FONTS.map(([v, l]) => `<option value="${v}" ${o.fontFamily === v ? "selected" : ""}>${l}</option>`).join("");
+    const wt = [400, 500, 600, 700, 800, 900].map(v => `<option value="${v}" ${String(o.fontWeight) === String(v) || (o.fontWeight === "bold" && v === 700) ? "selected" : ""}>${{ 400: "Regular", 500: "Medium", 600: "SemiBold", 700: "Bold", 800: "ExtraBold", 900: "Black" }[v]}</option>`).join("");
+    h += `<div class="grp"><h4>Tipografiya</h4>
+      <textarea id="pText" rows="3" aria-label="Matn">${esc(o.upper && o.srcText != null ? o.srcText : o.text)}</textarea>
+      <div class="g2"><select id="pFont" aria-label="Shrift">${fam}</select><select id="pWeight" aria-label="Qalinlik">${wt}</select></div>
+      <div class="g3">${numF("pSize", "Aa", Math.round(o.fontSize))}${numF("pLh", "↕", r1(o.lineHeight).toFixed(2), 'step="0.01"')}${numF("pCs", "↔", Math.round(o.charSpacing || 0))}</div>
+      <div class="row"><div class="seg" style="flex:1">${["left", "center", "right", "justify"].map((v, i) => `<button class="ib" data-ta="${v}" aria-pressed="${o.textAlign === v}" aria-label="${v}">${icon(["taL", "taC", "taR", "taJ"][i])}</button>`).join("")}</div></div>
+      <div class="row"><div class="seg" style="flex:1">
+        <button class="ib" data-do="bold" aria-pressed="${+o.fontWeight >= 600 || o.fontWeight === "bold"}" data-tip="Qalin">${icon("bold")}</button>
+        <button class="ib" data-do="italic" aria-pressed="${o.fontStyle === "italic"}" data-tip="Kursiv">${icon("italic")}</button>
+        <button class="ib" data-do="underline" aria-pressed="${!!o.underline}" data-tip="Tagiga chizish">${icon("underline")}</button>
+        <button class="ib" data-do="upper" aria-pressed="${!!o.upper}" data-tip="KATTA HARF">${icon("caps")}</button></div></div></div>`;
+  }
+  if (!multi && o.type !== "image" && o.type !== "fxLayer" && o.type !== "group") {
+    const cp = colorProp(o), cv = typeof o[cp] === "string" ? o[cp] : "";
+    h += `<div class="grp"><h4>${cp === "stroke" ? "Rang (chiziq)" : "Rang"}</h4>${typeof o[cp] === "object" && o[cp] ? `<p class="hint">Gradient to'ldirish. Rang tanlasangiz, bir rangga almashadi.</p>` : ""}${swatchRow(cp, cv)}</div>`;
+    if (cp === "fill" && o.type !== "line") {
+      h += `<div class="grp"><h4>Hoshiya</h4>${swatchRow("stroke", typeof o.stroke === "string" ? o.stroke : "")}<div class="g2">${numF("pSw", "Qal.", r1(o.strokeWidth || 0))}${o.type === "rect" ? numF("pRx", "R", Math.round(o.rx || 0)) : ""}</div></div>`;
+    } else if (o.type === "line" || o.kind === "icon") {
+      h += `<div class="grp"><h4>Chiziq qalinligi</h4><div class="g2">${numF("pSw", "Qal.", r1(o.strokeWidth || 0), 'step="0.1"')}</div></div>`;
+    }
+  }
+  h += `<div class="grp"><h4>Shaffoflik</h4><div class="row"><input type="range" id="pOp" min="0" max="100" value="${Math.round((o.opacity ?? 1) * 100)}" aria-label="Shaffoflik"><span class="state" id="pOpV" style="min-width:36px;text-align:right">${Math.round((o.opacity ?? 1) * 100)}%</span></div></div>`;
+  if (!multi && o.type !== "fxLayer") {
+    const sh = o.shadow;
+    h += `<div class="grp"><h4>Soya</h4><label class="chk"><input type="checkbox" id="pSh" ${sh ? "checked" : ""}> Soya qo'shish</label>${sh ? `<div class="g3">${numF("pShB", "Blur", Math.round(sh.blur))}${numF("pShX", "X", Math.round(sh.offsetX))}${numF("pShY", "Y", Math.round(sh.offsetY))}</div>` : ""}</div>`;
+  }
+  if (!multi && o.type === "image") {
+    h += `<div class="grp"><h4>Rasm</h4><div class="g2"><button class="btn" data-do="fill">Posterga to'ldirish</button><button class="btn" data-do="asbg">Fon qilish</button></div></div>`;
+  }
+  if (o.type === "fxLayer") h += `<div class="grp"><p class="hint">Effektlarni "Fon" panelida yoqing yoki o'chiring.</p></div>`;
+  pProps.innerHTML = h; bindProps();
+}
+function liveGeom() {
+  const a = canvas.getActiveObject(); if (!a || !$("#pX")) return;
+  const b = bounds(a);
+  [["pX", b.left], ["pY", b.top], ["pH", b.height]].forEach(([id, v]) => { const el = $("#" + id); if (el && document.activeElement !== el) el.value = Math.round(v); });
+  const w = $("#pW"); if (w && document.activeElement !== w) w.value = Math.round(isText(a) ? a.width * a.scaleX : b.width);
+}
+function eachSel(fn) { const a = canvas.getActiveObject(); if (!a) return; if (a.type === "activeSelection") a.getObjects().forEach(fn); else fn(a); }
+function bindProps() {
+  const a = canvas.getActiveObject();
+  const on = (id, ev, fn) => { const el = $("#" + id); if (el) el.addEventListener(ev, fn); };
+  on("pPreset", "change", e => { const p = SIZES.find(x => x.id === e.target.value); if (p) resizeDoc(p.w, p.h); else $("#pw").focus(); });
+  on("pw", "change", e => resizeDoc(e.target.value, H));
+  on("ph", "change", e => resizeDoc(W, e.target.value));
+  on("pSwap", "click", () => resizeDoc(H, W));
+  on("pName", "change", e => { a.name = e.target.value.trim() || a.name; pushHist(); });
+  on("pX", "change", e => { moveTo(a, +e.target.value, null); canvas.requestRenderAll(); pushHist(); });
+  on("pY", "change", e => { moveTo(a, null, +e.target.value); canvas.requestRenderAll(); pushHist(); });
+  on("pW", "change", e => {
+    const v = Math.max(1, +e.target.value);
+    if (isText(a)) a.set("width", v / a.scaleX); else { const b = a.getBoundingRect(true, true); a.scaleX *= v / b.width; }
+    a.setCoords(); canvas.requestRenderAll(); pushHist(); liveGeom();
+  });
+  on("pH", "change", e => { const v = Math.max(1, +e.target.value), b = a.getBoundingRect(true, true); a.scaleY *= v / b.height; a.setCoords(); canvas.requestRenderAll(); pushHist(); });
+  on("pA", "change", e => { a.rotate(+e.target.value || 0); a.setCoords(); canvas.requestRenderAll(); pushHist(); });
+  on("pText", "input", e => { const v = e.target.value; if (a.upper) { a.srcText = v; a.set("text", v.toUpperCase()); } else a.set("text", v); canvas.requestRenderAll(); pushSoon(); });
+  on("pFont", "change", e => { a.set("fontFamily", e.target.value); fontsThen(() => { a.initDimensions(); canvas.requestRenderAll(); pushHist(); }); });
+  on("pWeight", "change", e => { a.set("fontWeight", +e.target.value); fontsThen(() => { a.initDimensions(); canvas.requestRenderAll(); pushHist(); renderProps(); }); });
+  on("pSize", "change", e => { a.set("fontSize", Math.max(4, +e.target.value)); canvas.requestRenderAll(); pushHist(); });
+  on("pLh", "change", e => { a.set("lineHeight", Math.max(0.5, +e.target.value)); canvas.requestRenderAll(); pushHist(); });
+  on("pCs", "change", e => { a.set("charSpacing", +e.target.value || 0); canvas.requestRenderAll(); pushHist(); });
+  on("pSw", "change", e => { eachSel(o => o.set("strokeWidth", Math.max(0, +e.target.value))); if (!a.stroke && +e.target.value > 0 && a.type !== "line") a.set("stroke", C.ice); canvas.requestRenderAll(); pushHist(); });
+  on("pRx", "change", e => { const v = Math.max(0, +e.target.value); a.set({ rx: v, ry: v }); canvas.requestRenderAll(); pushHist(); });
+  on("pOp", "input", e => { eachSel(o => o.set("opacity", +e.target.value / 100)); $("#pOpV").textContent = e.target.value + "%"; canvas.requestRenderAll(); pushSoon(); });
+  on("pSh", "change", e => { a.set("shadow", e.target.checked ? new fabric.Shadow({ color: "rgba(0,0,0,.45)", blur: 24, offsetX: 0, offsetY: 8 }) : null); canvas.requestRenderAll(); pushHist(); renderProps(); });
+  ["pShB", "pShX", "pShY"].forEach(id => on(id, "change", () => { a.set("shadow", new fabric.Shadow({ color: "rgba(0,0,0,.45)", blur: +$("#pShB").value, offsetX: +$("#pShX").value, offsetY: +$("#pShY").value })); canvas.requestRenderAll(); pushHist(); }));
+  $$("[data-ta]", pProps).forEach(b => b.addEventListener("click", () => { a.set("textAlign", b.dataset.ta); canvas.requestRenderAll(); pushHist(); renderProps(); }));
+  $$("[data-colorfor]", pProps).forEach(row => {
+    const prop = row.dataset.colorfor;
+    const apply = c => {
+      if (prop === "canvasBg") { canvas.backgroundColor = c; }
+      else eachSel(o => { o.set(prop, c); if (prop === "stroke" && !o.strokeWidth) o.set("strokeWidth", 2); });
+      canvas.requestRenderAll(); pushHist();
+    };
+    $$("button[data-c]", row).forEach(b => b.addEventListener("click", () => { apply(b.dataset.c); renderProps(); }));
+    const cp = $("input[type=color]", row); cp.addEventListener("input", () => { apply(cp.value); }); cp.addEventListener("change", () => renderProps());
+  });
+  $$("[data-do]", pProps).forEach(b => b.addEventListener("click", () => doProp(b.dataset.do)));
+  bindScrub(pProps);
+}
+function doProp(k) {
+  const a = canvas.getActiveObject(); if (!a) return;
+  if (k === "flipX" || k === "flipY") { a.set(k, !a[k]); }
+  if (k === "lock") { a.locked = !a.locked; applyLock(a); }
+  if (k === "bold") { const b = +a.fontWeight >= 600 || a.fontWeight === "bold"; a.set("fontWeight", b ? 400 : 700); }
+  if (k === "italic") a.set("fontStyle", a.fontStyle === "italic" ? "normal" : "italic");
+  if (k === "underline") a.set("underline", !a.underline);
+  if (k === "upper") { if (a.upper) { a.upper = false; a.set("text", a.srcText != null ? a.srcText : a.text); } else { a.upper = true; a.srcText = a.text; a.set("text", a.text.toUpperCase()); } }
+  if (k === "fill") { coverImage(a); }
+  if (k === "asbg") { coverImage(a); a.set({ name: "Fon rasmi", role: "bg", locked: true }); applyLock(a); canvas.getObjects().filter(o => o.role === "bg" && o !== a).forEach(o => canvas.remove(o)); canvas.moveTo(a, 0); cur.imageUrl = normUrl(a.getSrc()); canvas.discardActiveObject(); renderBgList(); }
+  a.setCoords && a.setCoords();
+  fontsThen(() => { if (isText(a)) a.initDimensions(); canvas.requestRenderAll(); pushHist(); renderProps(); });
+}
+function fontsThen(fn) { const p = document.fonts && document.fonts.ready; if (p) p.then(fn); else fn(); }
+
+/* label-drag scrubbing (Shift ×10) */
+function bindScrub(root) {
+  $$("[data-scrub]", root).forEach(lab => {
+    lab.addEventListener("pointerdown", e => {
+      const inp = $("#" + lab.dataset.scrub); if (!inp || inp.disabled) return;
+      e.preventDefault(); lab.setPointerCapture(e.pointerId);
+      const x0 = e.clientX, v0 = parseFloat(inp.value) || 0, step = parseFloat(inp.step) || 1;
+      const mv = ev => { const k = ev.shiftKey ? 10 : 1; let v = v0 + Math.round((ev.clientX - x0) / 2) * step * k; if (inp.min !== "") v = Math.max(+inp.min, v); if (inp.max !== "") v = Math.min(+inp.max, v); inp.value = step < 1 ? v.toFixed(2) : Math.round(v); inp.dispatchEvent(new Event("input", { bubbles: true })); inp.dispatchEvent(new Event("change", { bubbles: true })); };
+      const up = () => { lab.removeEventListener("pointermove", mv); lab.removeEventListener("pointerup", up); };
+      lab.addEventListener("pointermove", mv); lab.addEventListener("pointerup", up);
+    });
+  });
+}
+
+/* ============================================================
+   Side tabs
+   ============================================================ */
+$$(".tabs [data-pane]").forEach(b => b.addEventListener("click", () => {
+  $$(".tabs [data-pane]").forEach(x => x.setAttribute("aria-selected", String(x === b)));
+  ["props", "align", "bg", "gridp"].forEach(p => { $("#p-" + p).hidden = p !== b.dataset.pane; });
+  if (b.dataset.pane === "bg") renderBgList();
+}));
+
+/* ============================================================
+   Align & distribute (glyph-aware)
+   ============================================================ */
+$$("#alignRel [data-rel]").forEach(b => b.addEventListener("click", () => { ui.alignRel = b.dataset.rel; $$("#alignRel [data-rel]").forEach(x => x.setAttribute("aria-pressed", String(x === b))); }));
+function withSelection(fn) {
+  const objs = canvas.getActiveObjects().filter(o => !o.locked); if (!objs.length) { toast("Avval element tanlang"); return; }
+  canvas.discardActiveObject(); fn(objs);
+  objs.forEach(o => o.setCoords());
+  canvas.setActiveObject(objs.length > 1 ? new fabric.ActiveSelection(objs, { canvas }) : objs[0]);
+  canvas.requestRenderAll(); pushHist(); renderProps();
+}
+function alignTo(dir) {
+  withSelection(objs => {
+    let ref;
+    if (ui.alignRel === "poster") ref = { left: 0, top: 0, width: W, height: H };
+    else if (ui.alignRel === "sel" && objs.length > 1) { const bs = objs.map(bounds); const l = Math.min(...bs.map(b => b.left)), t = Math.min(...bs.map(b => b.top)); ref = { left: l, top: t, width: Math.max(...bs.map(b => b.left + b.width)) - l, height: Math.max(...bs.map(b => b.top + b.height)) - t }; }
+    else ref = { left: G.margin, top: G.margin, width: W - 2 * G.margin, height: H - 2 * G.margin };
+    objs.forEach(o => {
+      const b = bounds(o);
+      if (dir === "left") o.left += ref.left - b.left;
+      if (dir === "right") o.left += ref.left + ref.width - (b.left + b.width);
+      if (dir === "hc") o.left += ref.left + ref.width / 2 - (b.left + b.width / 2);
+      if (dir === "top") o.top += ref.top - b.top;
+      if (dir === "bottom") o.top += ref.top + ref.height - (b.top + b.height);
+      if (dir === "vm") o.top += ref.top + ref.height / 2 - (b.top + b.height / 2);
+      o.setCoords();
+    });
+  });
+}
+function distribute(mode) {
+  const n = canvas.getActiveObjects().length;
+  if (n < 2 || ((mode === "h" || mode === "v") && n < 3)) { toast(mode.length === 1 ? "Teng taqsimlash uchun kamida 3 ta element tanlang" : "Kamida 2 ta element tanlang"); return; }
+  withSelection(objs => {
+    const hz = mode[0] === "h", key = hz ? "left" : "top", dim = hz ? "width" : "height";
+    const items = objs.map(o => ({ o, b: bounds(o) })).sort((a, b) => a.b[key] - b.b[key]);
+    let gap = G.gap;
+    if (mode.length === 1) { const first = items[0].b, last = items[items.length - 1].b, total = items.reduce((s, i) => s + i.b[dim], 0); gap = (last[key] + last[dim] - first[key] - total) / (items.length - 1); }
+    let pos = items[0].b[key] + items[0].b[dim] + gap;
+    items.slice(1).forEach(({ o, b }) => { o[key] += pos - b[key]; o.setCoords(); pos += b[dim] + gap; });
+  });
+}
+$$("[data-al]").forEach(b => b.addEventListener("click", () => alignTo(b.dataset.al)));
+$$("[data-dist]").forEach(b => b.addEventListener("click", () => distribute(b.dataset.dist)));
+
+/* ============================================================
+   Grid panel
+   ============================================================ */
+const gIds = ["margin", "cols", "gutter", "row", "gap"];
+function syncGridUI() { gIds.forEach(k => { const el = $("#g-" + k); if (document.activeElement !== el) el.value = G[k]; }); $("#g-show").checked = ui.showGrid; $("#g-snap").checked = ui.snap; $("#g-keep").checked = ui.keep; $("#aGrid").setAttribute("aria-pressed", String(ui.showGrid)); $("#aSnap").setAttribute("aria-pressed", String(ui.snap)); }
+gIds.forEach(k => $("#g-" + k).addEventListener("input", e => { const v = +e.target.value; if (!isNaN(v) && v >= +e.target.min) { G[k] = v; canvas.requestRenderAll(); } }));
+$("#g-show").addEventListener("change", e => { ui.showGrid = e.target.checked; syncGridUI(); canvas.requestRenderAll(); });
+$("#g-snap").addEventListener("change", e => { ui.snap = e.target.checked; syncGridUI(); });
+$("#g-keep").addEventListener("change", e => { ui.keep = e.target.checked; });
+$("#aGrid").addEventListener("click", () => { ui.showGrid = !ui.showGrid; syncGridUI(); canvas.requestRenderAll(); });
+$("#aSnap").addEventListener("click", () => { ui.snap = !ui.snap; syncGridUI(); });
+$("#gReset").addEventListener("click", () => { G = gridFor(W, H); syncGridUI(); canvas.requestRenderAll(); });
+$("#gSaveRule").addEventListener("click", async () => {
+  if (!caps.canAdmin || !caps.db) return;
+  const k = kOf(W, H), base = { margin: Math.round(G.margin / k), cols: G.cols, gutter: Math.round(G.gutter / k), row: Math.round(G.row / k), gap: Math.round(G.gap / k) };
+  try { await caps.db.doc("config/style").update({ grid: base }); toast("Panjara qoidasi saqlandi (1080 px asosda)"); }
+  catch (e) { try { await caps.db.doc("config/style").set({ ...STYLE, grid: base }); toast("Panjara qoidasi saqlandi"); } catch (e2) { toast("Saqlab bo'lmadi: " + (e2.message || e2.code)); } }
+});
+$("#gFit").addEventListener("click", () => {
+  const a = canvas.getActiveObject(); if (!a || a.type === "activeSelection") { toast("Bitta element tanlang"); return; }
+  const cw = colW(), starts = [], ends = [];
+  for (let i = 0; i < G.cols; i++) { const x = G.margin + i * (cw + G.gutter); starts.push(x); ends.push(x + cw); }
+  const b = bounds(a), near = (v, l) => l.reduce((p, c) => Math.abs(c - v) < Math.abs(p - v) ? c : p, l[0]);
+  const L = near(b.left, starts), R = Math.max(near(b.left + b.width, ends), L + cw);
+  if (isText(a)) { a.set("width", (R - L) / a.scaleX); a.setCoords(); moveTo(a, L, null); }
+  else { a.scaleX *= (R - L) / b.width; a.setCoords(); moveTo(a, L, null); }
+  const nb = bounds(a); moveTo(a, null, G.margin + Math.round((nb.top - G.margin) / G.row) * G.row);
+  canvas.requestRenderAll(); pushHist(); renderProps();
+});
+
+/* ============================================================
+   Background panel + motion effects
+   ============================================================ */
+function renderBgList() {
+  const box = $("#bgList"); if (!box) return;
+  const urls = []; const seen = new Set();
+  const add = (u, label) => { u = normUrl(u); if (u && !seen.has(u)) { seen.add(u); urls.push([u, label]); } };
+  add(STYLE.sampleImageUrl, "Namuna");
+  REQ.filter(r => r.status === "done" && r.imageUrl).forEach(r => add(r.imageUrl, r.title || r.topic || "Rasm"));
+  box.innerHTML = urls.length ? urls.map(([u, l]) => `<button type="button" data-bg="${esc(u)}" title="${esc(l)}" style="padding:0;overflow:hidden;aspect-ratio:3/4;${normUrl(cur.imageUrl) === u ? "border-color:var(--accent)" : ""}"><img src="${esc(u)}" alt="${esc(l)}" loading="lazy" style="width:100%;height:100%;object-fit:cover"></button>`).join("")
+    : `<p class="hint" style="grid-column:1/-1">Hali generatsiya qilingan rasm yo'q. "Rasm so'rovi" bo'limidan so'rov yuboring.</p>`;
+  $$("[data-bg]", box).forEach(b => b.addEventListener("click", () => setBackgroundImage(b.dataset.bg)));
+  hydrateImgs(box);
+  const sw = $("#bgSolid");
+  sw.innerHTML = SWATCHES().map(c => `<button type="button" data-c="${c}" style="background:${c}" aria-label="${c}"></button>`).join("");
+  $$("button", sw).forEach(b => b.addEventListener("click", () => {
+    hist.lock++;
+    canvas.getObjects().filter(o => o.role === "bg").forEach(o => canvas.remove(o));
+    const r = new fabric.Rect({ left: 0, top: 0, width: W, height: H, fill: b.dataset.c, strokeWidth: 0, name: "Fon rasmi", role: "bg", locked: true });
+    applyLock(r); canvas.insertAt(r, 0); canvas.backgroundColor = b.dataset.c; cur.imageUrl = "";
+    hist.lock--; canvas.requestRenderAll(); pushHist(); renderBgList();
+  }));
+}
+const fxLayer = () => canvas.getObjects().find(o => o.type === "fxLayer");
+const anyFx = fx => !!fx && ["zoom", "light", "wave", "scan", "sparks"].some(k => fx[k]);
+function ensureFx() {
+  let f = fxLayer(); if (f) return f;
+  f = new fabric.FxLayer({});
+  const objs = canvas.getObjects(); let idx = 0;
+  objs.forEach((o, i) => { if (o.role === "bg" || o.role === "shade") idx = i + 1; });
+  hist.lock++; canvas.insertAt(f, idx); hist.lock--;
+  return f;
+}
+function syncFxUI() {
+  const f = fxLayer(), fx = f ? f.fx : FX_DEFAULT();
+  ["zoom", "light", "wave", "scan", "sparks"].forEach(k => { $("#fx-" + k).checked = !!fx[k]; });
+  $("#fx-lightY").value = fx.lightY; $("#fx-period").value = String(fx.period);
+  $("#fxCtl").hidden = !anyFx(fx);
+  $("#fxPlay").innerHTML = icon(FX.playing ? "pause" : "play");
+  $("#fxLabel").textContent = FX.reduced && !FX.userPlay ? "Harakat to'xtatilgan" : `Harakat · ${fx.period} s`;
+}
+["zoom", "light", "wave", "scan", "sparks"].forEach(k => $("#fx-" + k).addEventListener("change", e => {
+  const f = ensureFx(); f.fx = { ...f.fx, [k]: e.target.checked }; syncFxUI(); pushHist(); canvas.requestRenderAll();
+}));
+$("#fx-lightY").addEventListener("input", e => { const f = ensureFx(); f.fx = { ...f.fx, lightY: +e.target.value }; canvas.requestRenderAll(); pushSoon(); });
+$("#fx-period").addEventListener("change", e => { const f = ensureFx(); f.fx = { ...f.fx, period: +e.target.value }; syncFxUI(); pushHist(); });
+$("#fxPlay").addEventListener("click", () => { FX.playing = !FX.playing; FX.userPlay = true; syncFxUI(); });
+(function fxLoop() {
+  const tick = ts => {
+    const f = curView === "editor" ? fxLayer() : null;
+    if (f && anyFx(f.fx) && FX.playing) {
+      FX.p = (ts / 1000 / f.fx.period) % 1; FX.zoom = f.fx.zoom ? 1 + 0.035 * (1 - Math.cos(2 * Math.PI * FX.p)) : 1;
+      canvas.requestRenderAll();
+    } else if (FX.p !== 0 || FX.zoom !== 1) { FX.p = 0; FX.zoom = 1; canvas.requestRenderAll(); }
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+})();
+
+/* ============================================================
+   Library popover
+   ============================================================ */
+let popEl = null;
+function closePop() { if (popEl) { popEl.remove(); popEl = null; } }
+function openPop(html, x, y, cls = "") {
+  closePop(); popEl = document.createElement("div"); popEl.className = "pop " + cls; popEl.innerHTML = html; document.body.appendChild(popEl);
+  const r = popEl.getBoundingClientRect();
+  popEl.style.left = clamp(x, 8, innerWidth - r.width - 8) + "px"; popEl.style.top = clamp(y, 8, innerHeight - r.height - 8) + "px";
+  return popEl;
+}
+document.addEventListener("pointerdown", e => { if (popEl && !popEl.contains(e.target) && !e.target.closest("#tLib,#aExport")) closePop(); });
+function openLibrary() {
+  const b = $("#tLib").getBoundingClientRect();
+  const el = openPop(`<div class="lib">
+    <div class="grp"><h4>Matn uslublari</h4><div class="libtxt">
+      <button data-ts="Sarlavha" style="font:700 18px 'Golos Text',sans-serif">Sarlavha</button>
+      <button data-ts="Matn" style="font:400 15px 'Golos Text',sans-serif">Matn</button>
+      <button data-ts="Yorliq" style="font:500 12px 'Golos Text',sans-serif;letter-spacing:.08em;color:var(--accent)">YORLIQ</button>
+      <button data-ts="Katta raqam" style="font:800 24px 'Golos Text',sans-serif;color:var(--accent)">24/7</button></div></div>
+    <div class="grp"><h4>Shakllar</h4><div class="libgrid">
+      <button data-sh="rect">${icon("square")}To'rtburchak</button><button data-sh="plate"><svg class="i" viewBox="0 0 24 24"><path d="M6 8h12a4 4 0 0 1 0 8H6a4 4 0 0 1 0-8Z"/></svg>Plashka</button>
+      <button data-sh="ellipse">${icon("circle")}Ellips</button><button data-sh="triangle"><svg class="i" viewBox="0 0 24 24"><path d="M12 4 21 20H3Z"/></svg>Uchburchak</button>
+      <button data-sh="line">${icon("line")}Chiziq</button></div></div>
+    <div class="grp"><h4>IT ikonkalari</h4><div class="libgrid">${IT_ICONS.map(([k, l]) => `<button data-icn="${k}" data-l="${l}">${icon(k)}${l}</button>`).join("")}</div>
+    <p class="hint">Ikonka rangini "Xususiyat" panelidan o'zgartiring.</p></div></div>`, b.right + 8, b.top);
+  $$("[data-ts]", el).forEach(x => x.addEventListener("click", () => { addTextStyle(x.dataset.ts); closePop(); }));
+  $$("[data-sh]", el).forEach(x => x.addEventListener("click", () => { addShape(x.dataset.sh); closePop(); }));
+  $$("[data-icn]", el).forEach(x => x.addEventListener("click", () => { addIcon(x.dataset.icn, x.dataset.l); closePop(); }));
+}
+$("#tLib").addEventListener("click", () => popEl ? closePop() : openLibrary());
+
+/* ============================================================
+   Clipboard, order, group, delete
+   ============================================================ */
+let clip = null, pasteN = 0;
+function copySel(cut) {
+  const a = canvas.getActiveObject(); if (!a) return;
+  a.clone(c => { clip = c; pasteN = 0; }, PROPS);
+  if (cut) delSel();
+}
+function pasteClip() {
+  if (!clip) return;
+  clip.clone(c => {
+    pasteN++; canvas.discardActiveObject();
+    c.set({ left: c.left + 24 * pasteN, top: c.top + 24 * pasteN, evented: true });
+    if (c.type === "activeSelection") { c.canvas = canvas; c.forEachObject(o => { if (o.role === "bg") { o.role = undefined; o.locked = false; } applyLock(o); canvas.add(o); }); c.setCoords(); }
+    else { if (c.role === "bg") { c.role = undefined; c.locked = false; } applyLock(c); canvas.add(c); }
+    canvas.setActiveObject(c); canvas.requestRenderAll(); pushHist();
+  }, PROPS);
+}
+function dupSel() { const a = canvas.getActiveObject(); if (!a) return; a.clone(c => { clip = c; pasteN = 0; pasteClip(); }, PROPS); }
+function delSel() {
+  const objs = canvas.getActiveObjects(); if (!objs.length) return;
+  canvas.discardActiveObject(); hist.lock++; objs.forEach(o => canvas.remove(o)); hist.lock--; canvas.requestRenderAll(); pushHist();
+}
+function order(k) {
+  const objs = canvas.getActiveObjects(); if (!objs.length) return;
+  const list = k === "up" || k === "bottom" ? [...objs].reverse() : objs;
+  list.forEach(o => { if (k === "top") canvas.bringToFront(o); if (k === "up") canvas.bringForward(o); if (k === "down") canvas.sendBackwards(o); if (k === "bottom") canvas.sendToBack(o); });
+  if (k === "bottom" || k === "down") { const bg = canvas.getObjects().filter(o => o.role === "bg"); bg.forEach(o => canvas.sendToBack(o)); }
+  canvas.requestRenderAll(); pushHist();
+}
+function groupSel() { const a = canvas.getActiveObject(); if (!a || a.type !== "activeSelection") return; const g = a.toGroup(); g.name = "Guruh"; canvas.requestRenderAll(); pushHist(); }
+function ungroupSel() { const a = canvas.getActiveObject(); if (!a || a.type !== "group") return; a.toActiveSelection(); canvas.requestRenderAll(); pushHist(); }
+function selectAll() { setTool("select"); const objs = canvas.getObjects().filter(o => o.visible !== false && !o.locked && o.evented !== false); canvas.discardActiveObject(); if (objs.length) canvas.setActiveObject(objs.length > 1 ? new fabric.ActiveSelection(objs, { canvas }) : objs[0]); canvas.requestRenderAll(); }
+function nudge(dx, dy) { const a = canvas.getActiveObject(); if (!a || a.lockMovementX) return; a.left += dx; a.top += dy; a.setCoords(); canvas.requestRenderAll(); pushSoon(); liveGeom(); }
+function flipSel(k) { eachSel(o => o.set(k, !o[k])); canvas.requestRenderAll(); pushHist(); }
+function lockSel() { eachSel(o => { o.locked = !o.locked; applyLock(o); }); canvas.discardActiveObject(); canvas.requestRenderAll(); pushHist(); }
+const A = { aUndo: undo, aRedo: redo, aCut: () => copySel(true), aCopy: () => copySel(false), aPaste: pasteClip, aDup: dupSel, aDel: delSel, aGroup: groupSel, aUngroup: ungroupSel, aTop: () => order("top"), aUp: () => order("up"), aDown: () => order("down"), aBottom: () => order("bottom") };
+Object.entries(A).forEach(([id, fn]) => $("#" + id).addEventListener("click", fn));
+
+/* ============================================================
+   Context menu
+   ============================================================ */
+function openCtxMenu(opt) {
+  const t = opt.target;
+  if (t && !canvas.getActiveObjects().includes(t) && t.evented !== false) { canvas.setActiveObject(t); canvas.requestRenderAll(); }
+  const a = canvas.getActiveObject(), has = !!a;
+  const it = (k, label, kb, dis) => `<button data-m="${k}" ${dis ? "disabled" : ""}>${label}${kb ? `<kbd>${kb}</kbd>` : ""}</button>`;
+  const el = openPop(`<div class="menu" role="menu">
+    ${it("cut", "Kesish", "Ctrl+X", !has)}${it("copy", "Nusxa olish", "Ctrl+C", !has)}${it("paste", "Joylash", "Ctrl+V", !clip)}${it("dup", "Dublikat", "Ctrl+D", !has)}<hr>
+    ${it("top", "Eng oldinga", "Ctrl+Shift+]", !has)}${it("up", "Oldinga", "Ctrl+]", !has)}${it("down", "Orqaga", "Ctrl+[", !has)}${it("bottom", "Eng orqaga", "Ctrl+Shift+[", !has)}<hr>
+    ${it("group", "Guruhlash", "Ctrl+G", !(a && a.type === "activeSelection"))}${it("ungroup", "Guruhni ajratish", "Ctrl+Shift+G", !(a && a.type === "group"))}${it("lock", a && a.locked ? "Qulfdan chiqarish" : "Qulflash", "Ctrl+Shift+L", !has)}
+    ${it("flipX", "Gorizontal aks ettirish", "Shift+H", !has)}${it("flipY", "Vertikal aks ettirish", "Shift+V", !has)}<hr>
+    ${it("all", "Hammasini tanlash", "Ctrl+A")}${it("del", "O'chirish", "Delete", !has)}</div>`, opt.e.clientX, opt.e.clientY);
+  const map = { cut: () => copySel(true), copy: () => copySel(false), paste: pasteClip, dup: dupSel, top: () => order("top"), up: () => order("up"), down: () => order("down"), bottom: () => order("bottom"), group: groupSel, ungroup: ungroupSel, lock: lockSel, flipX: () => flipSel("flipX"), flipY: () => flipSel("flipY"), all: selectAll, del: delSel };
+  $$("[data-m]", el).forEach(b => b.addEventListener("click", () => { closePop(); map[b.dataset.m](); }));
+}
+ws.addEventListener("contextmenu", e => e.preventDefault());
+
+/* ============================================================
+   Keyboard
+   ============================================================ */
+const KEYS = [
+  ["Tanlash / Qo'l", "V / H"], ["Vaqtincha qo'l", "Probel"], ["Matn, To'rtburchak, Ellips, Chiziq", "T, R, O, L"], ["Rasm joylash / Kutubxona", "I / K"],
+  ["Bekor qilish / Qaytarish", "Ctrl+Z / Ctrl+Shift+Z"], ["Saqlash", "Ctrl+S"], ["Kesish / Nusxa / Joylash", "Ctrl+X / C / V"], ["Dublikat", "Ctrl+D"], ["O'chirish", "Delete"],
+  ["Guruhlash / Ajratish", "Ctrl+G / Ctrl+Shift+G"], ["Oldinga / Orqaga", "Ctrl+] / Ctrl+["], ["Eng oldinga / Eng orqaga", "Ctrl+Shift+] / ["], ["Qulflash", "Ctrl+Shift+L"],
+  ["Aks ettirish", "Shift+H / Shift+V"], ["Hammasini tanlash", "Ctrl+A"], ["Surish 1 px / qator qadami", "Strelkalar / Shift+Strelka"],
+  ["Kattalashtirish kursorga", "Ctrl + g'ildirak"], ["Ekranga moslash / 100%", "Ctrl+0 / Ctrl+1"], ["Panjara / Magnit", "Ctrl+' / Shift+M"], ["Eksport", "Ctrl+E"], ["Yangi poster", "Alt+N"], ["Shu ro'yxat", "?"],
+];
+function openKeys() {
+  const d = document.createElement("div"); d.className = "dlg"; d.innerHTML = `<div role="dialog" aria-modal="true" aria-label="Tezkor tugmalar"><h3>Tezkor tugmalar</h3><div class="kbd">${KEYS.map(([a, b]) => `<span>${a}</span><kbd>${b}</kbd>`).join("")}</div><div class="row" style="justify-content:flex-end;margin-top:16px"><button class="btn" id="kClose">Yopish</button></div></div>`;
+  document.body.appendChild(d); const close = () => d.remove();
+  d.addEventListener("click", e => { if (e.target === d) close(); }); $("#kClose", d).addEventListener("click", close); $("#kClose", d).focus();
+  d.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+}
+$("#tKeys").addEventListener("click", openKeys);
+const isTyping = t => t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.tagName === "SELECT" || t.isContentEditable);
+document.addEventListener("keydown", e => {
+  if (curView !== "editor" || isTyping(e.target) || $(".dlg")) return;
+  const a = canvas.getActiveObject();
+  if (a && a.isEditing) return;
+  const mod = e.ctrlKey || e.metaKey, k = e.key, K = k.toLowerCase();
+  const go = fn => { e.preventDefault(); fn(); };
+  if (mod) {
+    if (K === "z" && e.shiftKey) return go(redo);
+    if (K === "z") return go(undo);
+    if (K === "y") return go(redo);
+    if (K === "s") return go(saveDoc);
+    if (K === "c") return go(() => copySel(false));
+    if (K === "x") return go(() => copySel(true));
+    if (K === "v") { if (clip) go(pasteClip); return; }
+    if (K === "d") return go(dupSel);
+    if (K === "g" && e.shiftKey) return go(ungroupSel);
+    if (K === "g") return go(groupSel);
+    if (K === "a") return go(selectAll);
+    if (K === "l" && e.shiftKey) return go(lockSel);
+    if (k === "]" || k === "}") return go(() => order(e.shiftKey ? "top" : "up"));
+    if (k === "[" || k === "{") return go(() => order(e.shiftKey ? "bottom" : "down"));
+    if (k === "0") return go(fitView);
+    if (k === "1") return go(() => zoomAt(1));
+    if (k === "=" || k === "+") return go(() => zoomAt(zoom() * 1.25));
+    if (k === "-") return go(() => zoomAt(zoom() / 1.25));
+    if (k === "'") return go(() => { ui.showGrid = !ui.showGrid; syncGridUI(); canvas.requestRenderAll(); });
+    if (K === "e") return go(openExport);
+    return;
+  }
+  if (e.altKey && K === "n") return go(newDoc);
+  if (k === "Delete" || k === "Backspace") return go(delSel);
+  if (k === "Escape") { closePop(); canvas.discardActiveObject(); setTool("select"); canvas.requestRenderAll(); return; }
+  if (k.startsWith("Arrow") && a) { const s = e.shiftKey ? G.row : 1; return go(() => nudge(k === "ArrowLeft" ? -s : k === "ArrowRight" ? s : 0, k === "ArrowUp" ? -s : k === "ArrowDown" ? s : 0)); }
+  if (k === " " && !ui.spaceHand) { e.preventDefault(); ui.spaceHand = true; setTool(ui.tool); return; }
+  if (e.shiftKey && K === "h") return go(() => flipSel("flipX"));
+  if (e.shiftKey && K === "v") return go(() => flipSel("flipY"));
+  if (e.shiftKey && K === "m") return go(() => { ui.snap = !ui.snap; syncGridUI(); toast(ui.snap ? "Magnit yoqildi" : "Magnit o'chirildi"); });
+  if (k === "?") return go(openKeys);
+  const tools = { v: "select", h: "hand", t: "text", r: "rect", o: "ellipse", l: "line" };
+  if (tools[K] && !e.shiftKey) return go(() => setTool(tools[K]));
+  if (K === "i") return go(() => pickImage("place"));
+  if (K === "k") return go(() => popEl ? closePop() : openLibrary());
+});
+document.addEventListener("keyup", e => { if (e.key === " " && ui.spaceHand) { ui.spaceHand = false; setTool(ui.tool); } });
+
+/* ============================================================
+   Export: PNG, PNG 2×, JPG, GIF
+   ============================================================ */
+function renderPoster(mult) {
+  const v = canvas.viewportTransform.slice(), act = canvas.getActiveObject();
+  if (act && act.isEditing) act.exitEditing();
+  canvas.viewportTransform = [1, 0, 0, 1, 0, 0];
+  const el = canvas.toCanvasElement(mult, { left: 0, top: 0, width: W, height: H });
+  canvas.viewportTransform = v; canvas.calcViewportBoundaries && canvas.calcViewportBoundaries(); canvas.requestRenderAll();
+  return el;
+}
+const toBlob = (el, type, q) => new Promise(r => el.toBlob(r, type, q));
+const fileBase = () => ($("#docTitle").value.trim() || "poster").replace(/[^\p{L}\p{N}\-_ ]+/gu, "").trim().replace(/\s+/g, "-").slice(0, 50) || "poster";
+async function saveFile(name, blob) {
+  if (!caps.downloads) { toast("Bu ko'rinishda faylni yuklab olish mavjud emas"); return; }
+  try { await caps.downloads.save({ filename: name, data: blob }); }
+  catch (e) { if (e && e.code === "declined") return; toast("Faylni saqlab bo'lmadi" + (e && e.message ? ": " + e.message : "")); }
+}
+async function exportStatic(kind) {
+  const pp = FX.p, pz = FX.zoom; FX.p = 0; FX.zoom = 1;
+  const el = renderPoster(kind === "png2" ? 2 : 1); FX.p = pp; FX.zoom = pz;
+  const blob = kind === "jpg" ? await toBlob(el, "image/jpeg", 0.92) : await toBlob(el, "image/png");
+  const m = kind === "png2" ? 2 : 1;
+  await saveFile(`${fileBase()}-${W * m}x${H * m}` + (kind === "jpg" ? ".jpg" : ".png"), blob);
+}
+let gifBusy = false;
+async function exportGif(size) {
+  if (gifBusy) return; gifBusy = true;
+  const f = fxLayer(), period = f && anyFx(f.fx) ? f.fx.period : 2, frames = Math.round(15 * period), mult = size;
+  const bar = document.createElement("div"); bar.className = "toast"; bar.innerHTML = `<div class="row" style="gap:12px"><span>GIF tayyorlanmoqda <b id="gifPct">0%</b></span><div class="prog"><i id="gifBar"></i></div></div>`; document.body.appendChild(bar);
+  const was = FX.playing; FX.playing = false;
+  try {
+    const mod = await import("https://cdn.jsdelivr.net/npm/gifenc@1.0.3/dist/gifenc.esm.js");
+    const gif = mod.GIFEncoder();
+    for (let i = 0; i < frames; i++) {
+      FX.p = i / frames; FX.zoom = f && f.fx.zoom ? 1 + 0.035 * (1 - Math.cos(2 * Math.PI * FX.p)) : 1;
+      const el = renderPoster(mult), ctx = el.getContext("2d"), data = ctx.getImageData(0, 0, el.width, el.height).data;
+      const pal = mod.quantize(data, 256), idx = mod.applyPalette(data, pal);
+      gif.writeFrame(idx, el.width, el.height, { palette: pal, delay: Math.round(1000 / 15) });
+      const pct = Math.round((i + 1) / frames * 100); $("#gifPct").textContent = pct + "%"; $("#gifBar").style.width = pct + "%";
+      await new Promise(r => setTimeout(r, 0));
+    }
+    gif.finish();
+    await saveFile(`${fileBase()}-${Math.round(W * size)}x${Math.round(H * size)}.gif`, new Blob([gif.bytes()], { type: "image/gif" }));
+  } catch (e) { toast("GIF tayyorlab bo'lmadi: " + (e && e.message ? e.message : "xato")); }
+  finally { FX.playing = was; bar.remove(); gifBusy = false; }
+}
+function openExport() {
+  const b = $("#aExport").getBoundingClientRect(), hasFx = anyFx(fxLayer()?.fx);
+  const el = openPop(`<div class="menu" role="menu">
+    <button data-x="png">PNG<kbd>${W}×${H}</kbd></button><button data-x="png2" ${W * 2 > 8000 || H * 2 > 8000 ? "disabled" : ""}>PNG 2×<kbd>${W * 2}×${H * 2}</kbd></button><button data-x="jpg">JPG<kbd>${W}×${H}</kbd></button><hr>
+    ${[0.5, 2 / 3, 1].map(s => `<button data-g="${s}">Harakatli GIF<kbd>${Math.round(W * s)}×${Math.round(H * s)}</kbd></button>`).join("")}
+    ${hasFx ? "" : `<p class="hint" style="padding:6px 10px 2px;max-width:240px">Effektlar yoqilmagan: GIF harakatsiz chiqadi. "Fon" panelida effekt yoqing.</p>`}</div>`, b.left, b.bottom + 6);
+  $$("[data-x]", el).forEach(x => x.addEventListener("click", () => { closePop(); exportStatic(x.dataset.x); }));
+  $$("[data-g]", el).forEach(x => x.addEventListener("click", () => { closePop(); exportGif(+x.dataset.g); }));
+}
+$("#aExport").addEventListener("click", () => popEl ? closePop() : openExport());
+/* ============================================================
+   Views
+   ============================================================ */
+let curView = "editor", curDir = null;
+const VIEWS = ["editor", "directions", "dir", "gallery", "queue", "rules"];
+function showView(v, arg) {
+  if (v === "dir") curDir = DIR(arg || curDir).slug;
+  curView = v;
+  $$(".nav [data-view]").forEach(b => b.toggleAttribute("aria-current", b.dataset.view === v) || b.removeAttribute("aria-current"));
+  const navV = v === "dir" ? "directions" : v;
+  $$(".nav [data-view]").forEach(b => { if (b.dataset.view === navV) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
+  VIEWS.forEach(k => { $("#v-" + k).hidden = k !== v; });
+  closePop();
+  if (v === "editor") { requestAnimationFrame(() => { resizeCanvas(); renderProps(); }); }
+  if (v === "gallery") renderGallery();
+  if (v === "queue") renderQueue();
+  if (v === "rules") renderRules();
+  if (v === "directions") renderDirections();
+  if (v === "dir") renderDirDetail(curDir);
+  if (v !== "editor") { const pg = $("#v-" + v + " .page"); if (pg) pg.scrollTop = 0; }
+  const hv = v === "dir" ? "dir-" + curDir : v;
+  if (location.hash.slice(1) !== hv) history.replaceState(null, "", v === "editor" ? location.pathname + location.search : "#" + hv);
+}
+function routeHash() {
+  const h = location.hash.slice(1);
+  if (h.startsWith("dir-") && DIRECTIONS.some(d => d.slug === h.slice(4))) { if (curView !== "dir" || curDir !== h.slice(4)) showView("dir", h.slice(4)); return true; }
+  if (VIEWS.includes(h) && h !== "dir" && h !== curView) { showView(h); return true; }
+  return false;
+}
+$$(".nav [data-view]").forEach(b => b.addEventListener("click", () => showView(b.dataset.view)));
+window.addEventListener("hashchange", routeHash);
+
+/* ============================================================
+   Documents: new, open, copy, save
+   ============================================================ */
+const SAMPLE = { title: "Parolingizni hech kimga aytmang", subtitle: "IT xodimlari hech qachon parolingizni so'ramaydi. Shubhali xat kelsa, darhol 1100 raqamiga qo'ng'iroq qiling.", footer: "Savollar: ichki raqam 1100", number: "0001" };
+const NOTE = "Namunaviy matn: o'z xabaringizni shu yerga yozing.";
+const DIR_SAMPLE = {
+  it: SAMPLE,
+  jobs: { title: "Yangi vakansiyalar e'lon qilindi", subtitle: NOTE, footer: "HUNTME JOBS" },
+  hrms: { title: "Ta'til so'rovlari endi tizim orqali", subtitle: NOTE, footer: "HUNTME HRMS" },
+  marketplace: { title: "Hamkorlar uchun yangi imkoniyatlar", subtitle: NOTE, footer: "HUNTME MARKETPLACE" },
+  fleet: { title: "Transport hisobotlari yangilandi", subtitle: NOTE, footer: "HUNTME FLEET" },
+  global: { title: "Xalqaro jamoalar bitta platformada", subtitle: NOTE, footer: "HUNTME GLOBAL" },
+  skills: { title: "Yangi kurslar to'plami ochildi", subtitle: NOTE, footer: "HUNTME SKILLS" },
+  hunterai: { title: "AI yordamchi ishga tushdi", subtitle: NOTE, footer: "HUNTER AI" },
+};
+async function newDoc(opts = {}) {
+  const dir = DIR(opts.direction || cur.direction || "it").slug, d = DIR(dir);
+  cur.id = null; cur.kind = "manual"; cur.pristine = !!opts.pristine; cur.direction = dir;
+  if (opts.size) setDocSize(opts.size.w, opts.size.h);
+  cur.imageUrl = d.base ? normUrl(STYLE.sampleImageUrl || "") : normUrl(dirImage(dir));
+  $("#docTitle").value = opts.title || (d.base ? "Yangi poster" : `${d.name} posteri`);
+  await buildTemplate(canvas, { ...(DIR_SAMPLE[dir] || SAMPLE), direction: dir, imageUrl: cur.imageUrl, number: nextNumber(), size: { w: W, h: H } });
+  fitView();
+  resetHist(); refreshLayers(); renderProps(); syncFxUI(); if (curView !== "editor") showView("editor");
+  if (!opts.pristine) ls.del("ips:draft:new");
+}
+function nextNumber() { return String(REQ.filter(r => r.status === "done").length + 1).padStart(4, "0"); }
+function numberOf(r) { const done = REQ.filter(x => x.status === "done").sort((a, b) => String(a.createdAt).localeCompare(String(b.createdAt))); const i = done.findIndex(x => x.id === r.id); return String((i < 0 ? done.length : i) + 1).padStart(4, "0"); }
+async function openRequest(r, opts = {}) {
+  const copy = !!opts.copy;
+  cur.id = copy ? null : r.id; cur.kind = copy ? "manual" : (r.kind || "generated"); cur.pristine = false; cur.imageUrl = normUrl(r.imageUrl || ""); cur.direction = DIR(r.direction).slug; syncDirUI();
+  $("#docTitle").value = copy ? `${r.title || "Poster"} (nusxa)`.slice(0, 60) : (r.title || r.topic || "Poster");
+  showView("editor");
+  const draft = !copy ? ls.get("ips:draft:" + r.id) : null;
+  const edited = Date.parse(r.editedAt || r.doneAt || r.createdAt || 0) || 0;
+  const done = () => { resetHist(); if (draft && draft.at > edited) { setDirty(true); toast("Saqlanmagan qoralama tiklandi"); } renderBgList(); };
+  if (draft && draft.at > edited && draft.layout) { $("#docTitle").value = draft.title || $("#docTitle").value; loadJSON(draft.layout, done); return; }
+  if (r.layout) { loadJSON(r.layout, done); return; }
+  await buildTemplate(canvas, { title: r.title, subtitle: r.subtitle, footer: r.footer, imageUrl: r.imageUrl, number: numberOf(r), direction: r.direction, size: r.size || { w: 1080, h: 1440 } });
+  fitView(); done(); refreshLayers();
+}
+$("#aNew").addEventListener("click", () => newDoc({ direction: cur.direction }));
+function dirImage(dir) { const r = REQ.filter(x => x.direction === dir && x.status === "done" && x.imageUrl && x.kind !== "manual").sort((a, b) => String(b.doneAt || b.createdAt).localeCompare(String(a.doneAt || a.createdAt)))[0]; return r ? r.imageUrl : ""; }
+$("#docTitle").addEventListener("input", () => { setDirty(true); saveDraft(); });
+function firstText(name) { const o = canvas.getObjects().find(x => x.name === name && isText(x)); return o ? (o.upper && o.srcText != null ? o.srcText : o.text) : ""; }
+async function saveDoc() {
+  if (!caps.canWrite || !caps.db) { toast(caps.uid ? "Sizda galereyaga saqlash huquqi yo'q. Eksport qilishingiz mumkin." : "Galereyaga saqlash uchun tizimga kiring. Eksport qilishingiz mumkin."); return; }
+  const a = canvas.getActiveObject(); if (a && a.isEditing) a.exitEditing();
+  const layout = serialize();
+  if (/"src":"(data|blob):/.test(layout)) { toast("Postarda faqat shu brauzerdagi rasm bor. Uni qayta joylang, keyin saqlang.", 4200); return; }
+  const kb = new Blob([layout]).size / 1024;
+  if (kb > 240) { toast(`Layout ${Math.round(kb)} KB: 240 KB dan oshmasin. Ortiqcha ikonka yoki guruhlarni kamaytiring.`, 4200); return; }
+  const now = new Date().toISOString(), title = $("#docTitle").value.trim() || firstText("Sarlavha") || "Poster";
+  const fields = { layout, title, editedAt: now, editedBy: caps.uid, status: "done", imageUrl: normUrl(cur.imageUrl || ""), direction: cur.direction, size: { w: W, h: H }, aspect: aspectOf(W, H) };
+  $("#docState").textContent = "Saqlanmoqda…";
+  try {
+    if (cur.id) await caps.db.doc("requests/" + cur.id).update(fields);
+    else {
+      const id = genId();
+      await caps.db.doc("requests/" + id).set({ ...fields, topic: "", subtitle: firstText("Qo'shimcha matn").slice(0, 140), footer: firstText("Pastki qator").slice(0, 60), kind: "manual", createdBy: caps.uid, createdAt: now, doneAt: now });
+      ls.del("ips:draft:new"); cur.id = id; cur.kind = "manual";
+    }
+    ls.del("ips:draft:" + cur.id); setDirty(false); toast("Galereyaga saqlandi");
+  } catch (e) { setDirty(true); toast("Saqlab bo'lmadi: " + (e && (e.message || e.code) || "xato"), 4200); }
+}
+$("#aSave").addEventListener("click", saveDoc);
+
+/* ============================================================
+   Gallery
+   ============================================================ */
+const thumbCache = new Map();
+let thumbQ = Promise.resolve();
+let thumbCanvas = null;
+function thumbFor(r) {
+  const key = r.id + "|" + (r.editedAt || r.doneAt || "") + "|" + (r.layout ? r.layout.length : 0);
+  return renderThumb(key, r.layout ? { layout: r.layout } : { title: r.title, subtitle: r.subtitle, footer: r.footer, imageUrl: r.imageUrl, number: numberOf(r), direction: r.direction, size: r.size });
+}
+function dirThumb(dir) {
+  const img = dirImage(dir) || (DIR(dir).base ? STYLE.sampleImageUrl : "");
+  return renderThumb("dir|" + dir + "|" + img, { ...(DIR_SAMPLE[dir] || SAMPLE), direction: dir, imageUrl: img, number: "0001", size: { w: 1080, h: 1440 } }, 460);
+}
+function renderThumb(key, r, target = 380) {
+  if (thumbCache.has(key)) return Promise.resolve(thumbCache.get(key));
+  thumbQ = thumbQ.then(() => new Promise(res => {
+    if (!thumbCanvas) thumbCanvas = new fabric.StaticCanvas(null, { width: W, height: H, enableRetinaScaling: false, renderOnAddRemove: false });
+    const c = thumbCanvas;
+    let sz = r.size || { w: 1080, h: 1440 };
+    if (r.layout) { try { sz = JSON.parse(r.layout).size || { w: 1080, h: 1440 }; } catch (e) {} }
+    c.setWidth(sz.w); c.setHeight(sz.h);
+    const mult = Math.min(1, target / Math.max(sz.w, sz.h * 0.75));
+    const finish = () => { try { c.clipPath = POSTER_CLIP(sz.w, sz.h); c.renderAll(); const url = c.toDataURL({ format: "jpeg", quality: 0.84, multiplier: mult }); thumbCache.set(key, url); res(url); } catch (e) { res(""); } };
+    const pp = FX.p, pz = FX.zoom; FX.p = 0; FX.zoom = 1;
+    const restore = () => { FX.p = pp; FX.zoom = pz; };
+    if (r.layout) (window.__WEB ? window.__WEB.resolveAll(normalizeLayout(r.layout)) : Promise.resolve(normalizeLayout(r.layout))).then(s2 => c.loadFromJSON(s2, () => { finish(); restore(); }));
+    else buildTemplate(c, r).then(() => { finish(); restore(); }).catch(() => { restore(); res(""); });
+  }));
+  return thumbQ;
+}
+function hasFxLayout(r) { if (!r.layout) return false; try { const j = JSON.parse(r.layout); return (j.objects || []).some(o => o.type === "fxLayer" && anyFx(o.fx)); } catch (e) { return false; } }
+const delArm = new Map();
+function renderGallery() {
+  const box = $("#cards"); if (!box) return;
+  const q = ($("#gSearch").value || "").trim().toLowerCase();
+  renderChips();
+  const list = REQ.filter(r => r.status === "done").filter(r => ui.gDir === "all" || DIR(r.direction).slug === ui.gDir).filter(r => !q || String(r.title || "").toLowerCase().includes(q)).sort((a, b) => String(b.editedAt || b.doneAt || b.createdAt).localeCompare(String(a.editedAt || a.doneAt || a.createdAt)));
+  if (!caps.ready) { box.innerHTML = `<div class="empty" style="grid-column:1/-1"><b>Galereya yuklanmoqda</b>Ma'lumotlar bazasiga ulanilmoqda.</div>`; return; }
+  if (!caps.db) { box.innerHTML = `<div class="empty" style="grid-column:1/-1"><b>Galereya bu ko'rinishda mavjud emas</b>Galereyani ko'rish uchun tizimga kiring. Muharrirda ishlash va eksport qilish mumkin.</div>`; return; }
+  if (!list.length) { box.innerHTML = `<div class="empty" style="grid-column:1/-1"><b>${q ? "Hech narsa topilmadi" : "Galereya hozircha bo'sh"}</b>${q ? "Boshqa so'z bilan qidirib ko'ring." : "Muharrirda poster yarating va \"Saqlash\" tugmasini bosing yoki \"Rasm so'rovi\" bo'limidan so'rov yuboring."}</div>`; return; }
+  box.innerHTML = list.map(r => `<article class="card" data-id="${esc(r.id)}">
+      <div class="thumb"><img alt="${esc(r.title || "Poster")}" data-thumb="${esc(r.id)}">${hasFxLayout(r) ? `<span class="badge">GIF</span>` : ""}</div>
+      <div class="meta"><b title="${esc(r.title)}">${esc(r.title || r.topic || "Nomsiz poster")}</b><small><span class="dot" style="background:${DIR(r.direction).main};width:8px;height:8px;margin-right:6px;vertical-align:1px"></span>${esc(DIR(r.direction).name)} · ${docSize(r).w}×${docSize(r).h} · ${r.kind === "manual" ? "qo'lda" : "generatsiya"} · ${esc(fmtTime(r.editedAt || r.doneAt || r.createdAt))}</small></div>
+      <div class="acts2"><button class="btn" data-g="edit">${icon("pen")}Tahrirlash</button><button class="btn" data-g="copy">${icon("dup")}Nusxa</button>${caps.canAdmin ? `<button class="btn danger" data-g="del" aria-label="O'chirish">${icon("trash")}</button>` : ""}</div></article>`).join("");
+  $$("img[data-thumb]", box).forEach(img => { const r = REQ.find(x => x.id === img.dataset.thumb); thumbFor(r).then(u => { if (u) img.src = u; }); });
+  $$(".card", box).forEach(card => {
+    const r = REQ.find(x => x.id === card.dataset.id);
+    $$("[data-g]", card).forEach(b => b.addEventListener("click", () => galleryAct(b, r)));
+  });
+}
+async function galleryAct(b, r) {
+  const k = b.dataset.g;
+  if (k === "edit") openRequest(r);
+  if (k === "copy") openRequest(r, { copy: true });
+  if (k === "del") {
+    if (!b.classList.contains("arm")) { b.classList.add("arm"); b.innerHTML = "Tasdiqlang"; setTimeout(() => { if (b.isConnected) { b.classList.remove("arm"); b.innerHTML = icon("trash"); } }, 4000); return; }
+    try { await caps.db.doc("requests/" + r.id).delete(); ls.del("ips:draft:" + r.id); toast("Poster o'chirildi"); if (cur.id === r.id) { cur.id = null; setDirty(true); } }
+    catch (e) { toast("O'chirib bo'lmadi: " + (e.message || e.code)); }
+  }
+}
+$("#gSearch").addEventListener("input", debounce(renderGallery, 150));
+
+/* ============================================================
+   Queue (image requests)
+   ============================================================ */
+const STATUS_UZ = { queued: "Navbatda", generating: "Chizilmoqda", done: "Tayyor", error: "Xato" };
+[["rTopic", "cTopic", 120], ["rTitle", "cTitle", 60], ["rSub", "cSub", 140], ["rFoot", "cFoot", 60]].forEach(([i, c, m]) => $("#" + i).addEventListener("input", e => { $("#" + c).textContent = `${e.target.value.length}/${m}`; }));
+$("#reqForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  if (!caps.canWrite) { toast("So'rov yuborish uchun tizimga kiring va tahrirlash huquqiga ega bo'ling"); return; }
+  const topic = $("#rTopic").value.trim(), title = $("#rTitle").value.trim();
+  if (!topic || !title) { toast("Mavzu va sarlavhani yozing"); return; }
+  const id = genId(), now = new Date().toISOString();
+  $("#rSubmit").disabled = true;
+  try {
+    const rsz = SIZES.find(x => x.id === $("#rSize").value) || SIZES[0];
+    await caps.db.doc("requests/" + id).set({ size: { w: rsz.w, h: rsz.h }, aspect: aspectOf(rsz.w, rsz.h), direction: DIR($("#rDir").value).slug, topic: topic.slice(0, 120), title: title.slice(0, 60), subtitle: $("#rSub").value.trim().slice(0, 140), footer: $("#rFoot").value.trim().slice(0, 60), status: "queued", kind: "generated", createdBy: caps.uid, createdAt: now });
+    const keepDir = $("#rDir").value, keepSize = $("#rSize").value; e.target.reset(); $("#rDir").value = keepDir; $("#rSize").value = keepSize; ["cTopic", "cTitle", "cSub", "cFoot"].forEach((c, i) => { $("#" + c).textContent = "0/" + [120, 60, 140, 60][i]; });
+    toast("So'rov navbatga qo'shildi");
+  } catch (err) { toast("Yuborib bo'lmadi: " + (err.message || err.code)); }
+  finally { $("#rSubmit").disabled = false; }
+});
+function renderQueue() {
+  const box = $("#qlist"); if (!box) return;
+  if (!caps.ready) { box.innerHTML = `<div class="empty"><b>Navbat yuklanmoqda</b></div>`; return; }
+  if (!caps.db) { box.innerHTML = `<div class="empty"><b>Navbat bu ko'rinishda mavjud emas</b>Navbatni ko'rish uchun tizimga kiring.</div>`; return; }
+  const order = { generating: 0, queued: 1, error: 2, done: 3 };
+  const list = REQ.filter(r => r.kind !== "manual").sort((a, b) => (order[a.status] - order[b.status]) || String(b.createdAt).localeCompare(String(a.createdAt))).slice(0, 60);
+  if (!list.length) { box.innerHTML = `<div class="empty"><b>Navbat bo'sh</b>Chapdagi forma orqali birinchi so'rovni yuboring.</div>`; return; }
+  box.innerHTML = list.map(r => `<div class="qi" data-id="${esc(r.id)}"><span class="pill ${esc(r.status)}">${STATUS_UZ[r.status] || esc(r.status)}</span>
+    <div class="t"><b>${esc(r.title || "Sarlavhasiz")}</b><small><span class="dot" style="background:${DIR(r.direction).main};width:8px;height:8px;margin-right:6px"></span>${esc(DIR(r.direction).name)} · ${docSize(r).w}×${docSize(r).h} · ${esc(r.topic)} · ${esc(fmtTime(r.createdAt))}</small>${r.status === "error" && r.error ? `<span class="err">${esc(r.error)}</span>` : ""}</div>
+    <div class="row">${r.status === "error" && caps.canWrite ? `<button class="btn" data-q="retry">${icon("refresh")}Qayta navbatga</button>` : ""}${r.status === "done" ? `<button class="btn" data-q="open">${icon("open")}Ochish</button>` : ""}${caps.canAdmin && r.status !== "generating" ? `<button class="ib" data-q="del" aria-label="O'chirish">${icon("trash")}</button>` : ""}</div></div>`).join("");
+  $$(".qi", box).forEach(row => {
+    const r = REQ.find(x => x.id === row.dataset.id);
+    $$("[data-q]", row).forEach(b => b.addEventListener("click", async () => {
+      if (b.dataset.q === "open") openRequest(r);
+      if (b.dataset.q === "retry") { try { await caps.db.doc("requests/" + r.id).update({ status: "queued", error: "" }); toast("Qayta navbatga qo'yildi"); } catch (e) { toast("Bo'lmadi: " + (e.message || e.code)); } }
+      if (b.dataset.q === "del") {
+        if (!b.classList.contains("arm")) { b.classList.add("arm"); b.style.color = "var(--red)"; b.setAttribute("aria-label", "Tasdiqlang"); toast("O'chirish uchun yana bir marta bosing"); setTimeout(() => b.isConnected && b.classList.remove("arm"), 4000); return; }
+        try { await caps.db.doc("requests/" + r.id).delete(); } catch (e) { toast("O'chirib bo'lmadi"); }
+      }
+    }));
+  });
+}
+
+/* ============================================================
+   Rules page
+   ============================================================ */
+function hydrateImgs(root) { if (window.__WEB) window.__WEB.hydrate(root); }
+function renderRules() {
+  const p = STYLE.palette, names = [["Navy", p.navy], ["Teal", p.teal], ["Oq", p.white], ["Muz", p.ice], ...p.extra.map(c => ["Qo'shimcha", c])];
+  $("#rulesBox").innerHTML = `
+  <section class="panelbox"><h3>Palitra</h3><div class="pal">${names.map(([n, c]) => `<div><i style="background:${esc(c)}"></i><span>${n}<br>${esc(c)}</span></div>`).join("")}</div>
+    <dl class="kv"><dt>Shrift</dt><dd>Golos Text (barcha matnlar)</dd><dt>Sarlavha</dt><dd>Golos Text 700, 88→52 px, ≤3 qator</dd><dt>Matn</dt><dd>Golos Text 400, 34 px</dd><dt>Yorliq, raqam, sana</dt><dd>Golos Text 500, 20–22 px</dd><dt>Poster</dt><dd>1080 × 1440 px (3:4)</dd></dl></section>
+  <section class="panelbox" style="grid-column:1/-1"><h3>Yo'nalishlar ranglari</h3>
+    <div class="dirrow" style="color:var(--dim)"><span>Yo'nalish</span><span>Och</span><span>Asosiy</span><span>Chuqur</span><span>Poster foni</span></div>
+    ${DIRECTIONS.map(d => `<div class="dirrow"><span style="color:var(--text)">${esc(d.name)}</span>${[d.light, d.main, d.deep, d.bg].map(c => `<span><i style="background:${c}"></i>${c}</span>`).join("")}</div>`).join("")}
+    <p class="hint">Light va dark mode uchun palitra bir xil. Poster doim to'q fonda chiqadi.</p></section>
+  <section class="panelbox" style="grid-column:1/-1"><h3>O'lchamlar</h3>
+    <div class="dirrow" style="grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));color:var(--dim)"><span>Tayyor o'lcham</span><span>Piksel</span><span>Nisbat</span><span>Chet / oraliq</span></div>
+    ${SIZES.map(p => { const g = gridFor(p.w, p.h); return `<div class="dirrow" style="grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr))"><span style="color:var(--text)">${esc(p.label)}</span><span>${p.w}×${p.h}</span><span>${aspectOf(p.w, p.h)}</span><span>${g.margin} / ${g.gap} px</span></div>`; }).join("")}
+    <p class="hint">Maxsus o'lcham: ${SIZE_MIN}–${SIZE_MAX} px. Masshtab = qisqa tomon / 1080: chet maydoni, oraliqlar, shriftlar va effektlar shunga ko'paytiriladi. Fon rasmi har qanday nisbatga "cover" usulida moslanadi.</p></section>
+  <section class="panelbox"><h3>Generatsiya sozlamalari</h3><dl class="kv">
+    <dt>Kompaniya</dt><dd>${esc(STYLE.company)}</dd><dt>Model</dt><dd>${esc(STYLE.model)}</dd><dt>Slug</dt><dd>${esc(STYLE.modelSlug)}</dd>
+    <dt>Nisbat</dt><dd>${esc(STYLE.aspect)}</dd><dt>Sifat</dt><dd>${esc(String(STYLE.resolution).toUpperCase())}</dd><dt>Seed</dt><dd>${esc(STYLE.seed)}</dd>
+    <dt>Bir safarda</dt><dd>${esc(STYLE.maxPerRun)} ta so'rov, har biri 1 ta rasm</dd><dt>Style reference</dt><dd>${STYLE.styleRef ? esc(STYLE.styleRef) : "belgilanmagan"}</dd></dl>
+    ${STYLE.sampleImageUrl ? `<img src="${esc(normUrl(STYLE.sampleImageUrl))}" alt="Namunaviy fon rasmi" style="width:140px;aspect-ratio:3/4;object-fit:cover;border-radius:6px;border:1px solid var(--line)">` : ""}</section>
+  <section class="panelbox"><h3>Panjara</h3><dl class="kv"><dt>Chet maydoni</dt><dd>${STYLE.grid.margin} px</dd><dt>Ustunlar</dt><dd>${STYLE.grid.cols} ta, orasi ${STYLE.grid.gutter} px</dd><dt>Qator qadami</dt><dd>${STYLE.grid.row} px</dd><dt>Elementlar orasi</dt><dd>${STYLE.grid.gap} px</dd><dt>Ustun kengligi</dt><dd>${r1((W - 2 * STYLE.grid.margin - (STYLE.grid.cols - 1) * STYLE.grid.gutter) / STYLE.grid.cols)} px</dd></dl>
+    <p class="hint">Yopishish masofasi ekranda 10 px. Qo'shni element yonida 48 px oraliq boshqa chiziqlardan ustun turadi.</p></section>
+  <section class="panelbox" style="grid-column:1/-1"><h3>Prompt shabloni</h3><pre class="prompt">${esc(STYLE.promptTemplate)}</pre><p class="hint">{mavzu} o'rniga foydalanuvchi mavzusi ingliz tiliga qisqa tarjima qilinib qo'yiladi.</p></section>
+  <section class="panelbox" style="grid-column:1/-1"><h3>Tezkor tugmalar</h3><div class="kbd">${KEYS.map(([a, b]) => `<span>${a}</span><kbd>${b}</kbd>`).join("")}</div></section>`;
+  hydrateImgs($("#rulesBox"));
+}
+
+/* ============================================================
+   Counts, header
+   ============================================================ */
+function renderCounts() {
+  $("#cntGallery").textContent = REQ.filter(r => r.status === "done").length;
+  $("#cntQueue").textContent = REQ.filter(r => r.status === "queued" || r.status === "generating").length;
+  const last = RUNNER && RUNNER.lastRunAt; $("#lastRun").textContent = last ? fmtTime(last) + (RUNNER.lastProcessed != null ? ` · ${RUNNER.lastProcessed} ta` : "") : "hali bo'lmagan";
+}
+$("#btnRunNow").addEventListener("click", () => toast("Generator hali ulanmagan. Rejalashtirilgan vazifa qo'shilgach, bu tugma uni darhol ishga tushiradi.", 4200));
+
+/* ============================================================
+   Capabilities & data
+   ============================================================ */
+function applyStyle() {
+  const g = STYLE.grid || DEFAULT_STYLE.grid;
+  if (cur.pristine || hist.stack.length <= 1) G = gridFor(W, H);
+  syncGridUI(); renderBgList(); if (curView === "rules") renderRules();
+}
+async function initCaps() {
+  const cl = window.claude;
+  const use = n => cl && cl.use ? cl.use(n).catch(() => null) : Promise.resolve(null);
+  const [db, user, assets, downloads] = await Promise.all([use("db"), use("user"), use("assets"), use("downloads")]);
+  Object.assign(caps, { db, user, assets, downloads });
+  if (user) {
+    try { caps.uid = await user.id(); } catch (e) { caps.uid = null; }
+    try { caps.owner = await user.isOwner(); } catch (e) {}
+    try { caps.canAdmin = await user.canEdit(); } catch (e) {}
+    let w = null; try { w = await user.can("data.write"); } catch (e) {}
+    caps.canWrite = !!db && !!caps.uid && w !== false;
+  }
+  $("#btnRunNow").hidden = !caps.owner;
+  $("#gSaveRule").hidden = !caps.canAdmin;
+  if (!caps.canWrite) {
+    $("#banner").hidden = false;
+    $("#bannerText").textContent = (window.__WEB && !window.__WEB.firebase) ? "Mahalliy rejim: Firebase hali ulanmagan (firebase-config.js bo'sh). Muharrir va eksport ishlaydi, galereya va so'rovlar ulangandan keyin ishlaydi." : caps.uid ? "Sizda faqat ko'rish huquqi bor: muharrirda ishlash va eksport qilish mumkin, lekin galereyaga saqlash va so'rov yuborish mumkin emas." : "Siz tizimga kirmagansiz: muharrirda ishlash va eksport qilish mumkin, lekin galereyaga saqlash va so'rov yuborish mumkin emas.";
+    $("#aSave").disabled = true; $("#rSubmit").disabled = true;
+  }
+  if (!db) { caps.ready = true; renderCounts(); if (curView !== "editor") showView(curView); return; }
+  const timer = setTimeout(() => { if (!caps.ready) { caps.ready = true; toast("Ma'lumotlar bazasi javob bermadi. Sahifani keyinroq yangilang.", 4200); renderGallery(); renderQueue(); } }, 10000);
+  db.doc("config/style").onSnapshot(s => {
+    if (s.exists) { const d = s.data() || {}; STYLE = { ...DEFAULT_STYLE, ...d, palette: { ...DEFAULT_STYLE.palette, ...(d.palette || {}) }, grid: { ...DEFAULT_STYLE.grid, ...(d.grid || {}) } }; }
+    const wasPristine = cur.pristine && !cur.id && hist.stack.length <= 1;
+    applyStyle();
+    if (wasPristine && STYLE.sampleImageUrl && normUrl(STYLE.sampleImageUrl) !== cur.imageUrl) newDoc({ pristine: true });
+  }, () => {});
+  db.doc("config/runner").onSnapshot(s => { RUNNER = s.exists ? s.data() : null; renderCounts(); }, () => {});
+  db.collection("requests").onSnapshot(snap => {
+    clearTimeout(timer); caps.ready = true;
+    REQ = snap.docs.map(d => { const x = d.data() || {}; return { id: d.id, ...x, imageUrl: normUrl(x.imageUrl) }; });
+    renderCounts();
+    if (curView === "gallery") renderGallery();
+    if (curView === "queue") renderQueue();
+    if (!$("#p-bg").hidden) renderBgList();
+  }, err => { clearTimeout(timer); caps.ready = true; toast("Galereyani o'qib bo'lmadi: " + (err.message || err.code)); renderGallery(); renderQueue(); });
+}
+
+/* ============================================================
+   Directions: overview, detail page, pickers
+   ============================================================ */
+ui.gDir = "all";
+function dirOptions(sel) { return DIRECTIONS.map(d => `<option value="${d.slug}" ${d.slug === sel ? "selected" : ""}>${esc(d.name)}</option>`).join(""); }
+function syncDirUI() {
+  const d = DIR(cur.direction), sel = $("#docDir");
+  if (sel && sel.value !== d.slug) sel.innerHTML = dirOptions(d.slug);
+  $("#dirDot").style.background = d.main;
+}
+$("#docDir").innerHTML = dirOptions("it");
+function docSize(r) { if (r.size && r.size.w) return r.size; if (r.layout) { try { const s2 = JSON.parse(r.layout).size; if (s2) return s2; } catch (e) {} } return { w: 1080, h: 1440 }; }
+$("#docSize").innerHTML = sizeOptions(W, H);
+$("#docSize").addEventListener("change", e => { const p = SIZES.find(x => x.id === e.target.value); if (p) resizeDoc(p.w, p.h); else { canvas.discardActiveObject(); canvas.requestRenderAll(); $$(".tabs [data-pane]")[0].click(); renderProps(); setTimeout(() => { const i = $("#pw"); if (i) { i.focus(); i.select(); } }, 30); } });
+$("#rSize").innerHTML = SIZES.map(p => `<option value="${p.id}">${esc(p.label)} · ${p.w}×${p.h}</option>`).join("");
+const syncRSize = () => { const p = SIZES.find(x => x.id === $("#rSize").value) || SIZES[0]; $("#rSizeAsp").textContent = aspectOf(p.w, p.h); };
+$("#rSize").addEventListener("change", syncRSize); syncRSize();
+$("#docDir").addEventListener("change", e => applyDirection(e.target.value));
+$("#rDir").innerHTML = dirOptions("it");
+const syncRDir = () => { const d = DIR($("#rDir").value); $("#rDirHex").innerHTML = `<span class="dot" style="background:${d.main};width:8px;height:8px"></span> ${d.main}`; };
+$("#rDir").addEventListener("change", syncRDir); syncRDir();
+function renderChips() {
+  const box = $("#gFilter"), n = slug => REQ.filter(r => r.status === "done" && (slug === "all" || DIR(r.direction).slug === slug)).length;
+  box.innerHTML = `<button data-gd="all" aria-pressed="${ui.gDir === "all"}">Hammasi <span class="cnt">${n("all")}</span></button>` + DIRECTIONS.map(d => `<button data-gd="${d.slug}" aria-pressed="${ui.gDir === d.slug}"><span class="dot" style="background:${d.main}"></span>${esc(d.name)} <span class="cnt">${n(d.slug)}</span></button>`).join("");
+  $$("[data-gd]", box).forEach(b => b.addEventListener("click", () => { ui.gDir = b.dataset.gd; renderGallery(); }));
+}
+function renderDirections() {
+  const box = $("#dirGrid");
+  box.innerHTML = DIRECTIONS.map(d => {
+    const n = REQ.filter(r => r.status === "done" && DIR(r.direction).slug === d.slug).length;
+    return `<button class="dircard" data-dir="${d.slug}" style="--dc:${d.main}"><div class="thumb"><img alt="${esc(d.name)} shabloni" data-dthumb="${d.slug}"></div>
+      <div class="bar"><i style="background:${d.light}"></i><i style="background:${d.main}"></i><i style="background:${d.deep}"></i></div>
+      <div class="info"><b>${esc(d.name)}</b><small>${d.light} · ${d.main} · ${d.deep}</small><small>${n} ta poster</small></div></button>`;
+  }).join("");
+  $$("[data-dthumb]", box).forEach(img => dirThumb(img.dataset.dthumb).then(u => { if (u) img.src = u; }));
+  $$("[data-dir]", box).forEach(b => b.addEventListener("click", () => showView("dir", b.dataset.dir)));
+}
+function renderDirDetail(slug) {
+  const d = DIR(slug), box = $("#dirDetail");
+  const posters = REQ.filter(r => r.status === "done" && DIR(r.direction).slug === d.slug).sort((a, b) => String(b.editedAt || b.doneAt || b.createdAt).localeCompare(String(a.editedAt || a.doneAt || a.createdAt)));
+  const roles = [["Och", d.light, "Bo'lim nomi, yorliqlar"], ["Asosiy", d.main, "Ikonkalar, plashkalar, effekt nuri"], ["Chuqur", d.deep, "Fon nuri, ikkinchi darajali shakllar"], ["Poster foni", d.bg, "Fon va soyalar: matn shu rang ustida o'qiladi"]];
+  const sq = `<div class="sq"><i style="background:${d.light}"></i><i style="background:${d.main}"></i><i style="background:${d.deep}"></i></div>`;
+  box.innerHTML = `
+    <div class="crumb"><button type="button" id="dBack">Yo'nalishlar</button><span>/</span><span>${esc(d.name)}</span></div>
+    <div class="dhead"><span class="mark" style="background:linear-gradient(135deg,${d.light},${d.main} 55%,${d.deep})"></span><div><h2>${esc(d.name)}</h2><p>${esc(d.label)}</p></div>
+      <div class="row" style="margin-left:auto;flex-wrap:wrap"><button class="btn pri" id="dOpen" style="background:${d.main};border-color:${d.main};color:#06121A">${icon("pen")}Shablonni muharrirda ochish</button><button class="btn" id="dReq">${icon("sparkles")}Fon rasmi so'rash</button></div></div>
+    <div class="dgrid">
+      <div class="dcol"><div class="dposter"><img id="dImg" alt="${esc(d.name)} poster shabloni"></div>
+        <p class="hint">${dirImage(d.slug) || d.base ? "Shablon yo'nalishning so'nggi fon rasmi bilan." : "Fon rasmi hali yo'q: shablon rang nuri bilan ko'rsatilgan. Fon rasmi so'rang yoki muharrirda o'zingiz yuklang."}</p></div>
+      <div class="dcol">
+        <section class="panelbox"><h3>Kolorit</h3>
+          <div class="tones">${roles.map(([n, c, u]) => `<button type="button" class="tone" data-hex="${c}" aria-label="${n} ${c}, nusxa olish"><i style="background:${c}"></i><span><b>${c}</b>${n}<br><em>${u}</em></span></button>`).join("")}</div>
+          <div class="modes"><div class="mode" style="background:#F4F8FD;color:#0D1117">${sq}<small>LIGHT MODE</small></div><div class="mode" style="background:#0D1117;color:#E3ECF4">${sq}<small>DARK MODE</small></div></div>
+          <p class="hint">Palitra light va dark mode'da bir xil. Rang kodini nusxalash uchun ustiga bosing.</p></section>
+        <section class="panelbox"><h3>Shablon qoidalari</h3><dl class="kv">
+          <dt>Bo'lim nomi</dt><dd>${esc(d.base ? (STYLE.company || d.label) : d.label)}, Golos Text 500, 22 px, och rang</dd>
+          <dt>Bezak</dt><dd>Chiziq va shakllarsiz: faqat matn, fon va soyalar</dd><dt>Sarlavha</dt><dd>Golos Text 700, oq #F4F8FB</dd><dt>Matn</dt><dd>Golos Text 400, 34 px, muz #CFE3EC</dd><dt>Fon</dt><dd>${d.bg}, soyalar shu rangda</dd><dt>Panjara</dt><dd>${G.margin} px chet, ${G.cols} ustun, ${G.gap} px oraliq</dd></dl></section>
+        <section class="panelbox"><h3>Fon rasmi prompti</h3><pre class="prompt">${esc(promptFor(d.slug))}</pre></section>
+        <section class="panelbox"><h3>Shu yo'nalish posterlari <span class="cnt">${posters.length}</span></h3>${posters.length ? `<div class="dmini">${posters.slice(0, 8).map(r => `<img data-pid="${esc(r.id)}" alt="${esc(r.title)}">`).join("")}</div>` : `<p class="hint">Hali poster yo'q. Shablonni ochib, birinchisini yarating.</p>`}</section>
+      </div></div>`;
+  dirThumb(d.slug).then(u => { const i = $("#dImg"); if (u && i) i.src = u; });
+  $$("[data-pid]", box).forEach(img => { const r = REQ.find(x => x.id === img.dataset.pid); thumbFor(r).then(u => { if (u) img.src = u; }); img.addEventListener("click", () => openRequest(r)); });
+  $$("[data-hex]", box).forEach(b => b.addEventListener("click", () => { const hx = b.dataset.hex; try { navigator.clipboard.writeText(hx).then(() => toast(hx + " nusxalandi"), () => toast(hx)); } catch (e) { toast(hx); } }));
+  $("#dBack").addEventListener("click", () => showView("directions"));
+  $("#dOpen").addEventListener("click", () => { if (cur.dirty && !confirmLeave()) return; newDoc({ direction: d.slug }); });
+  $("#dReq").addEventListener("click", () => { $("#rDir").value = d.slug; syncRDir(); showView("queue"); $("#rTopic").focus(); });
+}
+let leaveArm = 0;
+function confirmLeave() { const now = Date.now(); if (now - leaveArm < 4000) return true; leaveArm = now; toast("Muharrirda saqlanmagan o'zgarishlar bor. Davom etish uchun yana bir marta bosing.", 4000); return false; }
+
+/* ============================================================
+   Boot
+   ============================================================ */
+async function boot() {
+  FX.reduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (FX.reduced) { FX.playing = false; $("#rmNote").hidden = false; }
+  new ResizeObserver(() => { resizeCanvas(); }).observe(ws);
+  resizeCanvas();
+  try {
+    await Promise.race([
+      Promise.all([400, 500, 600, 700, 800, 900].map(w => `${w} 40px 'Golos Text'`).map(f => document.fonts.load(f))),
+      new Promise(r => setTimeout(r, 4000)),
+    ]);
+  } catch (e) {}
+  gbCache.clear();
+  const draft = ls.get("ips:draft:new");
+  if (draft && draft.layout) {
+    cur.id = null; cur.pristine = false; cur.imageUrl = draft.imageUrl || ""; $("#docTitle").value = draft.title || "Yangi poster";
+    loadJSON(draft.layout, () => { resetHist(); setDirty(true); });
+  } else await newDoc({ pristine: true });
+  fitView(); syncGridUI(); syncFxUI(); setTool("select");
+  routeHash();
+  initCaps();
+}
+boot();
+</script>
+</body></html>

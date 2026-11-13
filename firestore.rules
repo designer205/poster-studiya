@@ -1,0 +1,36 @@
+rules_version = '2';
+// IT Poster Studiya — Firestore xavfsizlik qoidalari.
+// Kim nima qila olishi config/roles hujjatida belgilanadi (owners, admins, members, domains, anyone).
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null && request.auth.token.email != null; }
+    function em() { return request.auth.token.email.lower(); }
+    function roles() { return get(/databases/$(database)/documents/config/roles).data; }
+    function owner() { return signedIn() && em() in roles().get('owners', []); }
+    function admin() { return owner() || (signedIn() && em() in roles().get('admins', [])); }
+    function member() {
+      return admin() || (signedIn() && (
+        roles().get('anyone', false) == true ||
+        em() in roles().get('members', []) ||
+        em().split('@')[1] in roles().get('domains', [])));
+    }
+
+    // Rollar: o'qish — kirganlar, yozish — egasi. Birinchi egani konsolda boot() orqali belgilang:
+    // function boot() { return signedIn() && em() == 'sizning@email'; } va owner() ichida boot() || ...
+    match /config/roles { allow read: if signedIn(); allow write: if owner(); }
+    // Brend sozlamalari (config/style, config/runner): o'qish — a'zolar, yozish — muharrirlar.
+    match /config/{doc} { allow read: if member(); allow write: if admin(); }
+
+    match /requests/{id} {
+      allow read: if member();
+      allow create: if member() && request.resource.data.createdBy == request.auth.uid;
+      allow update: if member();
+      allow delete: if admin();
+    }
+    match /assets/{id} {
+      allow read: if member();
+      allow create: if member() && request.resource.data.createdBy == request.auth.uid;
+      allow delete: if admin();
+    }
+  }
+}
