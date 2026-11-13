@@ -1,7 +1,7 @@
 <!doctype html><html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="IT departamenti uchun poster muharriri, fon rasmlari navbati va umumiy galereya.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect width=%2216%22 height=%2216%22 rx=%223%22 fill=%22%232DD4BF%22/%3E%3C/svg%3E">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}.authbox{display:flex;align-items:center;gap:10px;white-space:nowrap}.authbox .runinfo{display:inline}@media (max-width:1560px){.top>.runinfo{display:none}}@media (max-width:900px){.authbox .runinfo{display:none}}</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}.authbox{display:flex;align-items:center;gap:10px;white-space:nowrap}.authbox .runinfo{display:inline}@media (max-width:1560px){.top>.runinfo{display:none}}@media (max-width:1440px){.authbox .runinfo{display:none}}</style>
 <title>IT Poster Studiya</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,8 +11,8 @@
 /* Layout: professional design-tool shell — top bar, action strip, tool rail | workspace with rulers | inspector + layers, status line. Single dark theme. */
 :root{
   color-scheme:dark;
-  --bg:#080D18; --ws:#0C1220; --panel:#101828; --panel2:#151F33; --raise:#1B2740; --line:#22304A; --line2:#2C3C5C;
-  --text:#E3ECF4; --muted:#8798B2; --dim:#5D6E8A;
+  --bg:#161617; --ws:#1D1D1F; --panel:#222224; --panel2:#2A2A2D; --raise:#333337; --line:#38383C; --line2:#47474C;
+  --text:#ECECEE; --muted:#A3A3AA; --dim:#76767E;
   --accent:#2DD4BF; --accent-ink:#04201C; --pink:#FF4FA3; --amber:#FFB547; --red:#FF6B6B; --ok:#4ADE80;
   --navy:#0B1B3A; --ice:#CFE3EC;
   --f-display:"Golos Text",system-ui,sans-serif; --f-ui:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif; --f-mono:"Golos Text",system-ui,sans-serif;
@@ -65,7 +65,7 @@ label.chk{display:flex;align-items:center;gap:8px;cursor:pointer;padding:3px 0}
 
 /* tooltips */
 [data-tip]{position:relative}
-[data-tip]:hover::after,[data-tip]:focus-visible::after{content:attr(data-tip);position:absolute;z-index:80;left:50%;top:calc(100% + 6px);transform:translateX(-50%);background:#02060E;border:1px solid var(--line2);color:var(--text);font:11px/1.3 var(--f-ui);padding:5px 8px;border-radius:5px;white-space:nowrap;pointer-events:none}
+[data-tip]:hover::after,[data-tip]:focus-visible::after{content:attr(data-tip);position:absolute;z-index:80;left:50%;top:calc(100% + 6px);transform:translateX(-50%);background:#0E0E0F;border:1px solid var(--line2);color:var(--text);font:11px/1.3 var(--f-ui);padding:5px 8px;border-radius:5px;white-space:nowrap;pointer-events:none}
 [data-tip][data-k]:hover::after,[data-tip][data-k]:focus-visible::after{content:attr(data-tip) "   " attr(data-k)}
 .rail [data-tip]:hover::after,.rail [data-tip]:focus-visible::after{left:calc(100% + 8px);top:50%;transform:translateY(-50%)}
 
@@ -91,11 +91,11 @@ label.chk{display:flex;align-items:center;gap:8px;cursor:pointer;padding:3px 0}
 #rulerX{border-bottom:1px solid var(--line)}
 #rulerY{border-right:1px solid var(--line)}
 #ws{position:relative;overflow:hidden;min-width:0;min-height:0;background:
-  radial-gradient(circle at 1px 1px,rgba(135,152,178,.12) 1px,transparent 0) 0 0/16px 16px,var(--ws)}
+  radial-gradient(circle at 1px 1px,rgba(160,160,168,.13) 1px,transparent 0) 0 0/16px 16px,var(--ws)}
 #ws .canvas-container{position:absolute!important;inset:0}
 #ws.hand,#ws.hand .upper-canvas{cursor:grab!important}
 #ws.hand.grabbing,#ws.hand.grabbing .upper-canvas{cursor:grabbing!important}
-.fxctl{position:absolute;right:12px;bottom:12px;display:flex;gap:6px;align-items:center;background:rgba(16,24,40,.92);border:1px solid var(--line2);border-radius:8px;padding:4px 6px 4px 10px;font:11px var(--f-mono);color:var(--muted)}
+.fxctl{position:absolute;right:12px;bottom:12px;display:flex;gap:6px;align-items:center;background:rgba(34,34,36,.94);border:1px solid var(--line2);border-radius:8px;padding:4px 6px 4px 10px;font:11px var(--f-mono);color:var(--muted)}
 .side{display:flex;flex-direction:column;background:var(--panel);border-left:1px solid var(--line);min-height:0;min-width:0}
 .tabs{display:flex;border-bottom:1px solid var(--line);flex:none}
 .tabs button{flex:1;border:0;background:none;padding:10px 4px;color:var(--muted);cursor:pointer;font-size:12px;border-bottom:2px solid transparent}
@@ -149,13 +149,13 @@ label.chk{display:flex;align-items:center;gap:8px;cursor:pointer;padding:3px 0}
 .libtxt{display:flex;flex-direction:column;gap:4px}
 .libtxt button{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 10px;text-align:left;cursor:pointer}
 .libtxt button:hover{border-color:var(--accent)}
-.dlg{position:fixed;inset:0;z-index:70;background:rgba(2,6,14,.6);display:grid;place-items:center;padding:16px}
+.dlg{position:fixed;inset:0;z-index:70;background:rgba(8,8,9,.6);display:grid;place-items:center;padding:16px}
 .dlg>div{background:var(--panel2);border:1px solid var(--line2);border-radius:10px;max-width:640px;width:100%;max-height:85vh;overflow:auto;padding:20px}
 .dlg h3{margin:0 0 12px;font:600 15px var(--f-display)}
 .kbd{display:grid;grid-template-columns:1fr auto;gap:6px 16px;font-size:12.5px}
 .kbd kbd{justify-self:start}
 .kbd kbd,kbd.k{font:11px var(--f-mono);background:var(--bg);border:1px solid var(--line2);border-radius:4px;padding:2px 6px;color:var(--text);white-space:nowrap}
-.toast{position:fixed;left:50%;bottom:44px;transform:translateX(-50%);z-index:90;background:#02060E;border:1px solid var(--line2);padding:9px 14px;border-radius:8px;font-size:12.5px;max-width:calc(100% - 32px)}
+.toast{position:fixed;left:50%;bottom:44px;transform:translateX(-50%);z-index:90;background:#0E0E0F;border:1px solid var(--line2);padding:9px 14px;border-radius:8px;font-size:12.5px;max-width:calc(100% - 32px)}
 .prog{height:4px;background:var(--line);border-radius:2px;overflow:hidden;width:120px}
 .prog i{display:block;height:100%;background:var(--accent);width:0}
 
@@ -169,7 +169,7 @@ label.chk{display:flex;align-items:center;gap:8px;cursor:pointer;padding:3px 0}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
 .card .thumb{position:relative;aspect-ratio:3/4;background:var(--navy);max-width:100%}
 .card .thumb img{width:100%;height:100%;object-fit:contain;display:block}
-.card .thumb{background:#070B13!important}
+.card .thumb{background:#121213!important}
 .card .badge{position:absolute;top:8px;right:8px;font:600 10px var(--f-mono);background:var(--accent);color:var(--accent-ink);padding:2px 6px;border-radius:3px;letter-spacing:.06em}
 .card .meta{padding:10px 12px 4px;display:flex;flex-direction:column;gap:2px;min-width:0}
 .card .meta b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -193,7 +193,7 @@ label.chk{display:flex;align-items:center;gap:8px;cursor:pointer;padding:3px 0}
 .qi .t small{color:var(--muted);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .qi .err{color:var(--red);font-size:12px}
 .pill{font:600 10.5px var(--f-mono);padding:3px 8px;border-radius:10px;letter-spacing:.04em;white-space:nowrap;text-transform:uppercase}
-.pill.queued{background:rgba(135,152,178,.18);color:var(--muted)}
+.pill.queued{background:rgba(160,160,168,.18);color:var(--muted)}
 .pill.generating{background:rgba(255,181,71,.16);color:var(--amber)}
 .pill.done{background:rgba(74,222,128,.14);color:var(--ok)}
 .pill.error{background:rgba(255,107,107,.15);color:var(--red)}
@@ -207,6 +207,10 @@ dl.kv dt{color:var(--muted)}
 dl.kv dd{margin:0;font-family:var(--f-mono);font-size:12px;overflow-wrap:anywhere}
 pre.prompt{white-space:pre-wrap;margin:0;font:12px/1.55 var(--f-mono);background:var(--bg);border:1px solid var(--line);padding:10px;border-radius:6px;color:var(--ice)}
 
+
+/* ---------- language switch ---------- */
+.langsw{flex:none}
+.langsw .ib{width:34px;height:26px;font:600 11px var(--f-ui);letter-spacing:.04em}
 
 /* ---------- directions ---------- */
 .dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none;background:var(--accent);box-shadow:0 0 0 2px rgba(255,255,255,.06)}
@@ -295,6 +299,7 @@ pre.prompt{white-space:pre-wrap;margin:0;font:12px/1.55 var(--f-mono);background
       <button data-view="rules"><i data-ic="book"></i>Qoidalar</button>
     </nav>
     <div class="sp"></div>
+    <div class="seg langsw" role="group" aria-label="Til / Language"><button class="ib" type="button" data-lang="uz" aria-pressed="true">UZ</button><button class="ib" type="button" data-lang="en" aria-pressed="false">EN</button></div>
     <div class="runinfo">Oxirgi generatsiya: <i id="lastRun">hali bo'lmagan</i></div>
     <button class="btn" id="btnRunNow" hidden data-tip="Navbatdagi so'rovlarni hozir generatsiya qilish"><i data-ic="play"></i>Hozir generatsiya</button>
   </header>
@@ -484,7 +489,7 @@ pre.prompt{white-space:pre-wrap;margin:0;font:12px/1.55 var(--f-mono);background
   <!-- ================= QUEUE ================= -->
   <section class="view" id="v-queue" hidden>
     <div class="page"><div class="in">
-      <div class="ph"><div><h2>Rasm so'rovi</h2><p>Mavzuni yozing: fon rasmi navbat bo'yicha generatsiya qilinadi, matnlar esa shablonga qo'yiladi.</p></div></div>
+      <div class="ph"><div><h2>Rasm so'rovi</h2><p>Mavzuni yozing: fon rasmi navbat bo'yicha generatsiya qilinadi, matnlar esa shablonga qo'yiladi.</p></div><button class="btn" id="qGenSet" type="button" hidden><i data-ic="sparkles"></i>Generator sozlamalari</button></div>
       <div class="qwrap">
         <form class="panelbox" id="reqForm" autocomplete="off">
           <h3>Yangi so'rov</h3>
@@ -866,7 +871,7 @@ function drawRulers() {
     const band = (a, b, col) => { ctx.fillStyle = col; const s = toS(a), e = toS(b); if (horiz) ctx.fillRect(s, 0, e - s, 22); else ctx.fillRect(0, s, 22, e - s); };
     band(0, G.margin, "rgba(255,79,163,.16)"); band(ext - G.margin, ext, "rgba(255,79,163,.16)");
     if (sb) band(horiz ? sb.left : sb.top, horiz ? sb.left + sb.width : sb.top + sb.height, "rgba(45,212,191,.28)");
-    ctx.strokeStyle = "#3A4A68"; ctx.fillStyle = "#8798B2"; ctx.font = "500 9.5px 'Golos Text', sans-serif"; ctx.lineWidth = 1; ctx.beginPath();
+    ctx.strokeStyle = "#55555B"; ctx.fillStyle = "#A3A3AA"; ctx.font = "500 9.5px 'Golos Text', sans-serif"; ctx.lineWidth = 1; ctx.beginPath();
     const w0 = Math.floor((-off / z) / minor) * minor, w1 = (len - off) / z;
     for (let w = w0; w <= w1; w += minor) {
       const s = Math.round(toS(w)) + 0.5, major = Math.abs(w / step - Math.round(w / step)) < 1e-6, t = major ? 9 : 4;
@@ -2217,7 +2222,8 @@ function renderCounts() {
   $("#cntQueue").textContent = REQ.filter(r => r.status === "queued" || r.status === "generating").length;
   const last = RUNNER && RUNNER.lastRunAt; $("#lastRun").textContent = last ? fmtTime(last) + (RUNNER.lastProcessed != null ? ` · ${RUNNER.lastProcessed} ta` : "") : "hali bo'lmagan";
 }
-$("#btnRunNow").addEventListener("click", () => toast("Generator hali ulanmagan. Rejalashtirilgan vazifa qo'shilgach, bu tugma uni darhol ishga tushiradi.", 4200));
+$("#btnRunNow").addEventListener("click", () => genAvailable() ? runGenerator() : toast("Bu sahifada generator yo'q: Gemini generatori veb versiyada ishlaydi.", 4200));
+$("#qGenSet").addEventListener("click", () => openGenSettings());
 
 /* ============================================================
    Capabilities & data
@@ -2240,6 +2246,7 @@ async function initCaps() {
     caps.canWrite = !!db && !!caps.uid && w !== false;
   }
   $("#btnRunNow").hidden = !caps.owner;
+  $("#qGenSet").hidden = !(caps.owner && genAvailable());
   $("#gSaveRule").hidden = !caps.canAdmin;
   if (!caps.canWrite) {
     $("#banner").hidden = false;
@@ -2360,5 +2367,314 @@ async function boot() {
   initCaps();
 }
 boot();
+/* ============================================================
+   Gemini generator (web version only: the claude.ai page cannot reach external APIs)
+   The API key is kept only in this browser (localStorage), never in the database.
+   ============================================================ */
+const GEN_KEY = "ips:gemini";
+const GEN_MODELS = [
+  ["gemini-2.5-flash-image", "Nano Banana (gemini-2.5-flash-image)"],
+  ["gemini-3-pro-image-preview", "Nano Banana Pro (gemini-3-pro-image-preview)"],
+];
+const GEN_ASPECTS = ["1:1", "2:3", "3:2", "3:4", "4:3", "4:5", "5:4", "9:16", "16:9", "21:9"];
+const genAvailable = () => !!(window.__WEB && window.__WEB.firebase);
+function genSettings() { return ls.get(GEN_KEY) || { key: "", model: GEN_MODELS[0][0], size: "2K" }; }
+function genAspect(w, h) {
+  const r = w / h, val = a => { const [x, y] = a.split(":").map(Number); return x / y; };
+  return GEN_ASPECTS.reduce((a, b) => Math.abs(Math.log(val(b) / r)) < Math.abs(Math.log(val(a) / r)) ? b : a);
+}
+function openGenSettings(then) {
+  const s = genSettings();
+  const d = document.createElement("div"); d.className = "dlg";
+  d.innerHTML = `<div role="dialog" aria-modal="true" aria-label="Gemini sozlamalari"><h3>Gemini generatori</h3>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <p class="hint">Fon rasmlari Google Gemini (Nano Banana) bilan chiziladi. API kalitni Google AI Studio'da oling: <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener" style="color:var(--accent)">aistudio.google.com/apikey</a>. Kalit faqat shu brauzerda saqlanadi.</p>
+      <div class="fld"><label for="gKey">API kalit</label><input type="password" id="gKey" autocomplete="off" spellcheck="false" placeholder="AIza…" value="${esc(s.key)}"></div>
+      <div class="fld"><label for="gModel">Model</label><select id="gModel">${GEN_MODELS.map(([v, l]) => `<option value="${v}" ${v === s.model ? "selected" : ""}>${esc(l)}</option>`).join("")}</select></div>
+      <div class="fld"><label for="gSize">Sifat (faqat Pro)</label><select id="gSize">${["1K", "2K", "4K"].map(v => `<option ${v === s.size ? "selected" : ""}>${v}</option>`).join("")}</select></div>
+      <p class="hint">Bitta ishga tushirishda ko'pi bilan ${esc(STYLE.maxPerRun)} ta so'rov chiziladi, har biriga 1 ta rasm. Google rasm generatsiyasi uchun pullik tarif talab qilishi mumkin.</p>
+      <div class="row" style="justify-content:space-between;flex-wrap:wrap"><button class="btn danger" id="gForget" type="button">Kalitni o'chirish</button>
+        <div class="row"><button class="btn" id="gCancel" type="button">Bekor qilish</button><button class="btn pri" id="gSave" type="button">Saqlash</button></div></div>
+    </div></div>`;
+  document.body.appendChild(d);
+  const close = () => d.remove();
+  d.addEventListener("click", e => { if (e.target === d) close(); });
+  d.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+  $("#gCancel", d).addEventListener("click", close);
+  $("#gForget", d).addEventListener("click", () => { ls.del(GEN_KEY); toast("Kalit o'chirildi"); close(); });
+  $("#gSave", d).addEventListener("click", () => {
+    const key = $("#gKey", d).value.trim();
+    if (!key) { toast("API kalitni kiriting"); return; }
+    ls.set(GEN_KEY, { key, model: $("#gModel", d).value, size: $("#gSize", d).value });
+    toast("Gemini sozlamalari saqlandi"); close(); if (then) then();
+  });
+  setTimeout(() => $("#gKey", d).focus(), 30);
+}
+async function fetchAsBase64(url) {
+  const real = window.__WEB ? await window.__WEB.resolve(url) : url;
+  const blob = await (await fetch(real)).blob();
+  const buf = new Uint8Array(await blob.arrayBuffer());
+  let bin = ""; for (let i = 0; i < buf.length; i += 0x8000) bin += String.fromCharCode.apply(null, buf.subarray(i, i + 0x8000));
+  return { mime: blob.type || "image/jpeg", data: btoa(bin) };
+}
+const BAD_TOPIC = /(logo|logotip|text|matn|yozuv|harf|letters?|watermark|\b(nude|naked|sex|gun|weapon|kill|blood)\b)/i;
+function genError(status, body) {
+  const msg = (body && body.error && body.error.message) || "";
+  if (status === 400 && /API key/i.test(msg)) return "API kalit noto'g'ri";
+  if (status === 400) return ("So'rov rad etildi: " + msg).slice(0, 80);
+  if (status === 401 || status === 403) return "Kalitga ruxsat yo'q yoki tarif mos emas";
+  if (status === 404) return "Model topilmadi: sozlamada boshqa modelni tanlang";
+  if (status === 429) return "Gemini limiti tugadi: keyinroq urinib ko'ring";
+  if (status >= 500) return "Gemini serveri javob bermadi";
+  return ("Xato " + status + ": " + msg).slice(0, 80);
+}
+let genBusy = false;
+async function runGenerator() {
+  if (!genAvailable()) { toast("Generator faqat veb versiyada ishlaydi."); return; }
+  if (!caps.owner) { toast("Generatsiyani faqat egasi ishga tushiradi"); return; }
+  const s = genSettings();
+  if (!s.key) { openGenSettings(runGenerator); return; }
+  if (genBusy) return;
+  const queue = REQ.filter(r => r.status === "queued").sort((a, b) => String(a.createdAt).localeCompare(String(b.createdAt))).slice(0, Math.max(1, +STYLE.maxPerRun || 8));
+  if (!queue.length) { toast("Navbatda so'rov yo'q"); return; }
+  genBusy = true; $("#btnRunNow").disabled = true;
+  let ref = null;
+  const refUrl = STYLE.styleRef || STYLE.sampleImageUrl;
+  if (refUrl) { try { ref = await fetchAsBase64(refUrl); } catch (e) { ref = null; } }
+  let done = 0, n = 0;
+  for (const r of queue) {
+    n++; toast(`Generatsiya: ${n}/${queue.length} · ${r.title || r.topic}`, 60000);
+    const doc = caps.db.doc("requests/" + r.id);
+    const topic = String(r.topic || "").trim();
+    if (!topic || BAD_TOPIC.test(topic)) { await doc.update({ status: "error", error: "Mavzu qoidalarga mos emas" }).catch(() => {}); continue; }
+    try {
+      await doc.update({ status: "generating", error: "" });
+      const sz = r.size && r.size.w ? r.size : { w: 1080, h: 1440 };
+      const prompt = promptFor(r.direction).replace("{mavzu}", topic) +
+        " The subject above may be written in Uzbek: understand it and depict it visually in English terms. Never render any written words.";
+      const parts = [{ text: prompt }];
+      if (ref) { parts.push({ inlineData: { mimeType: ref.mime, data: ref.data } }); parts.push({ text: "Use the attached image only as a style reference for rendering, lighting and materials. Do not copy its subject; use the colors described above." }); }
+      const imageConfig = { aspectRatio: genAspect(sz.w, sz.h) };
+      if (/pro/.test(s.model)) imageConfig.imageSize = s.size || "2K";
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(s.model)}:generateContent`, {
+        method: "POST", headers: { "Content-Type": "application/json", "x-goog-api-key": s.key },
+        body: JSON.stringify({ contents: [{ role: "user", parts }], generationConfig: { responseModalities: ["IMAGE"], imageConfig, candidateCount: 1, seed: +STYLE.seed || undefined } }),
+      });
+      let body = null; try { body = await res.json(); } catch (e) {}
+      if (!res.ok) throw new Error(genError(res.status, body));
+      const cand = body && body.candidates && body.candidates[0];
+      const img = cand && cand.content && (cand.content.parts || []).find(p => p.inlineData || p.inline_data);
+      if (!img) {
+        const why = (body && body.promptFeedback && body.promptFeedback.blockReason) || (cand && cand.finishReason) || "";
+        throw new Error(/SAFETY|PROHIBITED|BLOCK/i.test(why) ? "Gemini mavzuni xavfsizlik sababli rad etdi" : "Gemini rasm qaytarmadi" + (why ? " (" + why + ")" : ""));
+      }
+      const inl = img.inlineData || img.inline_data, bin = atob(inl.data), u8 = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) u8[i] = bin.charCodeAt(i);
+      const up = await caps.assets.upload(new Blob([u8], { type: inl.mimeType || inl.mime_type || "image/png" }));
+      await doc.update({ status: "done", imageUrl: "/_blob/" + up.id, assetId: up.id, creationId: (body && body.responseId) || "", model: s.model, doneAt: new Date().toISOString(), error: "" });
+      done++;
+    } catch (e) {
+      const m = e && e.message ? e.message : "Tarmoq xatosi";
+      await doc.update({ status: "error", error: (/Failed to fetch|NetworkError/i.test(m) ? "Tarmoq xatosi: Gemini'ga ulanib bo'lmadi" : m).slice(0, 80) }).catch(() => {});
+      if (/API kalit|ruxsat yo'q/.test(m)) break;
+    }
+  }
+  try { await caps.db.doc("config/runner").set({ lastRunAt: new Date().toISOString(), lastProcessed: done }); } catch (e) {}
+  genBusy = false; $("#btnRunNow").disabled = false;
+  toast(`Generatsiya tugadi: ${done} ta tayyor, ${queue.length - done} ta xato`, 5000);
+}
+/* ============================================================
+   UZ / EN switch. The interface is written in Uzbek; in English mode every visible
+   UI string is swapped through this dictionary (exact matches, then patterns, then
+   " · "-separated parts). Poster content on the canvas is never touched.
+   ============================================================ */
+const LANG_KEY = "ips:lang";
+let LANG = (ls.get(LANG_KEY) === "en") ? "en" : "uz";
+const EN = {
+  // top bar / nav
+  "Muharrir": "Editor", "Yo'nalishlar": "Directions", "Galereya": "Gallery", "Rasm so'rovi": "Image requests", "Qoidalar": "Rules",
+  "Oxirgi generatsiya:": "Last generation:", "hali bo'lmagan": "not yet", "Hozir generatsiya": "Generate now", "Bo'limlar": "Sections",
+  "Navbatdagi so'rovlarni hozir generatsiya qilish": "Generate queued requests now", "/ IT departamenti": "/ IT department",
+  "Google bilan kirish": "Sign in with Google", "Chiqish": "Sign out", "Mahalliy rejim": "Local mode", "egasi": "owner", "muharrir": "editor", "ruxsat yo'q": "no access",
+  "Til / Language": "Language",
+  // banners
+  "Siz tizimga kirmagansiz: muharrirda ishlash va eksport qilish mumkin, lekin galereyaga saqlash va so'rov yuborish mumkin emas.": "You are not signed in: you can use the editor and export, but you can't save to the gallery or send requests.",
+  "Sizda faqat ko'rish huquqi bor: muharrirda ishlash va eksport qilish mumkin, lekin galereyaga saqlash va so'rov yuborish mumkin emas.": "You have view-only access: you can use the editor and export, but you can't save to the gallery or send requests.",
+  "Mahalliy rejim: Firebase hali ulanmagan (firebase-config.js bo'sh). Muharrir va eksport ishlaydi, galereya va so'rovlar ulangandan keyin ishlaydi.": "Local mode: Firebase is not connected yet (firebase-config.js is empty). The editor and export work; the gallery and requests work once it is connected.",
+  // action bar
+  "Amallar": "Actions", "Yangi poster": "New poster", "Galereyaga saqlash": "Save to gallery", "Bekor qilish": "Undo", "Qaytarish": "Redo",
+  "Kesish": "Cut", "Nusxa olish": "Copy", "Joylash": "Paste", "Dublikat": "Duplicate", "O'chirish": "Delete", "Guruhlash": "Group", "Guruhni ajratish": "Ungroup",
+  "Eng oldinga": "Bring to front", "Oldinga": "Bring forward", "Orqaga": "Send backward", "Eng orqaga": "Send to back",
+  "Panjarani ko'rsatish": "Show grid", "Magnit (yopishish)": "Snapping", "Eksport": "Export", "Hujjat nomi": "Document name",
+  "Saqlanmagan": "Not saved", "Saqlangan": "Saved", "O'zgartirilgan": "Modified", "Saqlanmoqda…": "Saving…",
+  "O'lcham: shablon, panjara va eksport shunga moslashadi": "Size: template, grid and export adapt to it", "Poster o'lchami": "Poster size",
+  "Yo'nalish: shablon ranglari shunga qarab o'zgaradi": "Direction: template colors follow it", "Yo'nalish": "Direction",
+  // tools
+  "Asboblar": "Tools", "Tanlash": "Select", "Qo'l": "Hand", "Matn": "Text", "To'rtburchak": "Rectangle", "Ellips": "Ellipse", "Chiziq": "Line",
+  "Rasm yoki logo joylash": "Place image or logo", "Kutubxona": "Library", "Tezkor tugmalar": "Keyboard shortcuts", "H / Probel": "H / Space", "Ish maydoni": "Canvas",
+  "To'xtatish / davom ettirish": "Pause / resume", "Harakat to'xtatilgan": "Motion paused",
+  // side panels
+  "Xususiyat": "Properties", "Tekislash": "Align", "Fon": "Background", "Panjara": "Grid", "Qatlamlar": "Layers",
+  "Poster o'lchami": "Poster size", "Tayyor o'lcham": "Preset size", "Yo'nalishni almashtirish (W ↔ H)": "Swap orientation (W ↔ H)",
+  "Fon rangi": "Background color", "Fon rasmi bo'lsa, rang uning ostida qoladi.": "With a background image, the color stays underneath.",
+  "Maslahat": "Tip", "Elementni tanlang yoki chap paneldan asbob oling. Matnlar harflarning haqiqiy chegarasi bo'yicha joylashadi.": "Select an element or pick a tool on the left. Text is positioned by the real edges of its letters.",
+  "Element": "Element", "Element nomi": "Element name", "Joylashuv": "Position", "Joylashuv · harflar bo'yicha": "Position · by letter edges",
+  "Gorizontal aks ettirish": "Flip horizontal", "Vertikal aks ettirish": "Flip vertical", "Qulflash": "Lock", "Qulfdan chiqarish": "Unlock",
+  "Tipografiya": "Typography", "Shrift": "Font", "Qalinlik": "Weight", "Qalin": "Bold", "Kursiv": "Italic", "Tagiga chizish": "Underline", "KATTA HARF": "UPPERCASE",
+  "Rang": "Color", "Rang (chiziq)": "Color (stroke)", "Erkin rang": "Custom color", "Hoshiya": "Stroke", "Qal.": "Wt.", "Chiziq qalinligi": "Stroke width",
+  "Shaffoflik": "Opacity", "Soya": "Shadow", "Soya qo'shish": "Add shadow", "Rasm": "Image", "Posterga to'ldirish": "Fill poster", "Fon qilish": "Set as background",
+  "Gradient to'ldirish. Rang tanlasangiz, bir rangga almashadi.": "Gradient fill. Picking a color makes it solid.",
+  "Effektlarni \"Fon\" panelida yoqing yoki o'chiring.": "Turn effects on or off in the Background panel.",
+  "Nisbatan": "Relative to", "Chet maydon": "Margins", "Poster": "Poster", "Tanlov": "Selection",
+  "Chapga": "Left", "Markazga": "Center", "O'ngga": "Right", "Tepaga": "Top", "O'rtaga": "Middle", "Pastga": "Bottom",
+  "Taqsimlash": "Distribute", "Teng, gorizontal": "Even, horizontal", "Teng, vertikal": "Even, vertical", "48 px, gorizontal": "48 px, horizontal", "48 px, vertikal": "48 px, vertical",
+  "Matnlar harflarning haqiqiy chegarasi bo'yicha tekislanadi. Taqsimlash uchun kamida 2 ta element tanlang.": "Text aligns by the real edges of its letters. Select at least 2 elements to distribute.",
+  "Generatsiya qilingan rasmlar": "Generated images", "O'z rasmingiz": "Your own image", "Rasm yuklash": "Upload image", "Bir rangli fon": "Solid background",
+  "Harakat effektlari": "Motion effects", "Sekin yaqinlashish": "Slow zoom", "Markaziy nur": "Center glow", "Balandlik": "Height", "Yorug'lik to'lqini": "Light sweep",
+  "Skaner chizig'i": "Scan line", "Uchqunlar": "Sparks", "Bir aylanish": "Loop length", "2 soniya": "2 seconds", "3 soniya": "3 seconds", "4 soniya": "4 seconds", "6 soniya": "6 seconds",
+  "Tizimingizda harakatni kamaytirish yoqilgan: muharrirda effektlar to'xtab turadi, GIF esa to'liq chiqadi.": "Reduce motion is on: effects stay paused in the editor; GIFs still export in full.",
+  "Hali generatsiya qilingan rasm yo'q. \"Rasm so'rovi\" bo'limidan so'rov yuboring.": "No generated images yet. Send a request from Image requests.", "Namuna": "Sample",
+  "Ko'rinish": "Display", "Chet maydonidan chiqarmaslik": "Keep inside margins", "Qiymatlar, px": "Values, px", "Chet": "Margin", "Ust.": "Cols", "Ora": "Gutter", "Qator": "Row", "Oraliq": "Gap",
+  "Qoidaga qaytarish": "Reset to rule", "Qoida sifatida saqlash": "Save as rule", "Panjaraga moslash": "Fit to grid",
+  "Tanlangan elementning chetlarini eng yaqin ustun chegaralariga, tepasini qator chizig'iga moslaydi.": "Snaps the selected element's edges to the nearest columns and its top to the nearest row line.",
+  // status bar
+  "Zoom": "Zoom", "Asbob": "Tool",
+  // library
+  "Matn uslublari": "Text styles", "Sarlavha": "Heading", "Yorliq": "Label", "Katta raqam": "Big number", "YORLIQ": "LABEL", "Shakllar": "Shapes", "Plashka": "Pill", "Uchburchak": "Triangle",
+  "IT ikonkalari": "IT icons", "Qalqon": "Shield", "Qulf": "Lock", "Bulut": "Cloud", "Server": "Server", "Tasdiq": "Check", "Diqqat": "Warning", "Pochta": "Mail", "Kalit": "Key", "Noutbuk": "Laptop", "Kod": "Code", "Telefon": "Phone",
+  "Ikonka rangini \"Xususiyat\" panelidan o'zgartiring.": "Change the icon color in the Properties panel.",
+  // layers (template names)
+  "Fon rasmi": "Background image", "Pastki soya": "Bottom shade", "Yuqori soya": "Top shade", "Effektlar": "Effects", "Bo'lim nomi": "Section name", "Raqam": "Number",
+  "Pastki qator": "Footer line", "Sana": "Date", "Qo'shimcha matn": "Subtext", "Ko'rsatish yoki yashirish": "Show or hide", "Guruh": "Group", "Ikonka": "Icon",
+  // export / context menu
+  "Harakatli GIF": "Animated GIF", "Effektlar yoqilmagan: GIF harakatsiz chiqadi. \"Fon\" panelida effekt yoqing.": "No effects on: the GIF will be static. Turn on an effect in the Background panel.",
+  "Hammasini tanlash": "Select all", "GIF tayyorlanmoqda": "Preparing GIF",
+  // keys dialog
+  "Tanlash / Qo'l": "Select / Hand", "Vaqtincha qo'l": "Temporary hand", "Probel": "Space", "Matn, To'rtburchak, Ellips, Chiziq": "Text, Rectangle, Ellipse, Line",
+  "Rasm joylash / Kutubxona": "Place image / Library", "Bekor qilish / Qaytarish": "Undo / Redo", "Saqlash": "Save", "Kesish / Nusxa / Joylash": "Cut / Copy / Paste",
+  "Guruhlash / Ajratish": "Group / Ungroup", "Oldinga / Orqaga": "Forward / Backward", "Eng oldinga / Eng orqaga": "To front / To back", "Aks ettirish": "Flip",
+  "Surish 1 px / qator qadami": "Nudge 1 px / one row", "Strelkalar / Shift+Strelka": "Arrows / Shift+Arrow", "Kattalashtirish kursorga": "Zoom to cursor", "Ctrl + g'ildirak": "Ctrl + wheel",
+  "Ekranga moslash / 100%": "Fit to screen / 100%", "Panjara / Magnit": "Grid / Snapping", "Shu ro'yxat": "This list", "Yopish": "Close",
+  // directions
+  "Har bir yo'nalishning o'z rangi va poster shabloni bor. Yo'nalishni tanlang: shablon, fon rasmi prompti va muharrirdagi ranglar shunga moslashadi.": "Each direction has its own color and poster template. Pick one: the template, background prompt and editor colors follow it.",
+  "IT departamenti": "IT department", "Shablonni muharrirda ochish": "Open template in editor", "Fon rasmi so'rash": "Request background", "Kolorit": "Color scheme",
+  "Och": "Light", "Asosiy": "Main", "Chuqur": "Deep", "Poster foni": "Poster background",
+  "Bo'lim nomi, yorliqlar": "Section name, labels", "Ikonkalar, plashkalar, effekt nuri": "Icons, pills, effect glow", "Fon nuri, ikkinchi darajali shakllar": "Background glow, secondary shapes",
+  "Fon va soyalar: matn shu rang ustida o'qiladi": "Background and shades: text reads on this color",
+  "Palitra light va dark mode'da bir xil. Rang kodini nusxalash uchun ustiga bosing.": "The palette is the same in light and dark mode. Click a color to copy its code.",
+  "Shablon qoidalari": "Template rules", "Bezak": "Decoration", "Chiziq va shakllarsiz: faqat matn, fon va soyalar": "No lines or shapes: only text, background and shades",
+  "Fon rasmi prompti": "Background prompt", "Shu yo'nalish posterlari": "Posters in this direction", "Hali poster yo'q. Shablonni ochib, birinchisini yarating.": "No posters yet. Open the template and create the first one.",
+  "Fon rasmi hali yo'q: shablon rang nuri bilan ko'rsatilgan. Fon rasmi so'rang yoki muharrirda o'zingiz yuklang.": "No background image yet: the template shows a color glow. Request one or upload your own in the editor.",
+  "Shablon yo'nalishning so'nggi fon rasmi bilan.": "Template with the direction's latest background.",
+  // gallery
+  "IT departamentining tayyor posterlari. Tahrirlash posterning o'zini o'zgartiradi, nusxa esa yangi poster ochadi.": "The IT department's finished posters. Edit changes the poster itself; Copy opens it as a new poster.",
+  "Sarlavha bo'yicha qidirish": "Search by title", "Hammasi": "All", "Yo'nalish bo'yicha filtr": "Filter by direction", "Tahrirlash": "Edit", "Nusxa": "Copy", "Tasdiqlang": "Confirm",
+  "Galereya hozircha bo'sh": "The gallery is empty", "Hech narsa topilmadi": "Nothing found", "Boshqa so'z bilan qidirib ko'ring.": "Try another word.",
+  "Muharrirda poster yarating va \"Saqlash\" tugmasini bosing yoki \"Rasm so'rovi\" bo'limidan so'rov yuboring.": "Create a poster in the editor and press Save, or send a request from Image requests.",
+  "Galereya yuklanmoqda": "Loading gallery", "Ma'lumotlar bazasiga ulanilmoqda.": "Connecting to the database.", "Galereya bu ko'rinishda mavjud emas": "The gallery isn't available here",
+  "Galereyani ko'rish uchun tizimga kiring. Muharrirda ishlash va eksport qilish mumkin.": "Sign in to see the gallery. You can still use the editor and export.",
+  "qo'lda": "manual", "generatsiya": "generated", "Nomsiz poster": "Untitled poster",
+  // queue
+  "Mavzuni yozing: fon rasmi navbat bo'yicha generatsiya qilinadi, matnlar esa shablonga qo'yiladi.": "Describe the topic: the background is generated from the queue and the texts go into the template.",
+  "Yangi so'rov": "New request", "O'lcham": "Size", "Mavzu (rasmda nima bo'lsin)": "Topic (what the image should show)", "Masalan: parollarni xavfsiz saqlash, bulutdagi zaxira nusxa": "e.g. storing passwords safely, cloud backup",
+  "Parolingizni hech kimga bermang": "Never share your password", "IT xodimlari hech qachon parolingizni so'ramaydi.": "IT staff will never ask for your password.", "Savollar: ichki raqam 1100": "Questions: ext. 1100",
+  "Navbatga qo'shish": "Add to queue", "Rasmda matn, logo yoki real odamlar bo'lmaydi: bunday mavzular rad etiladi.": "Images contain no text, logos or real people: such topics are rejected.",
+  "Navbat": "Queue", "Navbat bo'sh": "The queue is empty", "Chapdagi forma orqali birinchi so'rovni yuboring.": "Send the first request with the form on the left.",
+  "Navbatda": "Queued", "Chizilmoqda": "Generating", "Tayyor": "Done", "Xato": "Error", "Qayta navbatga": "Requeue", "Ochish": "Open", "Sarlavhasiz": "Untitled",
+  "Navbat yuklanmoqda": "Loading queue", "Navbat bu ko'rinishda mavjud emas": "The queue isn't available here", "Navbatni ko'rish uchun tizimga kiring.": "Sign in to see the queue.",
+  "Generator sozlamalari": "Generator settings", "Mavzu qoidalarga mos emas": "Topic does not meet the rules",
+  // rules page
+  "Brend, generatsiya va panjara qiymatlari. Ular kod bilan qotirilgan: AI faqat fon rasmini chizadi.": "Brand, generation and grid values. They are fixed in code: AI only paints the background.",
+  "Palitra": "Palette", "Navy": "Navy", "Teal": "Teal", "Oq": "White", "Muz": "Ice", "Qo'shimcha": "Extra",
+  "Golos Text (barcha matnlar)": "Golos Text (all text)", "Golos Text 400, 34 px": "Golos Text 400, 34 px", "Golos Text 500, 20–22 px": "Golos Text 500, 20–22 px", "Yorliq, raqam, sana": "Label, number, date",
+  "Yo'nalishlar ranglari": "Direction colors", "Light va dark mode uchun palitra bir xil. Poster doim to'q fonda chiqadi.": "The palette is the same in light and dark mode. Posters always sit on a dark background.",
+  "O'lchamlar": "Sizes", "Piksel": "Pixels", "Nisbat": "Ratio", "Chet / oraliq": "Margin / gap",
+  "Maxsus o'lcham: 320–4000 px. Masshtab = qisqa tomon / 1080: chet maydoni, oraliqlar, shriftlar va effektlar shunga ko'paytiriladi. Fon rasmi har qanday nisbatga \"cover\" usulida moslanadi.": "Custom size: 320–4000 px. Scale = short side / 1080: margins, gaps, type and effects are multiplied by it. The background covers any ratio.",
+  "Generatsiya sozlamalari": "Generation settings", "Kompaniya": "Company", "Model": "Model", "Slug": "Slug", "Sifat": "Quality", "Seed": "Seed", "Bir safarda": "Per run", "Style reference": "Style reference", "belgilanmagan": "not set", "Namunaviy fon rasmi": "Sample background",
+  "Chet maydoni": "Margin", "Ustunlar": "Columns", "Qator qadami": "Row step", "Elementlar orasi": "Element gap", "Ustun kengligi": "Column width",
+  "Yopishish masofasi ekranda 10 px. Qo'shni element yonida 48 px oraliq boshqa chiziqlardan ustun turadi.": "Snap distance is 10 px on screen. A 48 px gap next to a neighbor wins over other lines.",
+  "Prompt shabloni": "Prompt template", "{mavzu} o'rniga foydalanuvchi mavzusi ingliz tiliga qisqa tarjima qilinib qo'yiladi.": "{mavzu} is replaced with the user's topic, briefly translated into English.",
+  // sizes
+  "Poster 3:4": "Poster 3:4", "Story / Reels 9:16": "Story / Reels 9:16", "Instagram 4:5": "Instagram 4:5", "Kvadrat 1:1": "Square 1:1", "Ekran 16:9": "Screen 16:9", "Banner 1.91:1": "Banner 1.91:1",
+  "A4 bosma, 150 dpi": "A4 print, 150 dpi", "A3 bosma, 150 dpi": "A3 print, 150 dpi", "Maxsus": "Custom", "Maxsus…": "Custom…",
+  // generator dialog
+  "Gemini sozlamalari": "Gemini settings", "Gemini generatori": "Gemini generator", "API kalit": "API key", "Sifat (faqat Pro)": "Quality (Pro only)", "Kalitni o'chirish": "Forget key",
+  "Fon rasmlari Google Gemini (Nano Banana) bilan chiziladi. API kalitni Google AI Studio'da oling:": "Backgrounds are painted with Google Gemini (Nano Banana). Get an API key in Google AI Studio:",
+  ". Kalit faqat shu brauzerda saqlanadi.": ". The key is stored only in this browser.",
+  "Google rasm generatsiyasi uchun pullik tarif talab qilishi mumkin.": "Google may require a paid plan for image generation.",
+  // toasts
+  "Avval element tanlang": "Select an element first", "Bitta element tanlang": "Select one element", "Bu ko'rinishda faylni yuklab olish mavjud emas": "Downloads aren't available here",
+  "Faylni saqlab bo'lmadi": "Couldn't save the file", "Fon rasmini ochib bo'lmadi": "Couldn't open the background image", "Galereyaga saqlandi": "Saved to the gallery",
+  "Ma'lumotlar bazasi javob bermadi. Sahifani keyinroq yangilang.": "The database didn't respond. Reload the page later.", "Mavzu va sarlavhani yozing": "Enter a topic and a title",
+  "Muharrirda saqlanmagan o'zgarishlar bor. Davom etish uchun yana bir marta bosing.": "The editor has unsaved changes. Click again to continue.",
+  "O'chirib bo'lmadi": "Couldn't delete", "O'chirish uchun yana bir marta bosing": "Click again to delete", "Panjara qoidasi saqlandi (1080 px asosda)": "Grid rule saved (1080 px base)", "Panjara qoidasi saqlandi": "Grid rule saved",
+  "Postarda faqat shu brauzerdagi rasm bor. Uni qayta joylang, keyin saqlang.": "The poster has an image that lives only in this browser. Place it again, then save.",
+  "Poster o'chirildi": "Poster deleted", "Qayta navbatga qo'yildi": "Requeued", "Rasm 20 MB dan katta bo'lmasin": "Images must be under 20 MB", "Rasm faqat shu brauzerda turadi": "The image stays only in this browser",
+  "Rasmni ochib bo'lmadi": "Couldn't open the image", "Saqlanmagan qoralama tiklandi": "Unsaved draft restored", "So'rov navbatga qo'shildi": "Request added to the queue",
+  "So'rov yuborish uchun tizimga kiring va tahrirlash huquqiga ega bo'ling": "Sign in with edit access to send requests", "Magnit yoqildi": "Snapping on", "Magnit o'chirildi": "Snapping off",
+  "Bu sahifada generator yo'q: Gemini generatori veb versiyada ishlaydi.": "There's no generator on this page: the Gemini generator runs in the web version.",
+  "Generator faqat veb versiyada ishlaydi.": "The generator runs only in the web version.", "Generatsiyani faqat egasi ishga tushiradi": "Only the owner can run generation",
+  "Navbatda so'rov yo'q": "No requests in the queue", "Kalit o'chirildi": "Key removed", "API kalitni kiriting": "Enter the API key", "Gemini sozlamalari saqlandi": "Gemini settings saved",
+  "Teng taqsimlash uchun kamida 3 ta element tanlang": "Select at least 3 elements to distribute evenly", "Kamida 2 ta element tanlang": "Select at least 2 elements",
+  "Galereyaga saqlash uchun tizimga kiring. Eksport qilishingiz mumkin.": "Sign in to save to the gallery. You can still export.", "Sizda galereyaga saqlash huquqi yo'q. Eksport qilishingiz mumkin.": "You don't have permission to save to the gallery. You can still export.",
+  "#rasm": "#image",
+};
+const EN_PATTERNS = [
+  [/^(\d+) ta element tanlangan$/, "$1 elements selected"], [/^(\d+) ta poster$/, "$1 posters"], [/^(\d+) ta$/, "$1"],
+  [/^Harakat · (\d+) s$/, "Motion · $1 s"], [/^(.+) shabloni$/, (m, a) => tr(a) + " template"], [/^(.+) poster shabloni$/, (m, a) => tr(a) + " poster template"], [/^(.+) posteri$/, (m, a) => tr(a) + " poster"],
+  [/^Nisbat ([\d.:]+) · masshtab ([\d.]+)×\. .*$/, "Ratio $1 · scale $2×. When the size changes, the template, grid, type, effects and export adapt. Added elements move proportionally."],
+  [/^(.+), Golos Text 500, 22 px, och rang$/, "$1, Golos Text 500, 22 px, light color"], [/^(Och|Asosiy|Chuqur|Poster foni) (#[0-9A-Fa-f]{6}), nusxa olish$/, (m, a, b) => `${tr(a)} ${b}, copy`],
+  [/^(\d+) ta, orasi (\d+) px$/, "$1, gutter $2 px"], [/^(\d+) ta so'rov, har biri 1 ta rasm$/, "$1 requests, 1 image each"], [/^(\d+) px chet, (\d+) ustun, (\d+) px oraliq$/, "$1 px margin, $2 columns, $3 px gap"],
+  [/^Golos Text 700, 88→52 px, ≤3 qator$/, "Golos Text 700, 88→52 px, ≤3 lines"], [/^Golos Text 700, oq (#\w+)$/, "Golos Text 700, white $1"], [/^Golos Text 400, 34 px, muz (#\w+)$/, "Golos Text 400, 34 px, ice $1"],
+  [/^(#\w+), soyalar shu rangda$/, "$1, shades in this color"],
+  [/^Saqlab bo'lmadi: (.*)$/, "Couldn't save: $1"], [/^O'chirib bo'lmadi: (.*)$/, "Couldn't delete: $1"], [/^Yuborib bo'lmadi: (.*)$/, "Couldn't send: $1"], [/^Bo'lmadi: (.*)$/, "Failed: $1"],
+  [/^Rasmni yuklab bo'lmadi: (.*)$/, "Couldn't upload the image: $1"], [/^GIF tayyorlab bo'lmadi: (.*)$/, "Couldn't make the GIF: $1"], [/^Galereyani o'qib bo'lmadi: (.*)$/, "Couldn't read the gallery: $1"],
+  [/^Layout (\d+) KB: 240 KB dan oshmasin\. .*$/, "Layout is $1 KB: keep it under 240 KB. Remove extra icons or groups."],
+  [/^O'lcham: (\d+) × (\d+) px · (.+)$/, (m, a, b, c) => `Size: ${a} × ${b} px · ${tr(c)}`], [/^Maxsus · (\d+×\d+)$/, "Custom · $1"],
+  [/^Generatsiya: (\d+)\/(\d+) · (.*)$/, "Generating: $1/$2 · $3"], [/^Generatsiya tugadi: (\d+) ta tayyor, (\d+) ta xato$/, "Generation finished: $1 done, $2 failed"],
+  [/^Bitta ishga tushirishda ko'pi bilan (\d+) ta so'rov chiziladi, har biriga 1 ta rasm\. (.*)$/, (m, a, b) => `Each run paints at most ${a} requests, 1 image each. ${tr(b)}`],
+  [/^(.+) hisobiga hali ruxsat berilmagan.*$/, "$1 has no access yet: you can use the editor and export. Ask an administrator for gallery access."],
+  [/^(.+) nusxalandi$/, "$1 copied"],
+];
+function tr(s) {
+  if (LANG !== "en" || !s) return s;
+  const t = s.trim(); if (!t) return s;
+  let out = null;
+  if (Object.prototype.hasOwnProperty.call(EN, t)) out = EN[t];
+  else {
+    for (const [re, rep] of EN_PATTERNS) { if (re.test(t)) { out = t.replace(re, rep); break; } }
+    if (out == null && t.includes(" · ")) { const parts = t.split(" · "), tp = parts.map(p => tr(p)); if (tp.some((p, i) => p !== parts[i])) out = tp.join(" · "); }
+  }
+  if (out == null) return s;
+  return s.replace(t, out);
+}
+const I18N_ATTRS = ["data-tip", "placeholder", "aria-label", "title", "alt"];
+const skipNode = el => !el || el.closest("script,style,textarea,pre.prompt,[data-noi18n],.canvas-container");
+const skipAttr = el => !el || el.closest("script,style,pre.prompt,[data-noi18n],.canvas-container");
+function trNode(n) {
+  if (n.nodeType === 3) { if (skipNode(n.parentElement)) return; const v = n.nodeValue, t = tr(v); if (t !== v) n.nodeValue = t; return; }
+  if (n.nodeType !== 1 || skipAttr(n)) return;
+  I18N_ATTRS.forEach(a => { const v = n.getAttribute(a); if (v) { const t = tr(v); if (t !== v) n.setAttribute(a, t); } });
+  if (skipNode(n)) return;
+  if (n.tagName === "OPTION" || n.tagName === "BUTTON" || n.childNodes.length) n.childNodes.forEach(trNode);
+}
+function applyLang() {
+  document.documentElement.lang = LANG;
+  $$(".langsw [data-lang]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === LANG)));
+  if (LANG !== "en") return;
+  trNode(document.body);
+  new MutationObserver(ms => ms.forEach(m => {
+    if (m.type === "characterData") trNode(m.target);
+    else if (m.type === "attributes") trNode(m.target);
+    else m.addedNodes.forEach(trNode);
+  })).observe(document.body, { subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: I18N_ATTRS });
+}
+$$(".langsw [data-lang]").forEach(b => b.addEventListener("click", () => {
+  if (b.dataset.lang === LANG) return;
+  ls.set(LANG_KEY, b.dataset.lang);
+  if (cur.dirty) ls.set(draftKey(), { layout: hist.stack[hist.idx], title: $("#docTitle").value, at: Date.now(), imageUrl: cur.imageUrl });
+  setTimeout(() => location.reload(), 80);
+}));
+applyLang();
 </script>
 </body></html>

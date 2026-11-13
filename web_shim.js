@@ -162,7 +162,7 @@
     } else if (!me) {
       box.innerHTML = '<button class="btn pri" id="wSignIn" type="button">Google bilan kirish</button>';
     } else {
-      const nm = (me.displayName || me.email || "").replace(/[<>&"]/g, "");
+      const nm = ((me.displayName || "").split(" ")[0] || (me.email || "").split("@")[0]).replace(/[<>&"]/g, "");
       box.innerHTML = `<span class="runinfo" title="${me.email || ""}"><i>${nm}</i>${isOwner() ? " · egasi" : isAdmin() ? " · muharrir" : isMember() ? "" : " · ruxsat yo'q"}</span><button class="btn" id="wSignOut" type="button">Chiqish</button>`;
     }
     top.appendChild(box);
