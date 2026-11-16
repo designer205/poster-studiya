@@ -1018,15 +1018,15 @@ function boxBlurRGBA(img, w, h, r) {  // 3-pass separable box blur ≈ gaussian,
   for (let i = 0; i < n; i++) a[i] = f[i];
   return img;
 }
-let DITHER_TILE = null;
-function ditherPattern(ctx) {  // static ±3-level noise: breaks gradient banding on dark backgrounds (screen and GIF)
-  if (!DITHER_TILE) {
+const DITHER_TILE = {};
+function ditherPattern(ctx, amp = 4) {  // static ±3-level noise: breaks gradient banding on dark backgrounds (screen and GIF)
+  if (!DITHER_TILE[amp]) {
     const c = document.createElement("canvas"); c.width = c.height = 128; const x = c.getContext("2d"), im = x.createImageData(128, 128);
     let sd = 12345; const rn = () => (sd = (sd * 1664525 + 1013904223) >>> 0) / 4294967296;
-    for (let i = 0; i < im.data.length; i += 4) { const v = rn() < 0.5 ? 0 : 255; im.data[i] = im.data[i + 1] = im.data[i + 2] = v; im.data[i + 3] = Math.round(rn() * 4); }
-    x.putImageData(im, 0, 0); DITHER_TILE = c;
+    for (let i = 0; i < im.data.length; i += 4) { const v = rn() < 0.5 ? 0 : 255; im.data[i] = im.data[i + 1] = im.data[i + 2] = v; im.data[i + 3] = Math.round(rn() * amp); }
+    x.putImageData(im, 0, 0); DITHER_TILE[amp] = c;
   }
-  return ctx.createPattern(DITHER_TILE, "repeat");
+  return ctx.createPattern(DITHER_TILE[amp], "repeat");
 }
 
 function drawFx(ctx, fx, p, W, H, layer) {
@@ -1061,7 +1061,7 @@ function drawFx(ctx, fx, p, W, H, layer) {
     lx.putImageData(boxBlurRGBA(lx.getImageData(0, 0, sw, sh), sw, sh, R * 0.11 * sc / 1.7), 0, 0);
     ctx.save(); ctx.globalCompositeOperation = "screen"; ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = "high";
     ctx.drawImage(lc, 0, 0, W, H);
-    ctx.globalCompositeOperation = "source-over"; ctx.fillStyle = ditherPattern(ctx); ctx.fillRect(0, 0, W, H);
+    ctx.globalCompositeOperation = "source-over"; ctx.fillStyle = ditherPattern(ctx, FX.exportGrain ? 7 : 4); ctx.fillRect(0, 0, W, H);
     ctx.restore();
   }
   if (fx.grid) { // brand square grid: the lattice itself, still
@@ -2502,14 +2502,16 @@ async function exportGif(size) {
     gif.finish();
     await saveFile(`${fileBase()}-${Math.round(W * size)}x${Math.round(H * size)}.gif`, new Blob([gif.bytes()], { type: "image/gif" }));
   } catch (e) { toast("GIF tayyorlab bo'lmadi: " + (e && e.message ? e.message : "xato")); }
-  finally { FX.playing = was; pr.done(); gifBusy = false; }
+  finally { FX.playing = was; FX.exportGrain = false; pr.done(); gifBusy = false; }
 }
-async function exportVideo(size) {   // MP4 (H.264): full colour, no banding — best for Telegram / Instagram
+const videoBitrate = (w, h, q) => Math.round(Math.min(1.6e7, Math.max(1.5e6, w * h * 30 * (q === "hi" ? 0.11 : 0.07))));
+const videoDims = (s, q) => { const k = q === "hi" ? 1 : Math.min(1, 720 / Math.min(W, H)); return [Math.round(W * k / 2) * 2, Math.round(H * k / 2) * 2]; };
+async function exportVideo(size, q = "hi") {   // MP4 (H.264): full colour, no banding — best for Telegram / Instagram
   if (gifBusy) return;
   if (typeof VideoEncoder === "undefined") { toast("Bu brauzer MP4 yozishni qo'llamaydi. Chrome yoki yangi Safari'dan foydalaning."); return; }
   gifBusy = true;
-  const f = fxLayer(), fps = 30, loops = 2, frames = Math.round(fps * FX_PERIOD) * loops;
-  const vw = Math.round(W * size / 2) * 2, vh = Math.round(H * size / 2) * 2;
+  const f = fxLayer(), fps = 30, frames = Math.round(fps * FX_PERIOD);   // one seamless 6 s loop: Telegram/Instagram repeat it themselves
+  const [vw, vh] = videoDims(size, q); size = vw / W;
   const pr = exportProgress("MP4 tayyorlanmoqda"), was = FX.playing; FX.playing = false;
   try {
     const M = await import("https://cdn.jsdelivr.net/npm/mp4-muxer@5.1.3/build/mp4-muxer.mjs");
@@ -2519,7 +2521,8 @@ async function exportVideo(size) {   // MP4 (H.264): full colour, no banding —
     const muxer = new M.Muxer({ target: new M.ArrayBufferTarget(), video: { codec: "avc", width: vw, height: vh }, fastStart: "in-memory" });
     let err = null;
     const enc = new VideoEncoder({ output: (c, m) => muxer.addVideoChunk(c, m), error: e => err = e });
-    enc.configure({ codec, width: vw, height: vh, bitrate: Math.round(Math.min(2.5e7, vw * vh * fps * 0.25)), framerate: fps, latencyMode: "quality" });
+    enc.configure({ codec, width: vw, height: vh, bitrate: videoBitrate(vw, vh, q), bitrateMode: "variable", framerate: fps, latencyMode: "quality" });
+    FX.exportGrain = true;
     const cv = document.createElement("canvas"); cv.width = vw; cv.height = vh; const cx = cv.getContext("2d");
     const per = Math.round(fps * FX_PERIOD);
     for (let i = 0; i < frames; i++) {
@@ -2527,25 +2530,25 @@ async function exportVideo(size) {   // MP4 (H.264): full colour, no banding —
       setFrame(f, i % per, per);
       cx.imageSmoothingQuality = "high"; cx.drawImage(renderPoster(size), 0, 0, vw, vh);
       const fr = new VideoFrame(cv, { timestamp: Math.round(i * 1e6 / fps), duration: Math.round(1e6 / fps) });
-      enc.encode(fr, { keyFrame: i % per === 0 }); fr.close();
+      enc.encode(fr, { keyFrame: i === 0 }); fr.close();
       while (enc.encodeQueueSize > 4) await new Promise(r => setTimeout(r, 5));
       pr.set((i + 1) / frames); await new Promise(r => setTimeout(r, 0));
     }
     await enc.flush(); if (err) throw err; muxer.finalize();
     await saveFile(`${fileBase()}-${vw}x${vh}.mp4`, new Blob([muxer.target.buffer], { type: "video/mp4" }));
   } catch (e) { toast("MP4 tayyorlab bo'lmadi: " + (e && e.message ? e.message : "xato")); }
-  finally { FX.playing = was; pr.done(); gifBusy = false; }
+  finally { FX.playing = was; FX.exportGrain = false; pr.done(); gifBusy = false; }
 }
 function openExport() {
   const b = $("#aExport").getBoundingClientRect(), hasFx = anyFx(fxLayer()?.fx);
   const el = openPop(`<div class="menu" role="menu">
     <button data-x="png">PNG<kbd>${W}×${H}</kbd></button><button data-x="png2" ${W * 2 > 8000 || H * 2 > 8000 ? "disabled" : ""}>PNG 2×<kbd>${W * 2}×${H * 2}</kbd></button><button data-x="jpg">JPG<kbd>${W}×${H}</kbd></button><hr>
-    ${[1, 0.5].map(s => `<button data-v="${s}">MP4 video · 12 s<kbd>${Math.round(W * s / 2) * 2}×${Math.round(H * s / 2) * 2}</kbd></button>`).join("")}
+    ${["hi", "lite"].map(q => { const [w, h] = videoDims(1, q), mb = (videoBitrate(w, h, q) * FX_PERIOD / 8 / 1048576).toFixed(1); return `<button data-v="${q}">${q === "hi" ? "MP4 · yuqori sifat" : "MP4 · yengil"}<kbd>${w}×${h} · ~${mb} MB</kbd></button>`; }).join("")}
     ${[0.5, 2 / 3, 1].map(s => `<button data-g="${s}">Harakatli GIF<kbd>${Math.round(W * s)}×${Math.round(H * s)}</kbd></button>`).join("")}
     ${hasFx ? "" : `<p class="hint" style="padding:6px 10px 2px;max-width:240px">Effektlar yoqilmagan: GIF va video harakatsiz chiqadi. "Fon" panelida effekt yoqing.</p>`}</div>`, b.left, b.bottom + 6);
   $$("[data-x]", el).forEach(x => x.addEventListener("click", () => { closePop(); exportStatic(x.dataset.x); }));
   $$("[data-g]", el).forEach(x => x.addEventListener("click", () => { closePop(); exportGif(+x.dataset.g); }));
-  $$("[data-v]", el).forEach(x => x.addEventListener("click", () => { closePop(); exportVideo(+x.dataset.v); }));
+  $$("[data-v]", el).forEach(x => x.addEventListener("click", () => { closePop(); exportVideo(1, x.dataset.v); }));
 }
 $("#aExport").addEventListener("click", () => popEl ? closePop() : openExport());
 /* HUNTME brand logos (SVG from the design team, 2026-11-14), geometry-corrected: true-square icon diamonds,
@@ -3899,7 +3902,7 @@ async function runGenerator() {
 const LANG_KEY = "ips:lang";
 let LANG = (ls.get(LANG_KEY) === "en") ? "en" : "uz";
 const EN = {
-  "MP4 tayyorlanmoqda": "Preparing MP4", "MP4 video · 12 s": "MP4 video · 12 s", "Bu brauzer MP4 yozishni qo'llamaydi. Chrome yoki yangi Safari'dan foydalaning.": "This browser can't record MP4. Use Chrome or a recent Safari.",
+  "MP4 tayyorlanmoqda": "Preparing MP4", "MP4 · yuqori sifat": "MP4 · high quality", "MP4 · yengil": "MP4 · light", "Bu brauzer MP4 yozishni qo'llamaydi. Chrome yoki yangi Safari'dan foydalaning.": "This browser can't record MP4. Use Chrome or a recent Safari.",
   "Yangi variant": "New variant", "Kvadratlarni boshqa joylarda, boshqa shakl va yo'nalishda joylashtirish": "Place the squares elsewhere, with other shapes and directions",
   "Davomiylik: har bir animatsiya 6 soniya, oxiri boshiga ulanadi (uzluksiz halqa).": "Duration: every animation is 6 seconds and its end joins its beginning (seamless loop).",
   "To'r qirralarining yonishi": "Glowing grid edges", "IT to'plami (to'r + yonish + shisha + nur)": "IT set (grid + glow + glass + light)",
