@@ -365,6 +365,15 @@ pre.prompt{white-space:pre-wrap;margin:0;font:12px/1.55 var(--f-mono);background
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 .libgrid.hmgrid img{width:34px;height:34px;display:block;margin:0 auto 2px;background:#0F1119;border-radius:6px}
 .lib{max-height:min(78vh,720px);overflow:auto}
+#aAnim.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.animg{display:flex;align-items:center;gap:6px;flex:none}
+.zoomg{flex:none}
+@media (max-width:1340px){.zoomg .ib{display:none}}
+@media (max-width:1500px){#aAnim .lbl{display:none}#aAnim{padding:0 9px}}
+@media (max-width:1340px){.animtime{padding:0 2px 0 6px}.animtime .i{width:13px;height:13px}.animg{gap:4px}}
+.animtime{display:flex;align-items:center;gap:4px;height:30px;padding:0 4px 0 8px;border:1px solid var(--line2);border-radius:6px;background:var(--bg)}
+.animtime[hidden]{display:none}.animtime .i{width:15px;height:15px}
+.animtime select{border:0;background:transparent;height:28px;padding:0 2px;font:inherit;color:inherit;width:auto}
 </style>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
@@ -436,6 +445,10 @@ pre.prompt{white-space:pre-wrap;margin:0;font:12px/1.55 var(--f-mono);background
           <button class="ib" id="zOut" data-tip="Kichiklashtirish" data-k="Ctrl+-"><i data-ic="minus"></i></button>
           <button class="zv" id="zVal" data-tip="Ekranga moslash" data-k="Ctrl+0">100%</button>
           <button class="ib" id="zIn" data-tip="Kattalashtirish" data-k="Ctrl+="><i data-ic="plus"></i></button>
+        </div>
+        <div class="tg animg" aria-label="Animatsiya">
+          <button class="btn" id="aAnim" aria-pressed="false" data-tip="Barcha animatsiyalarni yoqish / o'chirish: logo, matnlar, ikonkalar"><i data-ic="anim"></i><span class="lbl">Animatsiya</span></button>
+          <label class="animtime" id="animTime" hidden data-tip="Animatsiya davomiyligi (boshi oxiriga ulanadi)"><i data-ic="timer"></i><select id="animDur" aria-label="Animatsiya davomiyligi"><option value="3">3 s</option><option value="4">4 s</option><option value="5">5 s</option><option value="6" selected>6 s</option><option value="8">8 s</option><option value="10">10 s</option><option value="12">12 s</option><option value="15">15 s</option></select></label>
         </div>
         <button class="btn accent" id="aExport" data-tip="Eksport" data-k="Ctrl+E"><i data-ic="download"></i>Eksport</button>
         <button class="btn pri" id="aSave" data-tip="Galereyaga saqlash" data-k="Ctrl+S"><i data-ic="save"></i>Saqlash</button>
@@ -540,12 +553,18 @@ pre.prompt{white-space:pre-wrap;margin:0;font:12px/1.55 var(--f-mono);background
           <div class="grp"><h4>O'z rasmingiz</h4>
             <button class="btn" id="bgUpload"><i data-ic="upload"></i>Rasm yuklash</button>
           </div>
+          <div class="grp"><h4>Fon rejimi</h4>
+            <div class="seg" role="group" aria-label="Fon rejimi"><button type="button" class="ib" style="padding:0 10px" data-bgm="dark" aria-pressed="true">Qora fon</button><button type="button" class="ib" style="padding:0 10px" data-bgm="light" aria-pressed="false">Oq fon</button></div>
+            <p class="hint">Oq fonda oq matnlar, logo yozuvi va chiziqlar avtomatik qora rangga o'tadi; logo belgisi va rangli qismlar o'z rangida qoladi. Oq rangni fon sifatida tanlasangiz ham shunday bo'ladi.</p>
+          </div>
           <div class="grp"><h4>Bir rangli fon</h4>
             <div class="sw" id="bgSolid"></div>
           </div>
           <div class="grp"><h4>Harakat effektlari</h4>
             <p class="hint" style="margin:0">Ranglar yo'nalishdan olinadi. Shisha kvadratlar brand to'riga yopishib butun poster bo'ylab — bo'sh joylar, chetlar va pastdagi rasm yoki element ustidan — harakatlanadi; faqat matn va logoni yopmaydi. 6 soniyalik halqa, har 1,5 soniyada yangi qadam.</p>
             <label class="chk"><input type="checkbox" id="fx-icon"> Ikonka animatsiyasi (HUNTME ikonkalari)</label>
+            <label class="chk"><input type="checkbox" id="fx-text"> Matn animatsiyasi: blur bilan paydo bo'lish</label>
+            <label class="chk"><input type="checkbox" id="fx-logo"> Logo animatsiyasi</label>
             <label class="chk"><input type="checkbox" id="fx-zoom"> Sekin yaqinlashish</label>
             <label class="chk"><input type="checkbox" id="fx-light"> Markaziy nur</label>
             <div class="row" style="padding-left:24px"><span class="hint" style="white-space:nowrap">Balandlik</span><input type="range" id="fx-lightY" min="0.1" max="0.9" step="0.01" value="0.38"></div>
@@ -704,6 +723,8 @@ const ICONS = {
   sparkles: "M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9ZM19 3v4M17 5h4",
   book: "M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5ZM20 17v4H6.5A2.5 2.5 0 0 1 4 18.5",
   play: "M7 4l13 8-13 8Z",
+  timer: "M10 2h4M12 14l3-3M12 22a8 8 0 1 0 0-16a8 8 0 0 0 0 16Z",
+  anim: "M4 5h16v14H4ZM4 9h16M4 15h16M8 5v4M12 5v4M16 5v4M8 15v4M12 15v4M16 15v4M10.5 10.5l3 1.5-3 1.5Z",
   pause: "M8 5v14M16 5v14",
   alert: "M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0ZM12 9v4M12 17h.01",
   file: "M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9ZM14 3v6h6M12 12v6M9 15h6",
@@ -815,7 +836,7 @@ const FONTS = [[FONT, "Golos Text"]];
 
 const ui = { showGrid: true, snap: true, keep: true, tool: "select", alignRel: "margin", zoomMode: "fit", rulers: true, spaceHand: false };
 const caps = { db: null, user: null, assets: null, downloads: null, uid: null, canWrite: false, canAdmin: false, owner: false, ready: false };
-const cur = { theme: null, direction: "huntme", id: null, kind: "manual", pristine: true, dirty: false, imageUrl: "" };
+const cur = { theme: null, bgMode: "dark", direction: "huntme", id: null, kind: "manual", pristine: true, dirty: false, imageUrl: "" };
 let REQ = [];          // requests from db
 let RUNNER = null;
 
@@ -842,7 +863,7 @@ function toast(msg, ms = 2600) {
 /* ============================================================
    Fabric setup
    ============================================================ */
-const PROPS = ["name", "role", "tone", "kind", "hmId", "hmMain", "locked", "fx", "upper", "srcText", "lockMovementX", "lockMovementY", "lockScalingX", "lockScalingY", "lockRotation", "hasControls", "evented"];
+const PROPS = ["name", "role", "tone", "kind", "hmId", "hmMain", "textAnim", "dk", "locked", "fx", "upper", "srcText", "lockMovementX", "lockMovementY", "lockScalingX", "lockScalingY", "lockRotation", "hasControls", "evented"];
 fabric.Object.prototype.set({
   transparentCorners: false, cornerColor: "#15B98E", cornerStrokeColor: "#03221A", borderColor: "#15B98E",
   cornerSize: 9, cornerStyle: "rect", borderScaleFactor: 1.3, padding: 0,
@@ -852,9 +873,11 @@ fabric.Textbox.prototype.set({ cursorColor: "#15B98E", selectionColor: "rgba(21,
 
 /* --- effect layer: a dedicated object between background and texts --- */
 const FX = { p: 0, zoom: 1, playing: true, reduced: false };
-const FX_PERIOD = 6;   // every animation runs exactly 6 s and its end joins its beginning (seamless loop)
-const FX_KEYS = ["zoom", "light", "wave", "scan", "sparks", "grid", "gridGlow", "glass", "data", "net", "icon"];
-const FX_DEFAULT = () => ({ zoom: false, light: false, wave: false, scan: false, sparks: false, grid: false, gridGlow: false, glass: false, glassSeed: 0, data: false, net: false, icon: false, lightY: 0.38, period: FX_PERIOD });
+const FX_PERIOD = 6;
+const FX_PERIODS = [3, 4, 5, 6, 8, 10, 12, 15];
+const fxPeriod = () => { const f = canvas && canvas.getObjects ? canvas.getObjects().find(o => o.type === "fxLayer") : null; const v = f && f.fx && +f.fx.period; return v >= 2 && v <= 30 ? v : FX_PERIOD; };   // every animation runs exactly 6 s and its end joins its beginning (seamless loop)
+const FX_KEYS = ["zoom", "light", "wave", "scan", "sparks", "grid", "gridGlow", "glass", "data", "net", "icon", "text", "logo"];
+const FX_DEFAULT = () => ({ zoom: false, light: false, wave: false, scan: false, sparks: false, grid: false, gridGlow: false, glass: false, glassSeed: 0, data: false, net: false, icon: false, text: false, logo: false, lightY: 0.38, period: FX_PERIOD });
 fabric.FxLayer = fabric.util.createClass(fabric.Rect, {
   type: "fxLayer",
   initialize(o) {
@@ -993,11 +1016,11 @@ function drawGlass(ctx, p, W, H, d, layer, seed = 0) {
     ctx.save(); ctx.globalAlpha = a;
     ctx.beginPath(); ctx.rect(x, y, w, h); ctx.clip();
     lens(x, y, w, h, 1);                                        // see-through frosted body, no magnified edges (no inner square)
-    ctx.fillStyle = "rgba(255,255,255,.06)"; ctx.fillRect(x, y, w, h);   // frost
+    ctx.fillStyle = cur.bgMode === "light" ? "rgba(15,17,25,.04)" : "rgba(255,255,255,.06)"; ctx.fillRect(x, y, w, h);   // frost
     if (type === 1) { ctx.fillStyle = rgbA(d.main, 0.2 / Math.max(0.2, a)); ctx.fillRect(x, y, w, h); }   // tinted: 20% of the accent
     if (type === 2) { ctx.fillStyle = rgbA(d.main, 0.85 / Math.max(0.85, a)); ctx.fillRect(x, y, w, h); } // solid fragment: 85%
     const lw = Math.max(1, u * 0.01);                            // one thin light rim around the pane, nothing inside it
-    ctx.lineWidth = lw; ctx.strokeStyle = "rgba(255,255,255,.28)"; ctx.strokeRect(x + lw / 2, y + lw / 2, w - lw, h - lw);
+    ctx.lineWidth = lw; ctx.strokeStyle = cur.bgMode === "light" ? "rgba(15,17,25,.16)" : "rgba(255,255,255,.28)"; ctx.strokeRect(x + lw / 2, y + lw / 2, w - lw, h - lw);
     ctx.restore();
   };
 
@@ -1062,14 +1085,14 @@ function drawFx(ctx, fx, p, W, H, layer) {
     ctx = outer;
     lx.setTransform(1, 0, 0, 1, 0, 0);
     lx.putImageData(boxBlurRGBA(lx.getImageData(0, 0, sw, sh), sw, sh, R * 0.11 * sc / 1.7), 0, 0);
-    ctx.save(); ctx.globalCompositeOperation = "screen"; ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = "high";
+    ctx.save(); ctx.globalCompositeOperation = cur.bgMode === "light" ? "multiply" : "screen"; ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = "high";
     ctx.drawImage(lc, 0, 0, W, H);
     ctx.globalCompositeOperation = "source-over"; ctx.fillStyle = ditherPattern(ctx, FX.exportGrain ? 7 : 4); ctx.fillRect(0, 0, W, H);
     ctx.restore();
   }
   if (fx.grid) { // brand square grid: the lattice itself, still
     const g = brandGrid(W, H);
-    ctx.save(); ctx.strokeStyle = rgbA(d.light, 0.08); ctx.lineWidth = Math.max(1, kk); ctx.beginPath();
+    ctx.save(); ctx.strokeStyle = cur.bgMode === "light" ? rgbA(d.deep, 0.12) : rgbA(d.light, 0.08); ctx.lineWidth = Math.max(1, kk); ctx.beginPath();
     for (let c = 0; c <= g.cols; c++) { ctx.moveTo(c * g.cw, 0); ctx.lineTo(c * g.cw, H); }
     for (let r = 0; r <= g.rows; r++) { ctx.moveTo(0, r * g.ch); ctx.lineTo(W, r * g.ch); }
     ctx.stroke(); ctx.restore();
@@ -1086,7 +1109,7 @@ function drawFx(ctx, fx, p, W, H, layer) {
         ctx.strokeStyle = rgbA(d.light, 0.24 * a); ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + dx * g.cw, y + dy * g.ch); ctx.stroke();
       }
       const a = band((c + r) / n) * (0.4 + 0.6 * Math.pow(0.5 + 0.5 * Math.sin(TAU * (p * 3 + rnd(c, r))), 4)); if (a < 0.05) continue;
-      ctx.fillStyle = rgbA("#FFFFFF", 0.4 * a); const s = 3 * kk; ctx.fillRect(x - s / 2, y - s / 2, s, s);
+      ctx.fillStyle = cur.bgMode === "light" ? rgbA(d.main, 0.5 * a) : rgbA("#FFFFFF", 0.4 * a); const s = 3 * kk; ctx.fillRect(x - s / 2, y - s / 2, s, s);
     }
     ctx.restore();
   }
@@ -1518,7 +1541,7 @@ function normalizeLayout(str) {
 }
 const OLD_BGS = ["#0B1B3A", "#07171A", "#071621", "#1A1210", "#0C1024", "#07131F", "#110D1F", "#0D1117"];
 function serialize() {
-  const j = canvas.toJSON(PROPS); delete j.clipPath; j.direction = cur.direction; j.size = { w: W, h: H }; if (cur.theme) j.theme = cur.theme;
+  const j = canvas.toJSON(PROPS); delete j.clipPath; j.direction = cur.direction; j.size = { w: W, h: H }; if (cur.theme) j.theme = cur.theme; if (cur.bgMode === "light") j.bgMode = "light";
   const out = JSON.stringify(j).replace(/https?:\/\/[^"/]+(\/_blob\/)/g, "$1");
   return window.__WEB ? window.__WEB.canonAll(out) : out;
 }
@@ -1543,10 +1566,10 @@ function loadJSONNow(str, cb) {
   hist.lock++;
   canvas.discardActiveObject();
   let resized = false;
-  try { const pj = JSON.parse(str); cur.theme = pj.theme || null; if (pj.direction) cur.direction = DIR(pj.direction).slug; const sz = pj.size || { w: 1080, h: 1440 }; if (sz.w !== W || sz.h !== H) { setDocSize(sz.w, sz.h); resized = true; } } catch (e) {}
+  try { const pj = JSON.parse(str); cur.theme = pj.theme || null; cur.bgMode = pj.bgMode === "light" ? "light" : "dark"; if (pj.direction) cur.direction = DIR(pj.direction).slug; const sz = pj.size || { w: 1080, h: 1440 }; if (sz.w !== W || sz.h !== H) { setDocSize(sz.w, sz.h); resized = true; } } catch (e) {}
   str = normalizeLayout(str);
   canvas.loadFromJSON(str, () => {
-    canvas.clipPath = POSTER_CLIP(); syncDirUI();
+    canvas.clipPath = POSTER_CLIP(); syncDirUI(); syncBgModeUI();
     canvas.getObjects().forEach(applyLock);
     hist.lock--; if (resized) fitView(); canvas.requestRenderAll(); refreshLayers(); renderProps(); syncFxUI();
     cb && cb();
@@ -2041,6 +2064,11 @@ function renderProps() {
       h += `<div class="grp"><h4>Chiziq qalinligi</h4><div class="g2">${numF("pSw", "Qal.", r1(o.strokeWidth || 0), 'step="0.1"')}</div></div>`;
     }
   }
+  if (!multi && textW) {
+    const on = !!(fxLayer() && fxLayer().fx.text), mine = o.textAnim !== "none";
+    h += `<div class="grp"><h4>Animatsiya</h4><select id="pTAnim" aria-label="Matn animatsiyasi"><option value="blur" ${mine ? "selected" : ""}>Blur bilan paydo bo'lish</option><option value="none" ${mine ? "" : "selected"}>Animatsiyasiz</option></select>
+      ${on ? `<p class="hint">Matnlar yuqoridan pastga navbat bilan paydo bo'ladi, 6 soniyalik halqa.</p>` : `<p class="hint">Matn animatsiyasi hozir o'chiq: tanlasangiz, butun poster uchun yoqiladi.</p>`}</div>`;
+  }
   h += `<div class="grp"><h4>Shaffoflik</h4><div class="row"><input type="range" id="pOp" min="0" max="100" value="${Math.round((o.opacity ?? 1) * 100)}" aria-label="Shaffoflik"><span class="state" id="pOpV" style="min-width:36px;text-align:right">${Math.round((o.opacity ?? 1) * 100)}%</span></div></div>`;
   if (!multi && o.type !== "fxLayer") {
     const sh = o.shadow;
@@ -2068,6 +2096,8 @@ function bindProps() {
   on("pSwap", "click", () => resizeDoc(H, W));
   if (!a && DIR(cur.direction).fixed) ["pPreset", "pw", "ph", "pSwap"].forEach(id => { const e = $("#" + id); if (e) e.disabled = true; });
   on("pName", "change", e => { a.name = e.target.value.trim() || a.name; pushHist(); });
+  on("pTAnim", "change", e => { a.textAnim = e.target.value === "none" ? "none" : undefined; if (e.target.value !== "none") { const f = ensureFx(); if (!f.fx.text) f.fx = { ...FX_DEFAULT(), ...f.fx, text: true }; syncFxUI(); }
+    TXT_ANIM.p = -1; canvas.requestRenderAll(); pushHist(); renderProps(); });
   on("pX", "change", e => { moveTo(a, +e.target.value, null); canvas.requestRenderAll(); pushHist(); });
   on("pY", "change", e => { moveTo(a, null, +e.target.value); canvas.requestRenderAll(); pushHist(); });
   on("pW", "change", e => {
@@ -2092,7 +2122,7 @@ function bindProps() {
   $$("[data-colorfor]", pProps).forEach(row => {
     const prop = row.dataset.colorfor;
     const apply = c => {
-      if (prop === "canvasBg") { canvas.backgroundColor = c; }
+      if (prop === "canvasBg") { canvas.backgroundColor = c; autoBgMode(c); }
       else eachSel(o => { o.set(prop, c); if (prop === "stroke" && !o.strokeWidth) o.set("strokeWidth", 2); });
       canvas.requestRenderAll(); pushHist();
     };
@@ -2233,7 +2263,7 @@ function renderBgList() {
     hist.lock++;
     canvas.getObjects().filter(o => o.role === "bg").forEach(o => canvas.remove(o));
     const r = new fabric.Rect({ left: 0, top: 0, width: W, height: H, fill: b.dataset.c, strokeWidth: 0, name: "Fon rasmi", role: "bg", locked: true });
-    applyLock(r); canvas.insertAt(r, 0); canvas.backgroundColor = b.dataset.c; cur.imageUrl = "";
+    applyLock(r); canvas.insertAt(r, 0); canvas.backgroundColor = b.dataset.c; cur.imageUrl = ""; autoBgMode(b.dataset.c);
     hist.lock--; canvas.requestRenderAll(); pushHist(); renderBgList();
   }));
 }
@@ -2259,14 +2289,31 @@ function syncFxUI() {
   $("#fx-lightY").value = fx.lightY;
   $("#fxCtl").hidden = !anyFx(fx);
   $("#fxPlay").innerHTML = icon(FX.playing ? "pause" : "play");
-  $("#fxLabel").textContent = FX.reduced && !FX.userPlay ? "Harakat to'xtatilgan" : `Harakat · ${FX_PERIOD} s`;
+  if (typeof syncAnimUI === "function") syncAnimUI();
+  $("#fxLabel").textContent = FX.reduced && !FX.userPlay ? "Harakat to'xtatilgan" : `Harakat · ${fxPeriod()} s`;
 }
 FX_KEYS.forEach(k => { const el = $("#fx-" + k); if (el) el.addEventListener("change", e => {
   const f = ensureFx(); f.fx = { ...FX_DEFAULT(), ...f.fx, [k]: e.target.checked };
   if (k === "glass" && e.target.checked) f.fx.grid = true;
   syncFxUI(); pushHist(); canvas.requestRenderAll();
 }); });
-$("#fxIT") && $("#fxIT").addEventListener("click", () => { const f = ensureFx(); f.fx = { ...FX_DEFAULT(), grid: true, gridGlow: true, glass: true, light: true, lightY: f.fx.lightY ?? 0.38, period: FX_PERIOD }; syncFxUI(); pushHist(); canvas.requestRenderAll(); });
+$("#fxIT") && $("#fxIT").addEventListener("click", () => { const f = ensureFx(); f.fx = { ...FX_DEFAULT(), grid: true, gridGlow: true, glass: true, light: true, lightY: f.fx.lightY ?? 0.38, period: fxPeriod() }; syncFxUI(); pushHist(); canvas.requestRenderAll(); });
+/* one "Animatsiya" switch for every animation (logo, texts, icons) + its duration */
+const ANIM_KEYS = ["icon", "text", "logo"];
+const animOn = () => { const f = fxLayer(); return !!(f && ANIM_KEYS.some(k => f.fx[k])); };
+function syncAnimUI() {
+  const on = animOn(), b = $("#aAnim"), t = $("#animTime"); if (!b) return;
+  b.setAttribute("aria-pressed", String(on)); b.classList.toggle("on", on); t.hidden = !on;
+  const sel = $("#animDur"), P = fxPeriod(); if (sel && +sel.value !== P) { if (![...sel.options].some(o => +o.value === P)) sel.insertAdjacentHTML("beforeend", `<option value="${P}">${P} s</option>`); sel.value = P; }
+}
+$("#aAnim").addEventListener("click", () => {
+  const f = ensureFx(), on = !animOn();
+  f.fx = { ...FX_DEFAULT(), ...f.fx, icon: on, text: on, logo: on, period: f.fx.period || FX_PERIOD };
+  if (on) FX.playing = true; TXT_ANIM.p = -1;
+  syncFxUI(); pushHist(); canvas.requestRenderAll(); toast(on ? `Animatsiya yoqildi · ${fxPeriod()} s` : "Animatsiya o'chirildi");
+});
+$("#animDur").addEventListener("change", e => { const f = ensureFx(); f.fx = { ...f.fx, period: +e.target.value }; syncFxUI(); pushHist(); canvas.requestRenderAll(); });
+$$("[data-bgm]").forEach(b => b.addEventListener("click", () => { if (cur.bgMode !== b.dataset.bgm) { applyBgMode(b.dataset.bgm); toast(b.dataset.bgm === "light" ? "Oq fon: oq detallar qora rangga o'tdi" : "Qora fon"); } }));
 $("#fxGlassNew").addEventListener("click", () => {
   const f = ensureFx(); const seed = ((f.fx.glassSeed || 0) + 1 + Math.floor(Math.random() * 997)) % 100000;
   f.fx = { ...FX_DEFAULT(), ...f.fx, glass: true, glassSeed: seed }; syncFxUI(); pushHist(); canvas.requestRenderAll();
@@ -2278,7 +2325,7 @@ $("#fxPlay").addEventListener("click", () => { FX.playing = !FX.playing; FX.user
   const tick = ts => {
     const f = curView === "editor" ? fxLayer() : null;
     if (f && anyFx(f.fx) && FX.playing) {
-      FX.p = (ts / 1000 / FX_PERIOD) % 1; FX.zoom = f.fx.zoom ? 1 + 0.035 * (1 - Math.cos(2 * Math.PI * FX.p)) : 1;
+      FX.p = (ts / 1000 / fxPeriod()) % 1; FX.zoom = f.fx.zoom ? 1 + 0.035 * (1 - Math.cos(2 * Math.PI * FX.p)) : 1;
       canvas.requestRenderAll();
     } else if (FX.p !== 0 || FX.zoom !== 1) { FX.p = 0; FX.zoom = 1; canvas.requestRenderAll(); }
     requestAnimationFrame(tick);
@@ -2481,7 +2528,7 @@ function exportProgress(label) {
 function setFrame(f, i, frames) { FX.anim = true; FX.p = i / frames; FX.zoom = f && f.fx.zoom ? 1 + 0.035 * (1 - Math.cos(2 * Math.PI * FX.p)) : 1; }
 async function exportGif(size) {
   if (gifBusy) return; gifBusy = true;
-  const f = fxLayer(), period = f && anyFx(f.fx) ? FX_PERIOD : 2, fps = 15, frames = Math.round(fps * period);
+  const f = fxLayer(), period = f && anyFx(f.fx) ? fxPeriod() : 2, fps = 15, frames = Math.round(fps * period);
   const pr = exportProgress("GIF tayyorlanmoqda"), was = FX.playing; FX.playing = false;
   try {
     const mod = await import("https://cdn.jsdelivr.net/npm/gifenc@1.0.3/dist/gifenc.esm.js");
@@ -2516,7 +2563,7 @@ async function exportVideo(size, q = "hi") {   // MP4 (H.264): full colour, no b
   if (gifBusy) return;
   if (typeof VideoEncoder === "undefined") { toast("Bu brauzer MP4 yozishni qo'llamaydi. Chrome yoki yangi Safari'dan foydalaning."); return; }
   gifBusy = true;
-  const f = fxLayer(), fps = 30, frames = Math.round(fps * FX_PERIOD);   // one seamless 6 s loop: Telegram/Instagram repeat it themselves
+  const f = fxLayer(), fps = 30, frames = Math.round(fps * fxPeriod());   // one seamless loop: Telegram/Instagram repeat it themselves
   const [vw, vh] = videoDims(size, q); size = vw / W;
   const pr = exportProgress("MP4 tayyorlanmoqda"), was = FX.playing; FX.playing = false;
   try {
@@ -2530,7 +2577,7 @@ async function exportVideo(size, q = "hi") {   // MP4 (H.264): full colour, no b
     enc.configure({ codec, width: vw, height: vh, bitrate: videoBitrate(vw, vh, q), bitrateMode: "variable", framerate: fps, latencyMode: "quality" });
     FX.exportGrain = true;
     const cv = document.createElement("canvas"); cv.width = vw; cv.height = vh; const cx = cv.getContext("2d");
-    const per = Math.round(fps * FX_PERIOD);
+    const per = Math.round(fps * fxPeriod());
     for (let i = 0; i < frames; i++) {
       if (err) throw err;
       setFrame(f, i % per, per);
@@ -2549,7 +2596,7 @@ function openExport() {
   const b = $("#aExport").getBoundingClientRect(), hasFx = anyFx(fxLayer()?.fx);
   const el = openPop(`<div class="menu" role="menu">
     <button data-x="png">PNG<kbd>${W}×${H}</kbd></button><button data-x="png2" ${W * 2 > 8000 || H * 2 > 8000 ? "disabled" : ""}>PNG 2×<kbd>${W * 2}×${H * 2}</kbd></button><button data-x="jpg">JPG<kbd>${W}×${H}</kbd></button><hr>
-    ${["hi", "lite"].map(q => { const [w, h] = videoDims(1, q), mb = (videoBitrate(w, h, q) * FX_PERIOD / 8 / 1048576).toFixed(1); return `<button data-v="${q}">${q === "hi" ? "MP4 · yuqori sifat" : "MP4 · yengil"}<kbd>${w}×${h} · ~${mb} MB</kbd></button>`; }).join("")}
+    ${["hi", "lite"].map(q => { const [w, h] = videoDims(1, q), mb = (videoBitrate(w, h, q) * fxPeriod() / 8 / 1048576).toFixed(1); return `<button data-v="${q}">${q === "hi" ? "MP4 · yuqori sifat" : "MP4 · yengil"}<kbd>${w}×${h} · ~${mb} MB</kbd></button>`; }).join("")}
     ${[0.5, 2 / 3, 1].map(s => `<button data-g="${s}">Harakatli GIF<kbd>${Math.round(W * s)}×${Math.round(H * s)}</kbd></button>`).join("")}
     ${hasFx ? "" : `<p class="hint" style="padding:6px 10px 2px;max-width:240px">Effektlar yoqilmagan: GIF va video harakatsiz chiqadi. "Fon" panelida effekt yoqing.</p>`}</div>`, b.left, b.bottom + 6);
   $$("[data-x]", el).forEach(x => x.addEventListener("click", () => { closePop(); exportStatic(x.dataset.x); }));
@@ -2641,11 +2688,11 @@ const hmAnimOn = o => { if (o.canvas !== canvas || o.anim === false) return fals
     if (this.kind !== "hmicon" || !this.hmId || !HM_ICON[this.hmId] || !hmAnimOn(this)) return orig.call(this, ctx);
     const ic = HM_ICON[this.hmId], main = this.hmMain || DIR(cur.direction).main, L = hmLayers(this.hmId, main);
     if (!L.ready) return orig.call(this, ctx);
-    const w = this.width, h = this.height, k = w / 512, t = FX.p * FX_PERIOD;
+    const w = this.width, h = this.height, k = w / 512, t = FX.p * fxPeriod();
     const cl = x => Math.max(0, Math.min(1, x)), oc = x => 1 - Math.pow(1 - x, 3), ob = x => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
     let gf = oc(cl(t / 0.4)); if (t > 1.3) gf *= 0.85 + 0.15 * Math.cos(2 * Math.PI * (t - 1.3) / 2);
     const pb = oc(cl((t - 0.2) / 0.6)), sb = 0.92 + 0.08 * pb, qb = cl((t - 0.9) / 0.4), sbadge = qb <= 0 ? 0 : ob(qb);
-    const out = t > 5.3 ? oc(cl((t - 5.3) / 0.6)) : 0, so = 1 - 0.04 * out, ta = t - 1.3;
+    const T5 = fxPeriod() - 0.7, out = t > T5 ? oc(cl((t - T5) / 0.6)) : 0, so = 1 - 0.04 * out, ta = t - 1.3;
     const [bx, by] = ic.bc || [256, 256], BC = [372, 372];
     let rot = 0; if (ic.base === "gear") rot = t * 12; if (ic.base === "wheel" && ta > 0) rot = 10 * Math.sin(2 * Math.PI * ta / 2.4) * Math.min(1, ta / 0.5);
     let tx = 0, ty = 0, brot = 0;
@@ -2670,6 +2717,117 @@ const hmAnimOn = o => { if (o.canvas !== canvas || o.anim === false) return fals
     ctx.restore();
   };
 })();
+
+/* ---------- text animation: every text appears out of a blur, top to bottom; all fade back into blur at the loop end ---------- */
+const TXT_ANIM = { p: -1, order: new Map() };
+const fxAnimOn = k => { const f = fxLayer(); return !!(f && f.fx && f.fx[k]) && (FX.anim || (FX.playing && !FX.rendering && curView === "editor")); };
+function logoAnimRender(o, ctx, orig) {   // simple: fades and settles in from 92%, softly out at the loop end
+  const t = FX.p * fxPeriod(), cl = x => Math.max(0, Math.min(1, x)), oc = x => 1 - Math.pow(1 - x, 3);
+  const e = oc(cl(t / 0.7)), out = t > fxPeriod() - 0.7 ? oc(cl((t - fxPeriod() + 0.7) / 0.6)) : 0, a = e * (1 - out);
+  if (a <= 0.002) return;
+  const c = o.getCenterPoint(), sc = 0.92 + 0.08 * e - 0.03 * out, z = Math.hypot(ctx.getTransform().a, ctx.getTransform().b), bpx = o.getScaledHeight() * 0.12 * (1 - e + out) * z;
+  ctx.save(); ctx.globalAlpha *= a; ctx.translate(c.x, c.y); ctx.scale(sc, sc); ctx.translate(-c.x, -c.y);
+  if (bpx > 0.4 && CAN_FILTER) ctx.filter = `blur(${bpx.toFixed(2)}px)`;
+  orig.call(o, ctx); ctx.filter = "none"; ctx.restore();
+}
+const textAnimOn = () => { const f = fxLayer(); return !!(f && f.fx && f.fx.text) && (FX.anim || (FX.playing && !FX.rendering && curView === "editor")); };
+function textAnimOrder() {
+  if (TXT_ANIM.p === FX.p && TXT_ANIM.n === canvas._objects.length) return TXT_ANIM.order;
+  const list = canvas.getObjects().filter(o => isText(o) && o.visible !== false && o.textAnim !== "none")
+    .map(o => ({ o, r: o.getBoundingRect(true, true) })).sort((a, b) => (a.r.top - b.r.top) || (a.r.left - b.r.left));
+  const m = new Map(); list.forEach((e, i) => m.set(e.o, i));
+  canvas.getObjects().forEach(o => { if (o.attachTo && !isText(o)) { const t = canvas.getObjects().find(x => isText(x) && x.slot === o.attachTo); if (t && m.has(t)) m.set(o, m.get(t)); } });
+  TXT_ANIM.p = FX.p; TXT_ANIM.n = canvas._objects.length; TXT_ANIM.order = m; return m;
+}
+function textAnimState(o) {
+  const i = textAnimOrder().get(o); if (i == null) return null;
+  const t = FX.p * fxPeriod(), cl = x => Math.max(0, Math.min(1, x)), oc = x => 1 - Math.pow(1 - x, 3);
+  const st = Math.min(0.15 + i * 0.16, Math.max(0.6, fxPeriod() * 0.32)), e = oc(cl((t - st) / 0.75)), out = t > fxPeriod() - 0.7 ? oc(cl((t - fxPeriod() + 0.7) / 0.6)) : 0;
+  const t0 = isText(o) ? o : canvas.getObjects().find(x => isText(x) && x.slot === o.attachTo) || o;
+  const fs = (t0.fontSize || 40) * (t0.scaleY || 1);
+  return { a: e * (1 - out), blur: fs * (0.32 * (1 - e) + 0.22 * out), dy: fs * 0.22 * (1 - e) };
+}
+(() => {
+  const orig = fabric.Object.prototype.render;
+  fabric.Object.prototype.render = function (ctx) {
+    if (this.canvas !== canvas || this.isEditing || this.type === "fxLayer" || this.kind === "hmicon" || this.role === "bg") return orig.call(this, ctx);
+    if (this.kind === "logo") { if (!fxAnimOn("logo")) return orig.call(this, ctx); return logoAnimRender(this, ctx, orig); }
+    if (!(isText(this) || this.attachTo) || !textAnimOn()) return orig.call(this, ctx);
+    const S = textAnimState(this); if (!S) return orig.call(this, ctx);
+    if (S.a <= 0.002) return;
+    const z = Math.hypot(ctx.getTransform().a, ctx.getTransform().b), bpx = S.blur * z;
+    ctx.save(); ctx.translate(0, S.dy);
+    if (bpx < 0.4) { ctx.globalAlpha *= S.a; orig.call(this, ctx); }
+    else if (CAN_FILTER) { ctx.filter = `blur(${bpx.toFixed(2)}px)`; ctx.globalAlpha *= S.a; orig.call(this, ctx); ctx.filter = "none"; }
+    else { // Safari < 18: soft ring of copies instead of a real blur
+      const N = 8, r = S.blur * 0.6; ctx.globalAlpha *= S.a / N * 1.6;
+      for (let k = 0; k < N; k++) { ctx.save(); ctx.translate(Math.cos(k / N * 6.283) * r, Math.sin(k / N * 6.283) * r); orig.call(this, ctx); ctx.restore(); }
+    }
+    ctx.restore();
+  };
+})();
+
+/* ---------- light background: every detail made for the dark poster adapts automatically ---------- */
+const LIGHT_BG = "#FFFFFF", DARK_INK = "#0F1119";
+function parseCol(c) {
+  if (typeof c !== "string") return null; c = c.trim();
+  let m = c.match(/^#([0-9a-f]{3,8})$/i);
+  if (m) { let h = m[1]; if (h.length <= 4) h = [...h].map(x => x + x).join(""); const n = i => parseInt(h.slice(i, i + 2), 16); return { r: n(0), g: n(2), b: n(4), a: h.length === 8 ? n(6) / 255 : 1 }; }
+  m = c.match(/^rgba?\(([^)]+)\)$/i);
+  if (m) { const v = m[1].split(/[ ,\/]+/).filter(Boolean).map(parseFloat); return { r: v[0], g: v[1], b: v[2], a: v[3] ?? 1 }; }
+  if (/^white$/i.test(c)) return { r: 255, g: 255, b: 255, a: 1 }; if (/^black$/i.test(c)) return { r: 0, g: 0, b: 0, a: 1 };
+  return null;
+}
+const lumOf = p => { const f = v => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); }; return 0.2126 * f(p.r) + 0.7152 * f(p.g) + 0.0722 * f(p.b); };
+const rgbaStr = (p, a) => `rgba(${Math.round(p.r)},${Math.round(p.g)},${Math.round(p.b)},${+(a ?? p.a).toFixed(3)})`;
+function toLightCol(c, d, logo) {
+  const p = parseCol(c); if (!p) return c;
+  const L = lumOf(p), same = (x, y) => { const q = parseCol(y); return q && Math.abs(q.r - x.r) + Math.abs(q.g - x.g) + Math.abs(q.b - x.b) < 6; };
+  if (L > 0.75) return p.a < 1 ? rgbaStr(parseCol(DARK_INK), p.a) : DARK_INK;      // white ink → dark ink
+  if (logo) return c;                                                                 // logo: the coloured icon stays as it is
+  if (L < 0.04) return rgbaStr({ r: 255, g: 255, b: 255 }, p.a);                       // dark shades/veils → white veils
+  if (same(p, d.light)) return p.a < 1 ? rgbaStr(parseCol(d.deep), p.a) : d.deep;     // pale accent → deep accent (readable on white)
+  if (L > 0.4) return rgbaStr({ r: p.r * 0.65, g: p.g * 0.65, b: p.b * 0.65 }, p.a);
+  return c;
+}
+const serCol = v => v && typeof v === "object" && v.toObject ? v.toObject() : v;
+const mapPaint = (v, fn) => {
+  if (v && typeof v === "object" && v.colorStops) {
+    const g = new fabric.Gradient(v.toObject ? v.toObject() : v);
+    g.colorStops = g.colorStops.map(st => { const p0 = parseCol(st.color) || { r: 0, g: 0, b: 0, a: 1 }, a0 = p0.a * (st.opacity ?? 1);
+      const q = parseCol(fn(rgbaStr(p0, a0))) || p0; return { offset: st.offset, color: `rgb(${Math.round(q.r)},${Math.round(q.g)},${Math.round(q.b)})`, opacity: +q.a.toFixed(4) }; });
+    return g;
+  }
+  return typeof v === "string" ? fn(v) : v;
+};
+function lightObj(o, d, logo) {
+  if (o.type === "image" || o.type === "fxLayer") return;
+  if (o._objects) o._objects.forEach(ch => lightObj(ch, d, logo || o.kind === "logo"));
+  if (o.dk) return;
+  o.dk = JSON.stringify({ f: serCol(o.fill), s: serCol(o.stroke) });
+  if (o.role === "bg") { const p = parseCol(o.fill); if (p && lumOf(p) < 0.3) o.set("fill", LIGHT_BG); return; }
+  const fn = c => toLightCol(c, d, logo);
+  o.set({ fill: mapPaint(o.fill, fn), stroke: mapPaint(o.stroke, fn) });
+  if (o.dirty !== undefined) o.dirty = true;
+}
+function darkObj(o) {
+  if (o._objects) o._objects.forEach(darkObj);
+  if (!o.dk) return;
+  try { const j = JSON.parse(o.dk), back = v => v && typeof v === "object" ? new fabric.Gradient(v) : v; o.set({ fill: back(j.f), stroke: back(j.s) }); } catch (e) {}
+  o.dk = undefined; o.dirty = true;
+}
+function applyBgMode(mode, opts = {}) {
+  const d = DIR(cur.direction);
+  cur.bgMode = mode === "light" ? "light" : "dark";
+  canvas.getObjects().forEach(o => cur.bgMode === "light" ? lightObj(o, d) : darkObj(o));
+  const bgc = parseCol(canvas.backgroundColor);
+  if (cur.bgMode === "light" && bgc && lumOf(bgc) < 0.3) canvas.backgroundColor = LIGHT_BG;
+  if (cur.bgMode === "dark" && bgc && lumOf(bgc) > 0.6) canvas.backgroundColor = POSTER_BG;
+  syncBgModeUI(); canvas.requestRenderAll();
+  if (!opts.silent) { pushHist(); renderProps(); }
+}
+function syncBgModeUI() { $$("[data-bgm]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.bgm === cur.bgMode))); }
+function autoBgMode(color) { const p = parseCol(color); if (!p) return; const L = lumOf(p); if (L > 0.6 && cur.bgMode !== "light") applyBgMode("light", { silent: true }); else if (L < 0.3 && cur.bgMode !== "dark") applyBgMode("dark", { silent: true }); }
 /* ============================================================
    Toolbar flyouts, zoom control, rulers
    ============================================================ */
@@ -3004,14 +3162,14 @@ const themesOf = slug => THEMES.filter(t => t.dir === slug);
 const primaryTheme = slug => (themesOf(slug).find(t => t.group !== "preset") || {}).id;
 function hmAnimDefault(id) { // templates with a HUNTME service icon start with the icon animation on
   if (!((THEME[id] || {}).opts || {}).hm) return;
-  hist.lock++; const f = ensureFx(); f.fx = { ...FX_DEFAULT(), ...f.fx, icon: true }; hist.lock--;
+  hist.lock++; const f = ensureFx(); f.fx = { ...FX_DEFAULT(), ...f.fx, icon: true, logo: true }; hist.lock--;
 }
 async function newFromTheme(id) {
   if (cur.dirty && !confirmLeave()) return;
   const th = THEME[id]; if (!th) return;
-  cur.id = null; cur.kind = "manual"; cur.pristine = false;
+  cur.id = null; cur.kind = "manual"; cur.pristine = false; cur.bgMode = "dark";
   if (curView !== "editor") showView("editor");
-  await buildTheme(canvas, id, {}); hmAnimDefault(id);
+  await buildTheme(canvas, id, {}); hmAnimDefault(id); syncBgModeUI();
   $("#docTitle").value = `${DIR(th.dir).name} · ${th.name}`;
   resetHist(); fitView(); refreshLayers(); renderProps(); syncFxUI(); renderThemes();
 }
@@ -3382,7 +3540,7 @@ async function buildTheme(c, id, o = {}) {
   if (!main) { c.setWidth(w); c.setHeight(h); }
   X.objs.forEach(ob => { if (main && ob.role === "bg") ob.set({ locked: true }); c.add(ob); });
   X.objs.filter(t => isText(t) && t.slot).forEach(t => layoutAttached(c, t));
-  if (main) { X.objs.forEach(applyLock); cur.theme = id; cur.direction = d.slug; cur.imageUrl = X.imageUrl || ""; hist.lock--; syncDirUI(); syncSizeUI(); }
+  if (main) { X.objs.forEach(applyLock); cur.theme = id; cur.direction = d.slug; cur.imageUrl = X.imageUrl || ""; if (cur.bgMode === "light") applyBgMode("light", { silent: true }); hist.lock--; syncDirUI(); syncSizeUI(); }
   c.requestRenderAll();
 }
 function themeTexts() { // the poster's current texts, keyed by slot
@@ -4039,6 +4197,12 @@ async function runGenerator() {
 const LANG_KEY = "ips:lang";
 let LANG = (ls.get(LANG_KEY) === "en") ? "en" : "uz";
 const EN = {
+  "Animatsiya": "Animation", "Barcha animatsiyalarni yoqish / o'chirish: logo, matnlar, ikonkalar": "Turn all animations on / off: logo, texts, icons", "Animatsiya davomiyligi (boshi oxiriga ulanadi)": "Animation length (seamless loop)", "Animatsiya davomiyligi": "Animation length", "Animatsiya o'chirildi": "Animation off",
+  "Logo animatsiyasi": "Logo animation", "Fon rejimi": "Background mode", "Qora fon": "Dark background", "Oq fon": "White background",
+  "Oq fonda oq matnlar, logo yozuvi va chiziqlar avtomatik qora rangga o'tadi; logo belgisi va rangli qismlar o'z rangida qoladi. Oq rangni fon sifatida tanlasangiz ham shunday bo'ladi.": "On a white background, white texts, the logo wordmark and lines turn dark automatically; the logo mark and coloured parts keep their colour. Picking white as the background does the same.",
+  "Oq fon: oq detallar qora rangga o'tdi": "White background: white details turned dark", "Qora fon": "Dark background",
+  "Matn animatsiyasi: blur bilan paydo bo'lish": "Text animation: blur-in", "Animatsiya": "Animation", "Blur bilan paydo bo'lish": "Blur-in", "Animatsiyasiz": "No animation",
+  "Matnlar yuqoridan pastga navbat bilan paydo bo'ladi, 6 soniyalik halqa.": "Texts appear one by one from top to bottom, 6-second loop.", "Matn animatsiyasi hozir o'chiq: tanlasangiz, butun poster uchun yoqiladi.": "Text animation is off: choosing it turns it on for the whole poster.",
   "Ikonka animatsiyasi (HUNTME ikonkalari)": "Icon animation (HUNTME icons)",
   "HUNTME xizmat ikonkalari": "HUNTME service icons", "Rang poster yo'nalishiga moslashadi.": "Colour follows the poster's direction.", "Kanalda muntazam chiqadi · HUNTME ikonkasi": "Posted regularly · HUNTME icon", "HUNTME ikonkasi": "HUNTME icon",
   "MP4 tayyorlanmoqda": "Preparing MP4", "MP4 · yuqori sifat": "MP4 · high quality", "MP4 · yengil": "MP4 · light", "Bu brauzer MP4 yozishni qo'llamaydi. Chrome yoki yangi Safari'dan foydalaning.": "This browser can't record MP4. Use Chrome or a recent Safari.",
@@ -4253,7 +4417,7 @@ const EN_PATTERNS = [
   [/^Bitta ishga tushirishda ko'pi bilan (\d+) ta so'rov chiziladi, har biriga 1 ta rasm\. (.*)$/, (m, a, b) => `Each run paints at most ${a} requests, 1 image each. ${tr(b)}`],
   [/^(.+) hisobiga hali ruxsat berilmagan.*$/, "$1 has no access yet: you can use the editor and export. Ask an administrator for gallery access."],
   [/^(.+) nusxalandi$/, "$1 copied"], [/^(.+) posteri doim (\d+)×(\d+) \(2:1\): faqat vakansiya nomi\.$/, "$1 posters are always $2×$3 (2:1): vacancy title only."],
-  [/^(.+) posteri doim (\d+×\d+)$/, "$1 posters are always $2"], [/^(.+): (\d+×\d+), faqat vakansiya nomi$/, "$1: $2, vacancy title only"], [/^(.+) shabloni$/, "$1 template"], [/^Mavzu: (.+)$/, "Theme: $1"], [/^Shisha kvadratlar: (\d+)-variant$/, "Glass squares: variant $1"], [/^MP4 tayyorlab bo'lmadi: (.*)$/, "Couldn't make the MP4: $1"], [/^Kanalda (\d+) marta chiqqan$/, "Posted $1 times in the channel"], [/^(\d+) ta shablon · (\d+) ta poster$/, "$1 templates · $2 posters"], [/^(\d+×\d+) \(2:1\), Telegram kanal\. .*$/, "$1 (2:1), Telegram channel. Vacancy title only, vertically centred."], [/^(\d+) ta variant$/, "$1 variants"], [/^Logo · (.+)$/, "Logo · $1"],
+  [/^(.+) posteri doim (\d+×\d+)$/, "$1 posters are always $2"], [/^(.+): (\d+×\d+), faqat vakansiya nomi$/, "$1: $2, vacancy title only"], [/^(.+) shabloni$/, "$1 template"], [/^Mavzu: (.+)$/, "Theme: $1"], [/^Shisha kvadratlar: (\d+)-variant$/, "Glass squares: variant $1"], [/^Animatsiya yoqildi · (\d+) s$/, "Animation on · $1 s"], [/^MP4 tayyorlab bo'lmadi: (.*)$/, "Couldn't make the MP4: $1"], [/^Kanalda (\d+) marta chiqqan$/, "Posted $1 times in the channel"], [/^(\d+) ta shablon · (\d+) ta poster$/, "$1 templates · $2 posters"], [/^(\d+×\d+) \(2:1\), Telegram kanal\. .*$/, "$1 (2:1), Telegram channel. Vacancy title only, vertically centred."], [/^(\d+) ta variant$/, "$1 variants"], [/^Logo · (.+)$/, "Logo · $1"],
 ];
 function tr(s) {
   if (LANG !== "en" || !s) return s;
